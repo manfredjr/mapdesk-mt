@@ -11,13 +11,16 @@
 
 ## Decisões
 
-1. Opção recomendada: SSL.com, certificado OV com eSigner, pela ação oficial `sslcom/esigner-codesign` (versão `v1.3.2`, de 22/12/2025). Com outra opção, só muda o passo de assinatura; o resto do plano fica igual.
+1. **Escolha do Manfred (05/10/2026): Certum Padrão em nuvem (SimplySign).** A SSL.com com eSigner fica como reserva. A Certum não tem ação oficial para o GitHub Actions. Há dois caminhos, e o primeiro passo da fatia é decidir entre eles, olhando o código:
+   - **`ssign`** (crate Rust, licença MIT, mantenedor Le-Syl21, projeto pequeno, consultado em docs.rs em 05/10/2026). Assina por HTTPS, sem o SimplySign Desktop, com implementação própria de Authenticode. Usa `CERTUM_EMAIL` e `CERTUM_OTP` (semente TOTP em base32). Como ele manuseia a credencial de assinatura, só entra depois de revisar o código e com versão fixada (`cargo install ssign --version <x> --locked`).
+   - **SimplySign Desktop e `signtool`** no runner Windows, com login automatizado pelo TOTP. As ferramentas são as oficiais da Certum, mas a automação do login é de terceiros e mais frágil.
+   A semente TOTP é uma credencial de longa duração: quem a tiver, junto com o e-mail, assina como a MT até o QR do SimplySign ser emitido de novo.
 2. São assinados dois grupos, como faz o RustDesk oficial:
    - antes de empacotar, os arquivos da pasta `./rustdesk`: `MapDesk-MT.exe`, `librustdesk.dll` e as demais `.dll` da MT/RustDesk, porque são eles que ficam instalados no cliente;
    - depois de empacotar, o `SaidaMT/MapDesk-MT.exe`, que é o que o cliente baixa.
-3. Os passos de assinatura só rodam quando o segredo `ES_USERNAME` existe. Sem ele, o build continua saindo sem assinatura, como hoje.
-4. Segredos do GitHub (criados pelo Manfred no repositório, nunca colados no chat): `ES_USERNAME`, `ES_PASSWORD`, `CREDENTIAL_ID`, `ES_TOTP_SECRET`.
-5. A assinatura roda em todo build com os segredos, inclusive em PR do próprio repositório, para o teste já ser com o arquivo assinado. PR vindo de fork alheio não recebe segredos e sai sem assinatura.
+3. Os passos de assinatura só rodam quando os segredos existem. Sem eles, o build continua saindo sem assinatura, como hoje.
+4. Segredos (criados pelo Manfred, nunca colados no chat) ficam num **ambiente protegido do GitHub** chamado `assinatura`, com o Manfred como aprovador obrigatório, e não como segredo comum do repositório. Na Certum com `ssign`, são `CERTUM_EMAIL` e `CERTUM_OTP`. Na SSL.com, seriam `ES_USERNAME`, `ES_PASSWORD`, `CREDENTIAL_ID` e `ES_TOTP_SECRET`.
+5. Com a Certum, a assinatura roda **só no build de tag** (publicação), num job separado que usa o ambiente `assinatura`. O GitHub pede a aprovação do Manfred antes de liberar os segredos. Os artefatos de PR continuam sem assinatura.
 
 ## Tarefas
 
@@ -25,8 +28,8 @@
 
 Arquivo: `.github/workflows/mapdesk-windows.yml`.
 
-- No `env` do job: `ES_USERNAME: ${{ secrets.ES_USERNAME }}`.
-- Depois de "Download RustDeskTempTopMostWindow artifacts" e antes de "Build self-extracted executable", um passo "Sign files" com `if: env.ES_USERNAME != ''`:
+- **Com a Certum**, a estrutura muda: um job novo `assinar`, com `needs: build-windows-x64`, `if: startsWith(github.ref, 'refs/tags/')` e `environment: assinatura`. Ele baixa o artefato, assina e só então publica a versão. O passo de release sai do job de build e vai para esse job. A pasta `./rustdesk` precisa ir no artefato (ou ser assinada no job de build antes do empacotamento, por um passo condicionado à tag que use o mesmo ambiente). Decidir isso na implementação, lendo o `ssign`.
+- **Com a SSL.com (reserva):** no `env` do job, `ES_USERNAME: ${{ secrets.ES_USERNAME }}`, e depois "Download RustDeskTempTopMostWindow artifacts" e antes de "Build self-extracted executable", um passo "Sign files" com `if: env.ES_USERNAME != ''`:
   - `uses: sslcom/esigner-codesign@v1.3.2`;
   - `command: batch_sign`;
   - `dir_path` e `output_path` ajustados para assinar no lugar os `.exe` e `.dll` de `./rustdesk`. Conferir no README da ação se `batch_sign` aceita filtro de extensão. Se não aceitar, assinar um a um com `sign` e `override: true`;
