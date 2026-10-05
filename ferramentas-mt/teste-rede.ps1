@@ -29,7 +29,15 @@
 #     MapDesk-MT. Por isso, feche o RustDesk oficial durante o teste;
 #   - conexões TCP que duram menos de 2 segundos podem escapar da amostragem;
 #   - o Windows não informa o destino de UDP; o registro no servidor de ID usa
-#     UDP e aparece só pelo DNS.
+#     UDP e aparece só pelo DNS;
+#   - se algum nome do RustDesk oficial já estiver no cache de DNS no início,
+#     uma consulta durante o teste pode ser respondida pelo cache sem deixar
+#     rastro; nesse caso o resumo é INCONCLUSIVO. Rode ipconfig /flushdns antes;
+#   - rustdesk.com e admin.rustdesk.com resolvem para IPs compartilhados da
+#     Cloudflare: uma conexão a outro site atrás da Cloudflare pode gerar um
+#     ATENÇÃO falso (erro para o lado seguro).
+#
+# Código de saída: 0 OK, 1 ATENÇÃO, 2 INCONCLUSIVO ou SEM RESULTADO.
 
 param(
     [int]$Duracao = 120
@@ -210,11 +218,17 @@ if (-not $achouProcesso) {
 
 # Resumo
 Escrever ""
+$codigo = 0
 if ($alertas.Count -eq 0 -and -not $achouProcesso) {
     Escrever "SEM RESULTADO: o MapDesk-MT não estava aberto"
+    $codigo = 2
+} elseif ($alertas.Count -eq 0 -and $cacheInicial.Count -gt 0) {
+    Escrever "INCONCLUSIVO: havia nomes do RustDesk no cache de DNS no início. Rode ipconfig /flushdns, feche o RustDesk oficial e rode de novo."
+    $codigo = 2
 } elseif ($alertas.Count -eq 0) {
     Escrever "OK: nenhuma conexão TCP ao RustDesk e nenhum nome do RustDesk consultado durante o teste"
 } else {
+    $codigo = 1
     Escrever "ATENÇÃO: houve contato com o RustDesk oficial durante o teste:"
     foreach ($a in $alertas) {
         Escrever ("  " + $a)
@@ -229,3 +243,5 @@ try {
 } catch {
     Write-Host ("Não consegui gravar o relatório em " + $arquivo + ": " + $_.Exception.Message)
 }
+Write-Host "Aviso: este roteiro deixou os nomes do RustDesk oficial no cache de DNS. Antes de rodar de novo, use ipconfig /flushdns."
+exit $codigo
