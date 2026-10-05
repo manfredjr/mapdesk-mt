@@ -134,6 +134,7 @@ Teste de rede, antes de cada versão: durante a abertura e uma sessão completa,
 - O Manfred recebe o aviso das versões novas pelo "Watch > Releases" de `rustdesk/rustdesk` no GitHub.
 - Correção de segurança: entra em até 7 dias. As demais versões, a cada 3 meses ou quando o Manfred pedir.
 - Cada versão nova passa por merge em PR, compilação, testes 1, 2 e de rede, e uma nova tag `<versão>-mt.N`, com o aviso de modificação atualizado.
+- Depois de cada merge do oficial: listar os workflows (`gh api repos/manfredjr/mapdesk-mt/actions/workflows --jq '.workflows[] | .path + " " + .state'`) e desligar qualquer um que esteja ativo e não seja `mapdesk-windows`, `bridge` ou `third-party-RustDeskTempTopMostWindow`. Em 05/10/2026, os dois agendados (`flutter-nightly` e `update-webpki-roots`) voltaram a ficar ativos sozinhos depois da primeira atividade no fork.
 
 ## 12. Fora da versão 1
 

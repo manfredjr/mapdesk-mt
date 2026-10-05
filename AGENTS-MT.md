@@ -109,9 +109,9 @@ Perfil 13.3 do briefing de início (outros perfis). O projeto é um fork em Rust
 | Camada | Escolha |
 |---|---|
 | Base | RustDesk 1.5.0 (`rustdesk/rustdesk`), publicada em 30/09/2026 |
-| Submódulo | `libs/hbb_common` (`rustdesk/hbb_common`), usado sem alteração. Servidor, chave, `APP_NAME` e padrões são definidos em tempo de execução por `src/mt_config.rs` no repositório principal (decisão de 05/10/2026, abordagem A) |
+| Submódulo | `libs/hbb_common`, apontando para o fork `manfredjr/hbb_common` (sem alteração, no commit do oficial). Servidor, chave, `APP_NAME` e padrões são definidos em tempo de execução por `src/mt_config.rs` no repositório principal (decisão de 05/10/2026, abordagem A) |
 | Interface | Flutter (pasta `flutter/`), ícones em `res/` |
-| Compilação | GitHub Actions, a partir de `.github/workflows/flutter-build.yml`, Windows em `windows-2022` |
+| Compilação | GitHub Actions, workflow da MT `.github/workflows/mapdesk-windows.yml` (derivado do `flutter-build.yml` oficial), Windows x64 em `windows-2022`. Os workflows do oficial ficam desligados no fork; só `mapdesk-windows`, `bridge` e `third-party-RustDeskTempTopMostWindow` ficam ativos |
 | Plataforma da versão 1 | Windows 64 bits |
 | Versão | a do RustDesk mais sufixo da MT, por exemplo `1.5.0-mt.1` |
 
