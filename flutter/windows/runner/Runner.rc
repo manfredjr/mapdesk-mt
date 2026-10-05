@@ -89,13 +89,13 @@ BEGIN
     BEGIN
         BLOCK "040904e4"
         BEGIN
-            VALUE "CompanyName", "Purslane Tech Pte. Ltd." "\0"
-            VALUE "FileDescription", "RustDesk Remote Desktop" "\0"
+            VALUE "CompanyName", "MT - Manfred Tecnologia" "\0"
+            VALUE "FileDescription", "MapDesk-MT, acesso remoto" "\0"
             VALUE "FileVersion", VERSION_AS_STRING "\0"
-            VALUE "InternalName", "rustdesk" "\0"
-            VALUE "LegalCopyright", "Copyright © 2026 Purslane Tech Pte. Ltd. All rights reserved." "\0"
-            VALUE "OriginalFilename", "rustdesk.exe" "\0"
-            VALUE "ProductName", "RustDesk" "\0"
+            VALUE "InternalName", "MapDesk-MT" "\0"
+            VALUE "LegalCopyright", "Copyright © 2026 Purslane Tech Pte. Ltd. All rights reserved. Modificado por MT - Manfred Tecnologia. AGPL-3.0." "\0"
+            VALUE "OriginalFilename", "MapDesk-MT.exe" "\0"
+            VALUE "ProductName", "MapDesk-MT" "\0"
             VALUE "ProductVersion", VERSION_AS_STRING "\0"
         END
     END
