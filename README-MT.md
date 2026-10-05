@@ -19,13 +19,15 @@ O GitHub Actions compila o Windows x64 pelo workflow `.github/workflows/mapdesk-
 - em toda tag `<versão>-mt.<n>` (por exemplo `1.5.0-mt.1`), com o executável publicado na versão (release);
 - por acionamento manual, na aba Actions.
 
+A versão MT fica em `flutter/lib/mt/mt_info.dart` (`kMtVersao`) e sobe junto com a tag.
+
 ## Situação do projeto
 
 | Fatia | O quê | Situação |
 |---|---|---|
-| 1 | Fundação: forks, ramos e compilação do oficial | pronta para teste, PR #1 |
+| 1 | Fundação: forks, ramos e compilação do oficial | feita, PR #1 |
 | 2 | Servidor embutido | a fazer |
-| 3 | Marca e avisos | a fazer |
+| 3 | Marca e avisos | em andamento, PR #2 |
 | 4 | Assinatura | a fazer |
 | 5 | Publicação | a fazer |
 

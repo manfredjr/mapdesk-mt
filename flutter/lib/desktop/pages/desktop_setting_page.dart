@@ -17,6 +17,7 @@ import 'package:flutter_hbb/models/platform_model.dart';
 import 'package:flutter_hbb/models/printer_model.dart';
 import 'package:flutter_hbb/models/server_model.dart';
 import 'package:flutter_hbb/models/state_model.dart';
+import 'package:flutter_hbb/mt/mt_info.dart';
 import 'package:get/get.dart';
 import 'package:provider/provider.dart';
 import 'package:url_launcher/url_launcher.dart';
@@ -2524,7 +2525,6 @@ class _AboutState extends State<_About> {
       };
     }(), hasData: (data) {
       final license = data['license'].toString();
-      final version = data['version'].toString();
       final buildDate = data['buildDate'].toString();
       final fingerprint = data['fingerprint'].toString();
       final myId = data['myId'].toString();
@@ -2540,7 +2540,8 @@ class _AboutState extends State<_About> {
                 height: 8.0,
               ),
               SelectionArea(
-                  child: Text('${translate('Version')}: $version')
+                  child: Text(
+                          'MapDesk-MT $kMtVersao (base RustDesk $kMtVersaoBase)')
                       .marginSymmetric(vertical: 4.0)),
               SelectionArea(
                   child: Text('${translate('Build Date')}: $buildDate')
@@ -2552,24 +2553,41 @@ class _AboutState extends State<_About> {
               SelectionArea(
                   child: Text('${translate('ID')}: $myId')
                       .marginSymmetric(vertical: 4.0)),
+              if (kMtPrivacidade.isNotEmpty)
+                InkWell(
+                    onTap: () {
+                      launchUrlString(kMtPrivacidade);
+                    },
+                    child: Text(
+                      'Política de privacidade',
+                      style: linkStyle,
+                    ).marginSymmetric(vertical: 4.0)),
               InkWell(
                   onTap: () {
-                    launchUrlString('https://rustdesk.com/privacy.html');
+                    launchUrlString(kMtSite);
                   },
                   child: Text(
-                    translate('Privacy Statement'),
+                    'Site',
                     style: linkStyle,
                   ).marginSymmetric(vertical: 4.0)),
               InkWell(
                   onTap: () {
-                    launchUrlString('https://rustdesk.com');
+                    launchUrlString(kMtCodigoFonte);
                   },
                   child: Text(
-                    translate('Website'),
+                    'Código-fonte desta versão',
+                    style: linkStyle,
+                  ).marginSymmetric(vertical: 4.0)),
+              InkWell(
+                  onTap: () {
+                    launchUrlString(kMtLicenca);
+                  },
+                  child: Text(
+                    'Licença AGPL-3.0',
                     style: linkStyle,
                   ).marginSymmetric(vertical: 4.0)),
               Container(
-                decoration: const BoxDecoration(color: Color(0xFF2c8cff)),
+                decoration: const BoxDecoration(color: Color(0xFF006B2D)),
                 padding:
                     const EdgeInsets.symmetric(vertical: 24, horizontal: 8),
                 child: SelectionArea(
@@ -2584,7 +2602,8 @@ class _AboutState extends State<_About> {
                             style: const TextStyle(color: Colors.white),
                           ),
                           Text(
-                            translate('Slogan_tip'),
+                            'Baseado no RustDesk, software livre distribuído sob a AGPL-3.0. Não é produto oficial do RustDesk.\n'
+                            'Versão modificada pela MT - Manfred Tecnologia. Este programa vem sem nenhuma garantia. Você pode redistribuí-lo e modificá-lo nos termos da AGPL-3.0.',
                             style: TextStyle(
                                 fontWeight: FontWeight.w800,
                                 color: Colors.white),
