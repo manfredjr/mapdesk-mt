@@ -27,7 +27,7 @@ A versão MT fica em `flutter/lib/mt/mt_info.dart` (`kMtVersao`) e sobe junto co
 |---|---|---|
 | 1 | Fundação: forks, ramos e compilação do oficial | feita, PR #1 |
 | 2 | Servidor embutido | a fazer |
-| 3 | Marca e avisos | em andamento, PR #2 |
+| 3 | Marca e avisos | pronta para teste, PR #2 |
 | 4 | Assinatura | a fazer |
 | 5 | Publicação | a fazer |
 
