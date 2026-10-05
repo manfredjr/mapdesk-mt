@@ -1,0 +1,19 @@
+#!/bin/sh
+# Envia todo commit para o GitHub assim que ele e criado.
+#
+# O repositorio no GitHub e o backup do projeto, e backup que depende de
+# alguem lembrar de acionar nao e backup. Este gancho tira a decisao do
+# caminho: commitou, subiu.
+#
+# Roda depois do commit, entao uma falha de rede nunca desfaz nem bloqueia o
+# commit. Se o envio falhar, o commit continua local e o proximo empurra os
+# dois.
+
+ramo=$(git symbolic-ref --quiet --short HEAD) || exit 0
+[ -z "$ramo" ] && exit 0
+
+git push --quiet origin "$ramo" 2>/dev/null && exit 0
+
+echo "Aviso: o commit ficou local, o envio para o GitHub falhou."
+echo "Rode 'git push origin $ramo' quando a rede voltar."
+exit 0
