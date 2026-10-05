@@ -187,8 +187,7 @@ class _InstallPageBodyState extends State<_InstallPageBody>
                               .marginOnly(bottom: em),
                           InkWell(
                             hoverColor: Colors.transparent,
-                            onTap: () => launchUrlString(
-                                'https://rustdesk.com/privacy.html'),
+                            onTap: () => launchUrlString(kMtLicenca),
                             child: Tooltip(
                               message: kMtLicenca,
                               child: Row(children: [
