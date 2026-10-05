@@ -1,0 +1,19 @@
+#!/bin/sh
+# Envia para o GitHub o commit de merge assim que ele e criado.
+#
+# O gancho post-commit nao roda em merge: o Git chama post-merge no lugar.
+# Sem este arquivo, um merge local (inclusive o de um git pull) ficaria sem
+# backup ate o proximo commit comum.
+#
+# Roda depois do merge, entao uma falha de rede nunca desfaz nem bloqueia o
+# merge. Se o envio falhar, o merge continua local e o proximo envio empurra
+# tudo.
+
+ramo=$(git symbolic-ref --quiet --short HEAD) || exit 0
+[ -z "$ramo" ] && exit 0
+
+git push --quiet origin "$ramo" 2>/dev/null && exit 0
+
+echo "Aviso: o merge ficou local, o envio para o GitHub falhou."
+echo "Rode 'git push origin $ramo' quando a rede voltar."
+exit 0
