@@ -23,7 +23,7 @@ O GitHub Actions compila o Windows x64 pelo workflow `.github/workflows/mapdesk-
 
 | Fatia | O quê | Situação |
 |---|---|---|
-| 1 | Fundação: forks, ramos e compilação do oficial | em andamento |
+| 1 | Fundação: forks, ramos e compilação do oficial | pronta para teste, PR #1 |
 | 2 | Servidor embutido | a fazer |
 | 3 | Marca e avisos | a fazer |
 | 4 | Assinatura | a fazer |
