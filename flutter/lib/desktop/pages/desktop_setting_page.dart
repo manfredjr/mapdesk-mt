@@ -18,6 +18,7 @@ import 'package:flutter_hbb/models/printer_model.dart';
 import 'package:flutter_hbb/models/server_model.dart';
 import 'package:flutter_hbb/models/state_model.dart';
 import 'package:flutter_hbb/mt/mt_info.dart';
+import 'package:flutter_hbb/mt/mt_logo_link.dart';
 import 'package:get/get.dart';
 import 'package:provider/provider.dart';
 import 'package:url_launcher/url_launcher.dart';
@@ -2536,6 +2537,7 @@ class _AboutState extends State<_About> {
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
+              MtLogoLink(altura: 56).marginOnly(top: 8.0),
               const SizedBox(
                 height: 8.0,
               ),

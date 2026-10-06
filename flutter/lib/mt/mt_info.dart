@@ -4,3 +4,4 @@ const String kMtCodigoFonte = 'https://github.com/manfredjr/mapdesk-mt/tree/$kMt
 const String kMtLicenca = 'https://www.gnu.org/licenses/agpl-3.0.html';
 const String kMtSite = 'https://manfred.com.br';
 const String kMtPrivacidade = '';
+const String kMtSiteMarca = 'https://www.manfred.com.br';

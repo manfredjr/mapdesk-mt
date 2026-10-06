@@ -41,3 +41,11 @@ python ferramentas-mt/gerar-marca.py
 ```
 
 Precisa só do Python com Pillow.
+
+## Logo da MT
+
+`mt-logo.svg` é o logo oficial da MT - Manfred Tecnologia, recebido do Manfred em 06/10/2026. O `flutter/assets/mt-logo.png` sai dele, com 192 px de altura (três vezes os 64 px da tela):
+
+```bash
+inkscape docs/marca/mt-logo.svg --export-type=png --export-filename=flutter/assets/mt-logo.png -h 192
+```

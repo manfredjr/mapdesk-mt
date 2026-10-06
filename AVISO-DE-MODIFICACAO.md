@@ -16,6 +16,7 @@ Este programa foi modificado pela MT - Manfred Tecnologia. A licença continua a
 | 05/10/2026 | Nome do executável e metadados do Windows | `flutter/windows/runner/Runner.rc`, `libs/portable/Cargo.toml`, `.github/workflows/mapdesk-windows.yml` |
 | 05/10/2026 | Tema verde da MT e nome do programa nos textos fixos | `flutter/lib/common.dart`, `flutter/lib/desktop/pages/server_page.dart`, `flutter/lib/desktop/widgets/tabbar_widget.dart`, `src/auth_2fa.rs` |
 | 05/10/2026 | Tela Sobre com a versão, a origem, a licença e o link do código-fonte | `flutter/lib/mt/mt_info.dart`, `flutter/lib/desktop/pages/desktop_setting_page.dart`, `AVISO-DE-MODIFICACAO.md` |
+| 06/10/2026 | Logo da MT com link para o site, no painel esquerdo da tela principal e na tela Sobre | `flutter/assets/mt-logo.png`, `flutter/lib/mt/mt_logo_link.dart`, `flutter/lib/mt/mt_info.dart`, `flutter/lib/desktop/pages/desktop_home_page.dart`, `flutter/lib/desktop/pages/desktop_setting_page.dart`, `.gitignore` |
 
 ## Nomes e logotipos
 
