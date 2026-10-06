@@ -26,9 +26,9 @@ A versão MT fica em `flutter/lib/mt/mt_info.dart` (`kMtVersao`) e sobe junto co
 | Fatia | O quê | Situação |
 |---|---|---|
 | 1 | Fundação: forks, ramos e compilação do oficial | feita, PR #1 |
-| 2 | Servidor embutido | a fazer |
-| 3 | Marca e avisos | pronta para teste, PR #2 |
-| 4 | Assinatura | a fazer |
+| 2 | Servidor embutido | em andamento, falta a chave do laboratório |
+| 3 | Marca e avisos | feita, PR #2 |
+| 4 | Assinatura | adiada (sem certificado por enquanto) |
 | 5 | Publicação | a fazer |
 
 ## Antes de publicar
