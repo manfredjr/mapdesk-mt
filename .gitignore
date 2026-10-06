@@ -61,3 +61,9 @@ flutter/web/
 
 # Rascunhos e roteiros da MT, fora do git
 .superpowers/
+!docs/marca/*.svg
+!flutter/assets/icon.png
+!flutter/assets/logo.png
+!flutter/assets/icon.svg
+!libs/portable/src/res/label.png
+!flutter/assets/mt-logo.png
