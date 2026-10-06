@@ -67,9 +67,23 @@ def gravar_ico(imagens, destino):
 
 
 LIMITE_NITIDEZ = 32
+# Ate este tamanho a margem transparente da arte e cortada antes de reduzir:
+# na bandeja e na barra de tarefas cada pixel conta.
+LIMITE_SEM_MARGEM = 48
+
+
+def sem_margem(imagem):
+    caixa = imagem.getbbox()
+    recorte = imagem.crop(caixa)
+    lado = max(recorte.size)
+    quadrado = Image.new("RGBA", (lado, lado), (0, 0, 0, 0))
+    quadrado.paste(recorte, ((lado - recorte.width) // 2, (lado - recorte.height) // 2))
+    return quadrado
 
 
 def reduzir(imagem, lado):
+    if lado <= LIMITE_SEM_MARGEM:
+        imagem = sem_margem(imagem)
     saida = imagem.resize((lado, lado), Image.LANCZOS)
     if lado <= LIMITE_NITIDEZ:
         saida = saida.filter(ImageFilter.UnsharpMask(radius=0.6, percent=60, threshold=0))
