@@ -1,29 +1,25 @@
-"""Gera os icones e imagens da marca MapDesk-MT a partir dos SVG de docs/marca/.
+"""Gera os icones e imagens da marca MapDesk-MT a partir das PNG de docs/marca/.
 
 Uso, na raiz do repositorio: python ferramentas-mt/gerar-marca.py
 
-Para trocar a arte, substitua os dois SVG em docs/marca/ e rode de novo.
-Cada tamanho dos .ico e renderizado direto do SVG pelo Inkscape (sem reduzir
-de um tamanho maior), para manter as linhas nitidas. Os .ico saem em DIB de
-32 bits com mascara AND, o formato classico do Windows. Precisa do Pillow e do
-Inkscape (caminho em INKSCAPE).
+Para trocar a arte, substitua as duas PNG em docs/marca/ (simbolo 1024x1024 e
+logo largo, ambos com fundo transparente) e rode de novo. Cada tamanho sai da
+PNG grande, reduzido com LANCZOS; os tamanhos pequenos (ate 32 px) recebem um
+leve realce de nitidez. Os .ico saem em DIB de 32 bits com mascara AND, o
+formato classico do Windows. Precisa so do Pillow.
 """
 
+import base64
 import io
 import os
-import re
-import shutil
 import struct
-import subprocess
-import sys
-import tempfile
 
-from PIL import Image
+from PIL import Image, ImageDraw, ImageFilter, ImageFont
 
-INKSCAPE = os.environ.get("INKSCAPE", r"C:\Program Files\Inkscape\bin\inkscape")
 RAIZ = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-SIMBOLO = os.path.join(RAIZ, "docs", "marca", "mapdesk-mt-simbolo.svg")
-LOGO = os.path.join(RAIZ, "docs", "marca", "mapdesk-mt-logo.svg")
+SIMBOLO = os.path.join(RAIZ, "docs", "marca", "mapdesk-mt-simbolo.png")
+LOGO = os.path.join(RAIZ, "docs", "marca", "mapdesk-mt-logo.png")
+FONTES = [r"C:\Windows\Fonts\Montserrat-Bold.ttf", r"C:\Windows\Fonts\arialbd.ttf"]
 
 TAMANHOS_APP = [16, 24, 32, 48, 64, 128, 256]
 TAMANHOS_BANDEJA = [16, 20, 24, 32, 40, 48]
@@ -35,15 +31,6 @@ LARGURA_LOGO = 600
 
 def caminho(*partes):
     return os.path.join(RAIZ, *partes)
-
-
-def png_do_svg(svg, saida, largura, altura):
-    subprocess.run(
-        [INKSCAPE, svg, "--export-type=png", f"--export-filename={saida}",
-         "-w", str(largura), "-h", str(altura)],
-        check=True, capture_output=True,
-    )
-    return Image.open(saida).convert("RGBA")
 
 
 def dib(imagem):
@@ -79,55 +66,86 @@ def gravar_ico(imagens, destino):
     print("gravado:", os.path.relpath(destino, RAIZ), [im.width for im in imagens])
 
 
-def svg_do_rotulo():
+LIMITE_NITIDEZ = 32
+
+
+def reduzir(imagem, lado):
+    saida = imagem.resize((lado, lado), Image.LANCZOS)
+    if lado <= LIMITE_NITIDEZ:
+        saida = saida.filter(ImageFilter.UnsharpMask(radius=0.6, percent=60, threshold=0))
+    return saida
+
+
+def rotulo(simbolo):
     """Rotulo da tela do executavel portatil: simbolo claro e texto branco.
 
-    O fundo da janela e azul acinzentado escuro e o original e texto branco,
-    entao o simbolo usa branco no lugar do verde escuro.
+    O fundo da janela e azul acinzentado escuro, entao o monitor vira branco e
+    o cursor usa o verde claro de apoio.
     """
-    with open(SIMBOLO, encoding="utf-8") as f:
-        simbolo = f.read()
-    miolo = re.search(r"<svg[^>]*>(.*)</svg>", simbolo, re.S).group(1)
-    miolo = miolo.replace("#006B2D", "#FFFFFF").replace("#43A92C", "#9AD52B").replace("#0F8F2F", "#9AD52B")
+    recorte = simbolo.crop(simbolo.getbbox()).resize((26, 24), Image.LANCZOS)
+    pixels = recorte.load()
+    for y in range(recorte.height):
+        for x in range(recorte.width):
+            r, g, b, a = pixels[x, y]
+            t = min(1.0, max(0.0, (g - 107) / (170 - 107)))
+            pixels[x, y] = (
+                round(255 + (0x9A - 255) * t),
+                round(255 + (0xD5 - 255) * t),
+                round(255 + (0x2B - 255) * t),
+                a,
+            )
+    tela = Image.new("RGBA", (96, 32), (0, 0, 0, 0))
+    tela.alpha_composite(recorte, (2, 4))
+    fonte = None
+    for caminho_fonte in FONTES:
+        if os.path.exists(caminho_fonte):
+            fonte = ImageFont.truetype(caminho_fonte, 15)
+            break
+    if fonte is None:
+        raise SystemExit("nem Montserrat nem Arial Bold encontradas")
+    texto = "MapDesk-MT"
+    while fonte.getlength(texto) > 66 and fonte.size > 8:
+        fonte = fonte.font_variant(size=fonte.size - 1)
+    ImageDraw.Draw(tela).text((30, 16), texto, font=fonte, fill=(255, 255, 255, 255), anchor="lm")
+    return tela
+
+
+def svg_do_icone(png256):
+    buf = io.BytesIO()
+    png256.save(buf, "PNG")
+    dados = base64.b64encode(buf.getvalue()).decode("ascii")
     return (
-        '<svg xmlns="http://www.w3.org/2000/svg" width="96" height="32" viewBox="0 0 96 32">'
-        f'<g transform="translate(2 4) scale(0.375)">{miolo}</g>'
-        '<text x="28" y="21" font-family="Montserrat, Arial, sans-serif" font-size="11.5" '
-        'font-weight="700" fill="#FFFFFF" textLength="66" lengthAdjust="spacingAndGlyphs">MapDesk-MT</text>'
-        "</svg>"
+        '<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" '
+        'width="256" height="256" viewBox="0 0 256 256">'
+        f'<image width="256" height="256" href="data:image/png;base64,{dados}"/></svg>\n'
     )
 
 
 def main():
-    if not (os.path.exists(INKSCAPE) or shutil.which(INKSCAPE)):
-        sys.exit(f"Inkscape nao encontrado em {INKSCAPE} (defina a variavel INKSCAPE)")
-    with tempfile.TemporaryDirectory() as tmp:
-        def render(lado):
-            return png_do_svg(SIMBOLO, os.path.join(tmp, f"s{lado}.png"), lado, lado)
+    simbolo = Image.open(SIMBOLO).convert("RGBA")
+    logo = Image.open(LOGO).convert("RGBA")
 
-        app = [render(l) for l in TAMANHOS_APP]
-        for destino in (
-            caminho("flutter", "windows", "runner", "resources", "app_icon.ico"),
-            caminho("res", "icon.ico"),
-            caminho("flutter", "assets", "icon.ico"),
-        ):
-            gravar_ico(app, destino)
-        gravar_ico([render(l) for l in TAMANHOS_BANDEJA], caminho("res", "tray-icon.ico"))
+    app = [reduzir(simbolo, l) for l in TAMANHOS_APP]
+    for destino in (
+        caminho("flutter", "windows", "runner", "resources", "app_icon.ico"),
+        caminho("res", "icon.ico"),
+        caminho("flutter", "assets", "icon.ico"),
+    ):
+        gravar_ico(app, destino)
+    gravar_ico([reduzir(simbolo, l) for l in TAMANHOS_BANDEJA], caminho("res", "tray-icon.ico"))
 
-        app[-1].save(caminho("flutter", "assets", "icon.png"))
-        print("gravado: flutter/assets/icon.png 256x256")
-        shutil.copyfile(SIMBOLO, caminho("flutter", "assets", "icon.svg"))
-        print("gravado: flutter/assets/icon.svg")
+    app[-1].save(caminho("flutter", "assets", "icon.png"))
+    print("gravado: flutter/assets/icon.png 256x256")
+    with open(caminho("flutter", "assets", "icon.svg"), "w", encoding="utf-8", newline="\n") as f:
+        f.write(svg_do_icone(app[-1]))
+    print("gravado: flutter/assets/icon.svg")
 
-        altura_logo = round(LARGURA_LOGO * 110 / 640)
-        png_do_svg(LOGO, caminho("flutter", "assets", "logo.png"), LARGURA_LOGO, altura_logo)
-        print(f"gravado: flutter/assets/logo.png {LARGURA_LOGO}x{altura_logo}")
+    altura_logo = round(LARGURA_LOGO * logo.height / logo.width)
+    logo.resize((LARGURA_LOGO, altura_logo), Image.LANCZOS).save(caminho("flutter", "assets", "logo.png"))
+    print(f"gravado: flutter/assets/logo.png {LARGURA_LOGO}x{altura_logo}")
 
-        rotulo = os.path.join(tmp, "rotulo.svg")
-        with open(rotulo, "w", encoding="utf-8") as f:
-            f.write(svg_do_rotulo())
-        png_do_svg(rotulo, caminho("libs", "portable", "src", "res", "label.png"), 96, 32)
-        print("gravado: libs/portable/src/res/label.png 96x32")
+    rotulo(simbolo).save(caminho("libs", "portable", "src", "res", "label.png"))
+    print("gravado: libs/portable/src/res/label.png 96x32")
 
 
 if __name__ == "__main__":

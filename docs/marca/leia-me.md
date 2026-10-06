@@ -1,25 +1,23 @@
 # Marca do MapDesk-MT
 
-A arte atual é provisória. O Manfred aprovou a base em 05/10/2026. A arte final deve vir com o texto do logotipo convertido em curvas, para não depender da fonte instalada.
+A arte final foi recebida do Manfred em 05/10/2026. Ela foi feita a partir do briefing da marca, com fundo transparente. Esta pasta guarda as duas PNG que servem de fonte para todos os ícones e imagens do projeto.
 
 ## Arquivos
 
 | Arquivo | Uso |
 |---|---|
-| `mapdesk-mt-simbolo.svg` | Símbolo (tela com cursor). Fonte dos ícones. |
-| `mapdesk-mt-logo.svg` | Logotipo horizontal "MapDesk - MT". Fonte do `logo.png`. |
+| `mapdesk-mt-simbolo.png` | Símbolo (monitor com cursor), 1024x1024. Fonte dos ícones. |
+| `mapdesk-mt-logo.png` | Logotipo horizontal "MapDesk - MT", 2000x341. Fonte do `logo.png`. |
 
 ## Cores
 
 | Cor | Uso |
 |---|---|
-| `#006B2D` | Principal escuro (moldura, base, "MapDesk") |
-| `#0F8F2F` | Contorno do cursor |
-| `#43A92C` | Destaque (cursor, "MT") |
-| `#9AD52B` | Apoio claro |
-| `#202020` | Texto |
+| `#006B2D` | Verde escuro (monitor, "MapDesk") |
+| `#46AA2C` | Verde claro (cursor, "- MT"), valor aproximado lido da arte |
+| `#9AD52B` | Verde de apoio, usado no cursor do rótulo do instalador portátil |
 
-Fonte do logotipo: Montserrat 700. Sem ela instalada, o Inkscape usa Arial.
+Fonte do logotipo: Montserrat Bold. O texto já está dentro da PNG, então a fonte não precisa estar instalada para usar a arte.
 
 ## O que o roteiro gera
 
@@ -28,16 +26,18 @@ Fonte do logotipo: Montserrat 700. Sem ela instalada, o Inkscape usa Arial.
 | `flutter/windows/runner/resources/app_icon.ico`, `res/icon.ico`, `flutter/assets/icon.ico` | 16, 24, 32, 48, 64, 128, 256 |
 | `res/tray-icon.ico` | 16, 20, 24, 32, 40, 48 |
 | `flutter/assets/icon.png` | 256x256 |
-| `flutter/assets/icon.svg` | cópia do símbolo |
-| `flutter/assets/logo.png` | 600x103, fundo transparente |
-| `libs/portable/src/res/label.png` | 96x32, símbolo claro e texto branco |
+| `flutter/assets/icon.svg` | SVG simples que embute o `icon.png` (reserva do `loadIcon`) |
+| `flutter/assets/logo.png` | 600x102, fundo transparente |
+| `libs/portable/src/res/label.png` | 96x32, monitor branco, cursor `#9AD52B` e texto "MapDesk-MT" em branco |
+
+Cada tamanho é reduzido da PNG grande com LANCZOS. Do 16 ao 32 px entra um leve realce de nitidez. O texto do rótulo usa Montserrat Bold se ela estiver instalada, senão Arial Bold.
 
 ## Como gerar de novo
 
-Troque os dois SVG desta pasta e rode, na raiz do repositório:
+Troque as duas PNG desta pasta e rode, na raiz do repositório:
 
 ```
 python ferramentas-mt/gerar-marca.py
 ```
 
-Precisa do Python com Pillow e do Inkscape. Se o Inkscape estiver em outro caminho, defina a variável de ambiente `INKSCAPE`.
+Precisa só do Python com Pillow.
