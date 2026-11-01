@@ -49,7 +49,7 @@ section p { margin-bottom: 14px; }
 section p, section li { text-align: justify; hyphens: auto; -webkit-hyphens: auto; }
 section .tela figcaption { text-align: center; }
 .itens { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px 32px; margin-bottom: 24px; }
-@media (max-width: 640px) { .itens { grid-template-columns: 1fr; } .topo h1 { font-size: 2.1rem; } }
+@media (max-width: 640px) { .itens { grid-template-columns: 1fr; } .topo h1 { font-size: 2.1rem; } section p, section li { text-align: left; } .topo .nota { font-size: 0.9rem; } }
 .itens h3 { font-size: 1rem; font-weight: 700; margin-bottom: 2px; }
 .itens p { color: var(--suave); font-size: 0.95rem; margin: 0; text-align: left; }
 ol, ul { padding-left: 22px; margin-bottom: 14px; }
