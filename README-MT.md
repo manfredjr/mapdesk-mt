@@ -30,6 +30,11 @@ A versão MT fica em `flutter/lib/mt/mt_info.dart` (`kMtVersao`) e sobe junto co
 | 3 | Marca e avisos | feita, PR #2 |
 | 4 | Assinatura | adiada (sem certificado por enquanto) |
 | 5 | Publicação | a fazer |
+| Site | Página do produto em `public/`, para `mapdesk.manfred.com.br` | PR #7 aberto; falta o print da janela |
+
+## Site do produto
+
+A página do produto fica em `public/` e é servida em `https://mapdesk.manfred.com.br/` pelo Git do cPanel (`.cpanel.yml`). O teste `ferramentas-mt/testar-site.py` roda no workflow `mapdesk-site.yml` e barra a publicação com marca sem fonte, medição de terceiros ou sem os links da AGPL-3.0. Os passos de publicação estão em `docs/publicacao.md`.
 
 ## Antes de publicar
 
@@ -39,7 +44,7 @@ A versão MT fica em `flutter/lib/mt/mt_info.dart` (`kMtVersao`) e sobe junto co
 
 ## Depois de publicar
 
-- Avisar a sessão do site-mt para trocar o executável da página de download.
+- Conferir a página do produto no ar (`docs/publicacao.md`, "Site do produto"). A página `manfred.com.br/acesso` dos clientes do suporte continua com o RustDesk oficial (decisão do Manfred em 01/11/2026).
 
 ## A confirmar com
 
