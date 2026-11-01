@@ -37,9 +37,8 @@ def conferir():
     textos = {p: p.read_text(encoding="utf-8") for p in PUBLIC.rglob("*") if p.suffix in (".html", ".css", ".htaccess") or p.name == ".htaccess"}
     for caminho, texto in textos.items():
         nome = caminho.relative_to(RAIZ).as_posix()
-        for marca in ("[PREENCHER]", "[FONTE?]"):
-            if marca in texto:
-                falhas.append(f"{nome}: marca {marca}")
+        for marca in re.findall(r"\[(?:PREENCHER|FONTE\?)[^\]]*\]", texto):
+            falhas.append(f"{nome}: marca {marca}")
         for car, desc in PROIBIDOS.items():
             if car in texto:
                 falhas.append(f"{nome}: {desc}")
