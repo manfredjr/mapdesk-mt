@@ -3,9 +3,9 @@ use hbb_common::config;
 
 const APP_NAME: &str = "MapDesk-MT";
 const SERVIDOR: &str = "rustdesk.manfred.com.br";
-// Public key of the hbbs server, not a secret. The lab key comes in slice 2 and
-// the production key in slice 5; the test fails while it is empty.
-const CHAVE_PUBLICA: &str = "CIfvalwtUTbDkS3JePcW37QmphouWPv+Uewa1zRFdcs=";
+// Public key of the production hbbs server (VPS), not a secret. The lab key must
+// never come back; the test pins this exact value.
+const CHAVE_PUBLICA: &str = "96OfYKuqwMseAJ9QQ7N1p32LLStUOKUq3rYIA91EDvo=";
 
 // Runs before custom.txt is read, so a signed custom.txt still wins. Idempotent:
 // the Flutter UI calls load_custom_client twice in the same process.
