@@ -101,6 +101,14 @@ mod tests {
         );
         assert_eq!(key.as_deref(), Some(super::CHAVE_PUBLICA));
         assert!(!super::CHAVE_PUBLICA.is_empty());
+        assert_eq!(
+            key.as_deref(),
+            Some("96OfYKuqwMseAJ9QQ7N1p32LLStUOKUq3rYIA91EDvo=")
+        );
+        assert_ne!(
+            key.as_deref(),
+            Some("CIfvalwtUTbDkS3JePcW37QmphouWPv+Uewa1zRFdcs=")
+        );
         assert_eq!(hide_server.as_deref(), Some("Y"));
     }
 }
