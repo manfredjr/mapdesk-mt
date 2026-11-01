@@ -67,3 +67,4 @@ flutter/web/
 !flutter/assets/icon.svg
 !libs/portable/src/res/label.png
 !flutter/assets/mt-logo.png
+!public/imagens/*.png

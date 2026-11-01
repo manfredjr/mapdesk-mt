@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MapDesk - MT - acesso remoto do suporte da MT</title>
+<meta name="description" content="Programa de acesso remoto para Windows usado no suporte da MT - Manfred Tecnologia. Liga só ao servidor da MT, no Brasil, e a conexão começa depois do seu aceite. Código aberto, derivado do RustDesk, sob a AGPL-3.0.">
+<link rel="icon" type="image/png" href="imagens/mapdesk.png">
+<meta property="og:title" content="MapDesk - MT - acesso remoto do suporte da MT">
+<meta property="og:description" content="Acesso remoto para Windows com servidor da MT no Brasil. A conexão só começa depois do seu aceite.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://mapdesk.manfred.com.br/">
+<meta property="og:image" content="https://mapdesk.manfred.com.br/imagens/mapdesk.png">
+<link rel="canonical" href="https://mapdesk.manfred.com.br/">
+<link rel="stylesheet" href="css/site.css">
+</head>
+<body>
+
+<main>
+
+<header class="topo">
+  <img class="topo__simbolo" src="imagens/mapdesk.png" alt="" width="56" height="56">
+  <h1>MapDesk - MT</h1>
+  <p class="topo__frase">Programa de acesso remoto para Windows que a MT - Manfred Tecnologia usa no suporte. O técnico vê a sua tela e resolve o problema com você, pelo servidor da MT, e a conexão só começa quando você aceita.</p>
+  <div class="acoes">
+    <a class="btn btn--primario" href="https://github.com/manfredjr/mapdesk-mt/releases/download/1.5.0-mt.1/MapDesk-MT.exe">Baixar para Windows</a>
+    <a class="btn btn--secundario" href="https://github.com/manfredjr/mapdesk-mt/tree/1.5.0-mt.1">Ver o código</a>
+  </div>
+  <p class="nota">Versão 1.5.0-mt.1, para Windows 64 bits. Um arquivo só, o MapDesk-MT.exe.</p>
+  <p class="nota">O arquivo vem do GitHub. O SHA-256 para conferir o download está na <a href="https://github.com/manfredjr/mapdesk-mt/releases">página da versão</a>.</p>
+  <p class="nota">Use só em computadores que você tem autorização para usar ou administrar. <a href="#uso-autorizado">Veja o uso autorizado</a>.</p>
+</header>
+
+<section>
+  <h2>Por que ele existe</h2>
+  <p>Boa parte do suporte de TI se resolve sem ir até o cliente. O técnico precisa ver a tela, mexer no mouse por alguns minutos e, às vezes, mandar um arquivo. Para isso existe o acesso remoto.</p>
+  <p>No MapDesk - MT, a conexão passa só pelo servidor da MT, que fica no Brasil. E nada acontece sem você: o técnico só entra depois que alguém na frente do computador aceita o pedido.</p>
+</section>
+
+<section>
+  <h2>O que ele faz</h2>
+  <div class="itens">
+    <div><h3>Aceite pelo botão verde</h3><p>O pedido de conexão aparece na tela. O técnico só vê o computador depois do clique em Aceitar.</p></div>
+    <div><h3>Senha permanente opcional</h3><p>O programa vem sem senha. Para atender sem ninguém na frente do computador, o técnico configura uma senha naquela máquina.</p></div>
+    <div><h3>Transferência de arquivos</h3><p>Envia e recebe arquivos durante o atendimento.</p></div>
+    <div><h3>Repasse</h3><p>Quando os dois computadores não conseguem se ligar direto, a conexão passa pelo servidor de repasse da MT.</p></div>
+    <div><h3>Servidor travado</h3><p>O programa só se liga ao servidor e à chave da MT, que já vêm dentro dele. Não dá para apontar para outro servidor.</p></div>
+    <div><h3>Marca da MT</h3><p>Nome, ícones e cores da MT, para você reconhecer o programa do seu suporte.</p></div>
+  </div>
+</section>
+
+<section>
+  <h2>Como usar</h2>
+  <ol>
+    <li>Baixe o <a href="https://github.com/manfredjr/mapdesk-mt/releases/download/1.5.0-mt.1/MapDesk-MT.exe">MapDesk-MT.exe</a>.</li>
+    <li>Dê um duplo clique nele.</li>
+    <li>Informe ao técnico o número de ID que aparece na janela.</li>
+    <li>Quando o pedido de conexão chegar, clique no botão verde <strong>Aceitar</strong>. Para encerrar, basta fechar a conexão.</li>
+  </ol>
+</section>
+
+<section>
+  <h2>Aviso do Windows</h2>
+  <p>O MapDesk-MT.exe ainda não tem assinatura digital, que é um certificado pago. Por isso o Windows desconfia dele na primeira vez.</p>
+  <p>Se aparecer "O Windows protegeu o seu computador", é o SmartScreen. Clique em <strong>Mais informações</strong> e depois em <strong>Executar assim mesmo</strong>.</p>
+  <p class="aviso">O Controle Inteligente de Aplicativos (Smart App Control) é outra história: ele não oferece esse botão. Nos computadores em que ele está ligado, o programa não abre enquanto não tiver a assinatura. Se for o seu caso, avise o técnico.</p>
+</section>
+
+<section>
+  <h2>Privacidade</h2>
+  <p>O servidor da MT registra o número de ID de cada computador, o endereço IP e o horário de cada conexão. Esses registros ficam guardados por 6 meses, com acesso restrito. O servidor não grava a tela nem o conteúdo do atendimento.</p>
+  <p>Os detalhes estão na página de <a href="privacidade.html">privacidade</a>.</p>
+</section>
+
+<section>
+  <h2>Código aberto</h2>
+  <p>O MapDesk - MT é uma obra derivada do RustDesk, que é software livre, e continua sob a licença <a href="https://github.com/manfredjr/mapdesk-mt/blob/1.5.0-mt.1/LICENCE">AGPL-3.0</a>, a mesma do original. Ele não é um produto oficial do RustDesk.</p>
+  <p>A MT modificou o programa a partir de 05/10/2026: embutiu o servidor e a chave da MT e trocou o nome, os ícones e as cores. A lista das mudanças, com as datas, está no <a href="https://github.com/manfredjr/mapdesk-mt/blob/1.5.0-mt.1/AVISO-DE-MODIFICACAO.md">aviso de modificação</a>.</p>
+  <p>O código completo desta versão, sob a mesma licença, está no <a href="https://github.com/manfredjr/mapdesk-mt/tree/1.5.0-mt.1">GitHub, na tag 1.5.0-mt.1</a>. Todas as versões publicadas ficam na <a href="https://github.com/manfredjr/mapdesk-mt/releases">lista de versões</a>.</p>
+  <p>[PREENCHER: licença e garantias, texto da legal-br]</p>
+</section>
+
+<section id="uso-autorizado">
+  <h2>Uso autorizado</h2>
+  <p>[PREENCHER: uso autorizado e cláusula contra cópia e raspagem do conteúdo, texto da legal-br]</p>
+</section>
+
+</main>
+
+<footer class="rodape">
+  <div class="rodape__base">
+    <div class="rodape__credito">
+      <p>Software de apoio ao suporte de TI da plataforma <a href="https://www.manfred.com.br" target="_blank" rel="noopener"><strong>manfred.com.br</strong></a>, por <a href="https://www.manfred.com.br" target="_blank" rel="noopener"><strong>MT - Manfred Tecnologia</strong></a></p>
+      <p>
+        <a href="https://github.com/manfredjr/mapdesk-mt/tree/1.5.0-mt.1">Código-fonte</a> &middot;
+        <a href="https://github.com/manfredjr/mapdesk-mt/blob/1.5.0-mt.1/LICENCE">Licença AGPL-3.0</a> &middot;
+        <a href="https://github.com/manfredjr/mapdesk-mt/releases">Versões</a> &middot;
+        <a href="privacidade.html">Privacidade</a>
+      </p>
+    </div>
+    <a class="rodape__selo" href="https://www.manfred.com.br" target="_blank" rel="noopener" aria-label="MT - Manfred Tecnologia">
+      <img src="imagens/mt-logo.png" alt="MT - Manfred Tecnologia" width="85" height="64" loading="lazy">
+    </a>
+  </div>
+</footer>
+
+</body>
+</html>
