@@ -175,16 +175,27 @@ jobs:
           mkdir -p ./SaidaMT
           mv ./target/release/rustdesk-portable-packer.exe ./SaidaMT/MapDesk-MT.exe
           sha256sum ./SaidaMT/*.exe
+          (cd SaidaMT && sha256sum MapDesk-MT.exe > MapDesk-MT.exe.sha256)
 
       - name: Upload executable
         uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
         with:
           name: mapdesk-mt-windows-x64
-          path: ./SaidaMT/*.exe
+          path: |
+            ./SaidaMT/MapDesk-MT.exe
+            ./SaidaMT/MapDesk-MT.exe.sha256
 
       - name: Test mt_config
         shell: bash
         run: cargo test --locked --lib --features hwcodec,vram,flutter mt_config
+
+      - name: Release notes (tag only)
+        if: startsWith(github.ref, 'refs/tags/')
+        shell: bash
+        run: |
+          hbb=$(git rev-parse HEAD:libs/hbb_common)
+          sed -e "s/{VERSAO}/${GITHUB_REF_NAME}/g" -e "s/{HBB_COMMIT}/${hbb}/g" docs/notas-versao.md > ./SaidaMT/notas-versao.md
+          cat ./SaidaMT/notas-versao.md
 
       - name: Publish release (tag only)
         if: startsWith(github.ref, 'refs/tags/')
@@ -192,7 +203,7 @@ jobs:
         with:
           prerelease: true
           tag_name: ${{ github.ref_name }}
-          body: |
-            Código-fonte desta versão: https://github.com/${{ github.repository }}/tree/${{ github.ref_name }}
-            Distribuído sob a AGPL-3.0. Baseado no RustDesk; não é produto oficial do RustDesk.
-          files: ./SaidaMT/*.exe
+          body_path: ./SaidaMT/notas-versao.md
+          files: |
+            ./SaidaMT/MapDesk-MT.exe
+            ./SaidaMT/MapDesk-MT.exe.sha256
