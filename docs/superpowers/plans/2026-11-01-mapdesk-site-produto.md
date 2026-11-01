@@ -14,7 +14,7 @@
 
 - Ramo `mt-site`. Nunca commit no `mt`. Nada de `--amend`, rebase, reset nem force-push.
 - Commit: verbo na 3ª pessoa, título sem acento, corpo com o porquê, última linha `Autor: Manfred Heil Junior`. Sem `Co-Authored-By`, sem "Generated with", sem nome de ferramenta de IA.
-- Portões antes de cada commit: `sh .superpowers/rascunho/portoes.sh <arquivo-da-mensagem>`. Na worktree, use o da pasta principal: `C:/COWORK/CODE/MAPDESK-MT/.superpowers/rascunho/portoes.sh`.
+- Portões antes de cada commit: `sh .superpowers/rascunho/portoes.sh <arquivo-da-mensagem>`. Na worktree, use o `portoes.sh` da pasta principal do projeto.
 - Texto em português do Brasil, sem travessão longo ou médio, aspas curvas, reticências de um caractere, espaço especial nem seta. Os textos da página passam pela skill `humanizar-ptbr` antes de gravar.
 - Não inventar dado: o que não tem fonte vira `[PREENCHER]`, e o teste barra a publicação.
 - Versão da página: a de `kMtVersao` em `flutter/lib/mt/mt_info.dart`, hoje `1.5.0-mt.1`.

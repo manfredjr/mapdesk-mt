@@ -28,9 +28,11 @@ O modelo é o repositório `manfredjr/mapdisk`, lido em 01/11/2026.
 | `.github/workflows/mapdesk-site.yml` | teste da página, separado da compilação |
 | `ferramentas-mt/testar-site.py` | o teste chamado pelo workflow |
 
+O print entra quando o Manfred mandar um; até lá, a página sai sem ele.
+
 ## 3. Seções da página
 
-1. **Topo:** "MapDesk - MT" e uma frase sobre o acesso remoto da MT. O botão "Baixar para Windows" aponta para o arquivo da versão pela tag exata (`releases/download/<tag>/MapDesk-MT.exe`), porque a versão sai como pré-versão e o endereço `latest` não a alcança. O botão "Ver o código" leva ao código dessa tag. Embaixo, o SHA-256 do arquivo.
+1. **Topo:** "MapDesk - MT" e uma frase sobre o acesso remoto da MT. O botão "Baixar para Windows" aponta para o arquivo da versão pela tag exata (`releases/download/<tag>/MapDesk-MT.exe`), porque a versão sai como pré-versão e o endereço `latest` não a alcança. O botão "Ver o código" leva ao código dessa tag. Embaixo, o link para o arquivo `MapDesk-MT.exe.sha256` da mesma versão (`releases/download/<tag>/MapDesk-MT.exe.sha256`). O número do SHA-256 fica fora da página até a tag sair, porque o executável só existe depois dela; a conferência do download é pelo arquivo `.sha256`.
 2. **Por que ele existe:** atendimento remoto com servidor próprio da MT, no Brasil, e conexão só depois do aceite.
 3. **O que ele faz:**
    - aceite pelo botão verde;
@@ -75,9 +77,9 @@ O `ferramentas-mt/testar-site.py` roda no workflow `mapdesk-site.yml` a cada PR 
 1. sobrar `[PREENCHER]` ou `[FONTE?]` em `public/`;
 2. aparecer `<script src=` externo, `googletagmanager`, `google-analytics`, `clarity.ms`, `facebook.net` ou `fonts.googleapis`;
 3. aparecer caractere proibido (travessão longo ou médio, aspas curvas, reticências de um caractere, espaço especial);
-4. o botão de baixar não apontar para `https://github.com/manfredjr/mapdesk-mt/releases/download/` com a tag de `flutter/lib/mt/mt_info.dart` (`kMtVersao`);
-5. faltar o link do código da versão exata, o link da licença AGPL-3.0 ou o link para `privacidade.html`;
-6. aparecer arquivo `.map` em `public/`;
+4. o botão de baixar (`a.btn--primario`) não apontar para `https://github.com/manfredjr/mapdesk-mt/releases/download/<v>/MapDesk-MT.exe`, ou o botão do código (`a.btn--secundario`) não apontar para `tree/<v>`, com `<v>` igual a `kMtVersao` de `flutter/lib/mt/mt_info.dart`; ou aparecer `releases/latest` em `public/`;
+5. faltar o link do código da versão exata, do `MapDesk-MT.exe.sha256`, da licença AGPL-3.0 ou de `privacidade.html`, sem contar links dentro de comentário HTML;
+6. aparecer arquivo `.map` ou `sourceMappingURL` em `public/`, ou `<link`, `<iframe`, `@import` ou `url()` com endereço externo;
 7. faltar arquivo citado pelo `.cpanel.yml` (`public/index.html` e `public/.htaccess`).
 
 Depois do CI verde vêm o revisor-mt (Opus) e o revisor-ux (computador e celular), e só então o teste do Manfred.
