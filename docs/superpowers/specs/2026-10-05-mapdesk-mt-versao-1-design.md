@@ -62,6 +62,8 @@ A configuração pelo nome do arquivo (`src/custom_server.rs`) continua ativa e 
 
 Valores das chaves: vêm da `docs/instalacao.md` do VPS-MT (passo G4). A chave do laboratório só é usada até a fatia 3.
 
+Registro de 01/11/2026: a chave de produção entrou antes da fatia 5 (PR #6), porque o DNS de `rustdesk.manfred.com.br` passou a apontar para a VPS de produção e o cliente com a chave do laboratório deixou de conectar.
+
 ## 5. Compilação
 
 - Workflow da MT: `.github/workflows/mapdesk-windows.yml`, derivado do `flutter-build.yml` do oficial, só com o Windows x64 (`windows-2022`).

@@ -66,7 +66,7 @@ Mensagem de commit: verbo na 3ª pessoa ("Cria", "Corrige", "Traz"), título sem
 Valem inclusive para mudança só de documentação.
 
 1. Caracteres proibidos nas linhas novas (ver "Textos").
-2. `git grep -i` pelos nomes das ferramentas de IA nas mudanças da MT. O código do RustDesk de origem não se altera por causa desse portão.
+2. `git grep -i` pelos nomes das ferramentas de IA nas mudanças da MT. O código do RustDesk de origem não se altera por causa desse portão. O grep exclui `.githooks/` (`-- ':!.githooks/'`), porque as travas precisam conter os nomes que recusam.
 3. Nenhum segredo, `.env` real ou certificado no commit.
 4. Só os arquivos previstos entram, e o commit chegou ao GitHub.
 

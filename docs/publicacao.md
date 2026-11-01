@@ -8,7 +8,7 @@ Passo a passo para publicar uma versão (fatia 5 e todas as seguintes). Publicar
    - respostas do advogado às questões 1, 3 e 4 da consulta (`docs/legal/CONSULTA-ADVOGADO-mapdesk-agpl-marca-2026-10-05.md`);
    - aviso de privacidade publicado no site da MT e o endereço gravado em `kMtPrivacidade` (`flutter/lib/mt/mt_info.dart`);
    - cessão do autor para a MT assinada.
-2. A chave pública de **produção** (VPS-MT, `docs/instalacao.md`, passo G4) está em `CHAVE_PUBLICA` (`src/mt_config.rs`). A do laboratório nunca vai para a versão distribuída.
+2. A chave pública de **produção** (VPS-MT, `docs/instalacao.md`, passo G4) está em `CHAVE_PUBLICA` (`src/mt_config.rs`). Feito em 01/11/2026, quando a VPS da HostGator passou a responder por `rustdesk.manfred.com.br`; o teste `mt_config` do workflow confere o valor exato antes de empacotar. A do laboratório nunca vai para a versão distribuída.
 3. O certificado de assinatura está válido, e os segredos do GitHub existem (fatia 4).
 4. A versão MT foi atualizada em dois lugares, com o mesmo valor:
    - `kMtVersao` em `flutter/lib/mt/mt_info.dart` (por exemplo `1.5.0-mt.1`);
