@@ -175,7 +175,7 @@ jobs:
           mkdir -p ./SaidaMT
           mv ./target/release/rustdesk-portable-packer.exe ./SaidaMT/MapDesk-MT.exe
           sha256sum ./SaidaMT/*.exe
-          (cd SaidaMT && sha256sum MapDesk-MT.exe > MapDesk-MT.exe.sha256)
+          (cd SaidaMT && h=$(sha256sum MapDesk-MT.exe | cut -d' ' -f1) && echo "$h  MapDesk-MT.exe" > MapDesk-MT.exe.sha256 && cat MapDesk-MT.exe.sha256)
 
       - name: Upload executable
         uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
