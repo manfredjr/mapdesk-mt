@@ -1,4 +1,5 @@
 """Confere a pagina do produto em public/ antes da publicacao (spec do site, secao 6)."""
+import html.parser
 import pathlib
 import re
 import sys
@@ -6,6 +7,7 @@ import sys
 RAIZ = pathlib.Path(__file__).resolve().parent.parent
 PUBLIC = RAIZ / "public"
 REPO = "https://github.com/manfredjr/mapdesk-mt"
+IMAGENS = {".png", ".jpg", ".jpeg", ".gif", ".webp", ".ico", ".avif", ".bmp"}
 
 PROIBIDOS = {
     "\u2014": "travessao longo",
@@ -16,15 +18,49 @@ PROIBIDOS = {
     "\u2019": "aspa curva",
     "\u2026": "reticencias de um caractere",
     "\u00a0": "espaco especial",
+    "\u202f": "espaco especial",
+    "\u2009": "espaco especial",
+    "\u200b": "espaco de largura zero",
     "\u2192": "seta",
+    "\u00d7": "sinal de multiplicacao",
+    "\u2212": "sinal de menos",
 }
-MEDICAO = ["googletagmanager", "google-analytics", "clarity.ms", "facebook.net", "fonts.googleapis", "doubleclick"]
+MEDICAO = re.compile(r"googletagmanager|google-analytics|clarity\.ms|facebook\.net|fonts\.googleapis|doubleclick", re.I)
+# URL absoluta ou "//", fora o proprio dominio do site (o canonical aponta para ele).
+EXTERNO = r"(?:https?:)?//(?!mapdesk\.manfred\.com\.br/)"
+REGRAS_EXTERNAS = {
+    "script externo": re.compile(r"<script\b[^>]*\bsrc\s*=\s*[\"']?" + EXTERNO, re.I),
+    "link externo": re.compile(r"<link\b[^>]*\bhref\s*=\s*[\"']?" + EXTERNO, re.I),
+    "iframe externo": re.compile(r"<iframe\b[^>]*\bsrc\s*=\s*[\"']?" + EXTERNO, re.I),
+    "@import externo": re.compile(r"@import\s+(?:url\(\s*)?[\"']?" + EXTERNO, re.I),
+    "url() externa": re.compile(r"url\(\s*[\"']?" + EXTERNO, re.I),
+}
+
+
+class Ancoras(html.parser.HTMLParser):
+    """Junta os <a> com href e classes. O parser ignora comentarios HTML."""
+
+    def __init__(self):
+        super().__init__()
+        self.ancoras = []
+
+    def handle_starttag(self, tag, attrs):
+        if tag == "a":
+            a = dict(attrs)
+            self.ancoras.append(((a.get("class") or "").split(), a.get("href")))
 
 
 def versao():
     texto = (RAIZ / "flutter/lib/mt/mt_info.dart").read_text(encoding="utf-8")
     achado = re.search(r"kMtVersao\s*=\s*'([^']+)'", texto)
     return achado.group(1) if achado else None
+
+
+def conferir_botao(ancoras, classe, esperado, desc):
+    hrefs = [href for classes, href in ancoras if classe in classes]
+    if not hrefs:
+        return [f"public/index.html: falta o {desc} (a.{classe})"]
+    return [f"public/index.html: {desc} (a.{classe}) aponta para {h}, esperado {esperado}" for h in hrefs if h != esperado]
 
 
 def conferir():
@@ -34,7 +70,10 @@ def conferir():
     v = versao()
     if not v:
         falhas.append("kMtVersao nao encontrado em mt_info.dart")
-    textos = {p: p.read_text(encoding="utf-8") for p in PUBLIC.rglob("*") if p.suffix in (".html", ".css", ".htaccess") or p.name == ".htaccess"}
+    textos = {}
+    for p in sorted(PUBLIC.rglob("*")):
+        if p.is_file() and p.suffix.lower() not in IMAGENS:
+            textos[p] = p.read_text(encoding="utf-8", errors="replace")
     for caminho, texto in textos.items():
         nome = caminho.relative_to(RAIZ).as_posix()
         for marca in re.findall(r"\[(?:PREENCHER|FONTE\?)[^\]]*\]", texto):
@@ -42,25 +81,35 @@ def conferir():
         for car, desc in PROIBIDOS.items():
             if car in texto:
                 falhas.append(f"{nome}: {desc}")
-        for termo in MEDICAO:
-            if termo in texto:
-                falhas.append(f"{nome}: medicao ou conteudo de terceiros ({termo})")
-        if re.search(r"<script[^>]+src=[\"']https?://", texto):
-            falhas.append(f"{nome}: script externo")
+        for termo in sorted({m.group(0).lower() for m in MEDICAO.finditer(texto)}):
+            falhas.append(f"{nome}: medicao ou conteudo de terceiros ({termo})")
+        for desc, regra in REGRAS_EXTERNAS.items():
+            if regra.search(texto):
+                falhas.append(f"{nome}: {desc}")
+        if re.search(r"sourceMappingURL", texto, re.I):
+            falhas.append(f"{nome}: sourceMappingURL")
+        if "releases/latest" in texto:
+            falhas.append(f"{nome}: releases/latest nao alcanca a pre-versao")
     for mapa in PUBLIC.rglob("*.map"):
         falhas.append(f"{mapa.relative_to(RAIZ).as_posix()}: source map")
     index = textos.get(PUBLIC / "index.html", "")
+    leitor = Ancoras()
+    leitor.feed(index)
+    hrefs = {href for _, href in leitor.ancoras}
     if v:
+        baixar = f"{REPO}/releases/download/{v}/MapDesk-MT.exe"
+        falhas += conferir_botao(leitor.ancoras, "btn--primario", baixar, "botao de baixar")
+        falhas += conferir_botao(leitor.ancoras, "btn--secundario", f"{REPO}/tree/{v}", "botao do codigo")
         exigidos = {
-            f"{REPO}/releases/download/{v}/MapDesk-MT.exe": "botao de baixar com a tag exata",
+            f"{baixar}.sha256": "SHA-256 da versao",
             f"{REPO}/tree/{v}": "codigo da versao exata",
             f"{REPO}/blob/{v}/LICENCE": "licenca AGPL-3.0",
             "privacidade.html": "pagina de privacidade",
         }
         for alvo, desc in exigidos.items():
-            if f'href="{alvo}"' not in index:
+            if alvo not in hrefs:
                 falhas.append(f"public/index.html: falta o link da {desc} ({alvo})")
-    if "AGPL-3.0" not in index:
+    if "AGPL-3.0" not in re.sub(r"(?s)<!--.*?-->", "", index):
         falhas.append("public/index.html: falta a mencao a AGPL-3.0")
     if not (PUBLIC / "privacidade.html").is_file():
         falhas.append("public/privacidade.html nao existe")
