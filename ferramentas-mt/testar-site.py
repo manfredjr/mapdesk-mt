@@ -24,6 +24,11 @@ PROIBIDOS = {
     "\u2192": "seta",
     "\u00d7": "sinal de multiplicacao",
     "\u2212": "sinal de menos",
+    "\u2190": "seta",
+    "\u2022": "marcador solto",
+    "\u2011": "hifen especial",
+    "\u2060": "espaco de largura zero",
+    "\ufeff": "marca de ordem de bytes",
 }
 MEDICAO = re.compile(r"googletagmanager|google-analytics|clarity\.ms|facebook\.net|fonts\.googleapis|doubleclick", re.I)
 # URL absoluta ou "//", fora o proprio dominio do site (o canonical aponta para ele).
@@ -32,6 +37,7 @@ REGRAS_EXTERNAS = {
     "script externo": re.compile(r"<script\b[^>]*\bsrc\s*=\s*[\"']?" + EXTERNO, re.I),
     "link externo": re.compile(r"<link\b[^>]*\bhref\s*=\s*[\"']?" + EXTERNO, re.I),
     "iframe externo": re.compile(r"<iframe\b[^>]*\bsrc\s*=\s*[\"']?" + EXTERNO, re.I),
+    "midia externa": re.compile(r"<(?:img|object|embed|source|video)\b[^>]*\b(?:src|data)\s*=\s*[\"']?" + EXTERNO, re.I),
     "@import externo": re.compile(r"@import\s+(?:url\(\s*)?[\"']?" + EXTERNO, re.I),
     "url() externa": re.compile(r"url\(\s*[\"']?" + EXTERNO, re.I),
 }
@@ -100,6 +106,11 @@ def conferir():
         baixar = f"{REPO}/releases/download/{v}/MapDesk-MT.exe"
         falhas += conferir_botao(leitor.ancoras, "btn--primario", baixar, "botao de baixar")
         falhas += conferir_botao(leitor.ancoras, "btn--secundario", f"{REPO}/tree/{v}", "botao do codigo")
+        regra = re.compile(r"href\s*=\s*[\"']?([^\"'\s>]*releases/download/[^\"'\s>]*)", re.I)
+        for caminho, texto in textos.items():
+            for h in regra.findall(texto):
+                if h not in (baixar, f"{baixar}.sha256"):
+                    falhas.append(f"{caminho.relative_to(RAIZ).as_posix()}: link de download fora da versao ({h})")
         exigidos = {
             f"{baixar}.sha256": "SHA-256 da versao",
             f"{REPO}/tree/{v}": "codigo da versao exata",
