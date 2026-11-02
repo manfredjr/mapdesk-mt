@@ -72,7 +72,7 @@ Texto na página:
 
 **INTERPRETAÇÃO.** Raspar o site copia e armazena o conteúdo, o que cabe na reprodução (art. 29, I) e no armazenamento em computador ou na inclusão em base de dados (art. 29, IX). O treino de sistemas de inteligência artificial com o conteúdo pressupõe essa cópia. A cláusula não cria proibição nova: lembra a regra da lei e diz onde pedir autorização.
 
-**INTERPRETAÇÃO.** O texto fala em "titular", e não em "MT". Os direitos sobre o conteúdo passam do Manfred para a MT pela cessão escrita, que ainda está no portão antes da tag (spec do site, seção 8). Até lá, "titular" é exato para os dois cenários.
+**INTERPRETAÇÃO.** O texto fala em "titular", e não em "MT". Os direitos sobre o conteúdo passam do Manfred para a MT pela cessão escrita, que ainda está no portão antes da tag (spec do site, seção 8; nota de 02/11/2026: o Manfred moveu a cessão para antes da primeira venda). Até lá, "titular" é exato para os dois cenários.
 
 **INTERPRETAÇÃO.** A página não tem aceite, então a cláusula funciona como aviso da reserva de direitos, e não como contrato com o visitante. A proteção vem da lei, não da adesão. O bloqueio técnico de robôs de IA fica no Cloudflare (spec, seção 8, passo 5).
 

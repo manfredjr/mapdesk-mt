@@ -4,6 +4,8 @@ Data: 05/10/2026. Consulente: MANFRED TECNOLOGIA LTDA (MT - Manfred Tecnologia),
 
 Situação: não enviada. O envio depende de decisão do Manfred.
 
+Há um complemento com as questões 6 a 9, de 02/11/2026: `CONSULTA-ADVOGADO-complemento-2026-11-02.md`.
+
 ## Contexto mínimo
 
 A MT vai distribuir, de graça, aos clientes do seu suporte remoto (empresas e pessoas físicas, cerca de 150 a 200 máquinas Windows), o "MapDesk": versão modificada do RustDesk 1.5.0, programa de acesso remoto de código aberto sob a licença GNU AGPL-3.0, cujo copyright é exibido em nome da Purslane Tech Pte. Ltd. (Singapura). A MT troca o nome exibido, os ícones e as cores, embute o próprio servidor e a própria chave, desliga funções que enviariam dados à RustDesk e deixa a aprovação por clique como padrão. O executável é publicado num repositório público do GitHub com o código-fonte de cada versão e oferecido na página de download do site da MT.

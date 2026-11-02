@@ -30,7 +30,7 @@ A versão MT fica em `flutter/lib/mt/mt_info.dart` (`kMtVersao`) e sobe junto co
 | 3 | Marca e avisos | feita, PR #2 |
 | 4 | Assinatura | adiada (sem certificado por enquanto) |
 | 5 | Publicação | a fazer |
-| Site | Página do produto em `public/`, para `mapdesk.manfred.com.br` | PR #7 aberto; falta o print da janela |
+| Site | Página do produto em `public/`, para `mapdesk.manfred.com.br` | feita, PR #7; publicação a fazer |
 
 ## Site do produto
 
@@ -38,8 +38,7 @@ A página do produto fica em `public/` e é servida em `https://mapdesk.manfred.
 
 ## Antes de publicar
 
-- Buscas no INPI e respostas do advogado (`docs/legal/`).
-- Executável assinado (fatia 4).
+- O que bloqueia a primeira versão está no portão de `docs/publicacao.md` e em `docs/superpowers/pendencias.md`. As respostas do advogado às pendências 1 a 6, as buscas no INPI e a assinatura (fatia 4) não bloqueiam, por decisão do Manfred em 01/11/2026 e 02/11/2026.
 - Teste de rede: nenhuma conexão a `*.rustdesk.com`.
 
 ## Depois de publicar

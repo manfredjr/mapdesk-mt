@@ -4,7 +4,7 @@ Data da consulta: 02/11/2026. Projeto MAPDESK-MT. Feita com a skill `legal-br`.
 
 Objeto: o que o workflow `.github/workflows/mapdesk-windows.yml` baixa ou compila de terceiros para montar o `MapDesk-MT.exe`, item do portão antes da tag (`docs/publicacao.md`, seção "Site do produto").
 
-**Resultado:** dois pacotes que entram no executável ficaram sem licença localizada, o driver de monitor virtual e os pacotes do driver de impressora. Os dois estão marcados com `[FONTE?]`. Enquanto isso não se resolver, a conferência não fecha para esses itens. Os demais têm licença localizada, com os avisos e as ressalvas das seções 3 e 4.
+**Resultado:** a conferência não fecha. Ficaram sem licença localizada, marcados com `[FONTE?]`, o driver de monitor virtual, o driver de impressora e o adaptador, o `hwcodec` e a biblioteca padrão do Rust. A `libyuv` tem texto de licença, mas o tipo exato não foi fechado, e o plugin `flutter_gpu_texture_renderer` volta `NOASSERTION` na API do GitHub. Os demais têm licença localizada, com os avisos e as ressalvas das seções 3 e 4.
 
 ## 1. Contexto e premissas
 
@@ -39,12 +39,12 @@ Relação de consumo, dados pessoais e menores não entram nesta verificação: 
 | AMF v1.4.35 | https://raw.githubusercontent.com/GPUOpen-LibrariesAndSDKs/AMF/v1.4.35/LICENSE.txt | Permissão no formato MIT e aviso sobre padrões |
 | `hwcodec`, commit do `Cargo.lock` | https://github.com/rustdesk-org/hwcodec/tree/778df1f99597722473b29443bac22ae6c23946fe | Ver item 3.7 |
 
-A biblioteca da `legal-br` (clone de 02/11/2026) não tem `STATUS-FONTES.md`. Por isso as duas leis foram conferidas no Planalto.
+As duas leis foram conferidas no Planalto. Correção: o clone da `legal-br` usado aqui não tinha `STATUS-FONTES.md`, mas a cópia instalada tem, gerado em 02/11/2026, e as duas leis estão EM DIA nele.
 
 **O que esta verificação não cobriu:**
 
 - Os pacotes `.zip` não foram baixados nem abertos, porque baixar depende de autorização do Manfred. Se algum deles traz um arquivo de licença dentro, ele não foi lido.
-- As licenças das dependências de código (crates do Cargo e pacotes do `pub`) ficaram de fora. O objeto aqui são os binários e as bibliotecas nativas do build. Só o `hwcodec` entrou, porque traz os codecs.
+- As licenças das dependências de código (crates do Cargo e pacotes do `pub`) ficaram de fora, salvo o `hwcodec`, que traz os codecs, e os plugins nativos vindos do git (item 17). O objeto aqui são os binários e as bibliotecas nativas do build.
 - Os avisos de terceiros que o próprio Flutter possa embutir no pacote não foram conferidos no executável.
 
 ## 3. O que entra no executável
@@ -67,6 +67,7 @@ A biblioteca da `legal-br` (clone de 02/11/2026) não tem `STATUS-FONTES.md`. Po
 | 14 | nv-codec-headers 12.1.14.0 (`ffnvcodec`) | Sobrescrita no `vcpkg.json` | Formato MIT, no cabeçalho lido | Versão fixa |
 | 15 | AMF 1.4.35 (`amd-amf`) | Sobrescrita no `vcpkg.json` | Formato MIT | Versão fixa |
 | 16 | `hwcodec`, commit `778df1f` | Dependência git do Cargo | `[FONTE?]` | Commit fixo no `Cargo.lock` |
+| 17 | Plugins nativos de `flutter/pubspec.yaml` vindos do git: `Dash-Chat-2`, `window_manager`, `rustdesk_desktop_multi_window`, `flutter_custom_cursor`, `flutter-desktop-embedding`, `uni_links`, `flutter_texture_rgba_renderer`, `flutter_gpu_texture_renderer`, `dynamic_layouts` | Dependência git do `pub` | Pela API do GitHub: MIT nos dois primeiros, Apache-2.0 em `rustdesk_desktop_multi_window`, `flutter_custom_cursor`, `flutter-desktop-embedding` e `flutter_texture_rgba_renderer`, BSD-2-Clause em `uni_links`, BSD-3-Clause em `dynamic_layouts`. `flutter_gpu_texture_renderer`: `NOASSERTION`, ou seja, `[FONTE?]` | Quais geram DLL no pacote não foi conferido |
 
 Usados só na compilação, sem entrar no pacote como programa próprio (INTERPRETAÇÃO, pela leitura do workflow): vcpkg, LLVM 15.0.6, `flutter_rust_bridge_codegen`, `cargo-expand`, `brotli` do `pip` e as actions do GitHub. Suas licenças não foram consultadas (`[FONTE?]`) porque não mudam o que a MT distribui. O Rust 1.75 também compila, mas a biblioteca padrão entra no executável, e a licença dela também está `[FONTE?]`.
 
@@ -78,11 +79,11 @@ Duas buscas na internet em 02/11/2026 não acharam os termos desse driver no sit
 
 **INTERPRETAÇÃO.** O autor provável é a Amyuni, não o RustDesk. A MIT do `rdev` não prova permissão para este binário, e os contratos de PDF não servem de base. Licença: `[FONTE?]`.
 
-**RISCO.** Alto até haver fonte. Sem licença, vale a regra geral: "Depende de autorização prévia e expressa do autor a utilização da obra", inclusive "a distribuição" (Lei nº 9.610/1998, art. 29, VI). A Lei nº 9.609/1998, art. 12, tipifica "Violar direitos de autor de programa de computador". O fato de o RustDesk distribuir o mesmo arquivo não transfere a permissão à MT, se ela existir.
+**RISCO.** Alto até haver fonte. Sem licença, vale a regra geral: "Depende de autorização prévia e expressa do autor a utilização da obra", inclusive "a distribuição, quando não intrínseca ao contrato firmado pelo autor com terceiros para uso ou exploração da obra" (Lei nº 9.610/1998, art. 29, VI). A Lei nº 9.609/1998, art. 12, tipifica "Violar direitos de autor de programa de computador". O fato de o RustDesk distribuir o mesmo arquivo não transfere a permissão à MT, se ela existir.
 
 ### 3.2. Driver de impressora e adaptador
 
-**FATO.** Os dois estão na versão `driver` do `rustdesk/hbb_common`, com corpo vazio. A API do GitHub não acha licença nesse repositório (404), e a verificação de 05/10/2026 já registrava a falta de arquivo de licença. O código-fonte desses pacotes não foi localizado. O programa carrega o adaptador pelo nome `printer_driver_adapter` (`src/server/printer_service.rs`, linha 11).
+**FATO.** Os dois estão na versão `driver` do `rustdesk/hbb_common`, com corpo vazio. No workflow, o passo fica dentro de um `try/catch` e ignora falha de download ou de SHA-256, então um executável pode sair com ou sem esses arquivos, e só o log da compilação diz qual foi o caso. A API do GitHub não acha licença nesse repositório (404), e a verificação de 05/10/2026 já registrava a falta de arquivo de licença. O código-fonte desses pacotes não foi localizado. O programa carrega o adaptador pelo nome `printer_driver_adapter` (`src/server/printer_service.rs`, linha 11).
 
 **INTERPRETAÇÃO.** A origem aponta para os autores do RustDesk, mas isso não diz sob qual licença os pacotes saem. Se o adaptador for parte da obra, ele cai na AGPL-3.0 e precisa de código correspondente, porque a seção 1 inclui "the source code for shared libraries and dynamically linked subprograms that the work is specifically designed to require". O driver instalado à parte pode ser um "aggregate" da seção 5, mas essa leitura depende de ver o pacote. Licença: `[FONTE?]`.
 
@@ -122,7 +123,7 @@ Duas buscas na internet em 02/11/2026 não acharam os termos desse driver no sit
 
 **FATO.** No commit `778df1f`, a raiz não tem arquivo de licença, e o `Cargo.toml` não tem campo `license`. A API também não acha licença no submódulo `rustdesk-org/externals` (404). O projeto compila com `--hwcodec`.
 
-**INTERPRETAÇÃO.** É o mesmo quadro do `hbb_common`, tratado na questão 2 da consulta ao advogado. A diferença é que aqui a MT distribui o código compilado, mesmo sem alterá-lo. Licença: `[FONTE?]`.
+**INTERPRETAÇÃO.** É o mesmo quadro do `hbb_common`, tratado na questão 2 da consulta ao advogado. A questão 2 olha para a alteração do `hbb_common`. Ela não responde se a MT pode distribuir compilados esses dois componentes sem alterá-los, e isso vale para ambos (questão 6 do complemento à consulta). Licença do `hwcodec`: `[FONTE?]`.
 
 **RISCO.** Médio.
 
@@ -131,14 +132,14 @@ Duas buscas na internet em 02/11/2026 não acharam os termos desse driver no sit
 - [ ] Decidir o destino de `usbmmidd_v2`: achar os termos, pedir permissão por escrito à Amyuni ou tirar do build.
 - [ ] Decidir o destino do driver de impressora e do adaptador: achar a licença e o código com o RustDesk ou tirar do build.
 - [ ] Abrir os três `.zip` e a engine, com autorização para baixar, e procurar arquivo de licença.
-- [ ] Criar um arquivo de avisos de terceiros que acompanhe o programa, com os textos de licença dos itens 4 a 15. Hoje o repositório não tem esse arquivo. Conferir antes se o pacote do Flutter já traz parte deles.
+- [ ] Criar um arquivo de avisos de terceiros que acompanhe o programa, com os textos de licença dos itens 4 a 15 e 17, inclusive o aviso e o arquivo NOTICE que a Apache-2.0 pedir. Hoje o repositório não tem esse arquivo. Conferir antes se o pacote do Flutter já traz parte deles.
 - [ ] Gravar nas notas da versão onde está o código do FFmpeg e das demais bibliotecas compiladas, com a forma de compilação.
 - [ ] Fixar o SHA-256 de `usbmmidd_v2.zip` e de `windows-x64-release.zip` no workflow, se ficarem no build.
 - [ ] Inventariar as licenças das crates e dos pacotes `pub`, que ficaram fora desta verificação.
 
 ## 5. Pendências de validação para o advogado externo
 
-Estas perguntas ainda não entraram em `CONSULTA-ADVOGADO-mapdesk-agpl-marca-2026-10-05.md`.
+Estas perguntas estão em `CONSULTA-ADVOGADO-complemento-2026-11-02.md`, questões 6 a 8.
 
 1. **Componente sem licença localizada.** A MT pode distribuir `usbmmidd_v2`, o driver de impressora, o adaptador e o `hwcodec` sem licença expressa, pelo fato de virem no build oficial de um programa AGPL? Leituras possíveis: (a) não pode sem autorização, o que é o risco maior; (b) no caso dos autores do RustDesk, a seção 5(c) da AGPL cobre as partes da obra, o que não alcança um terceiro como a Amyuni. Impacto: tirar os componentes do build ou mantê-los. Urgência: antes da primeira tag.
 2. **Driver como "aggregate".** Um driver instalado à parte pelo programa conta como "aggregate" (seção 5) ou como parte da obra? Impacto: dever de oferecer o código do driver. Urgência: antes da primeira tag, se o driver ficar.

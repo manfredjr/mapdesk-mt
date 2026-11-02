@@ -4,8 +4,7 @@ Passo a passo para publicar uma versão (fatia 5 e todas as seguintes). Publicar
 
 ## Antes de publicar
 
-1. Pendências que bloqueiam a primeira publicação (`docs/superpowers/pendencias.md`):
-   - aviso de privacidade publicado no site da MT e o endereço gravado em `kMtPrivacidade` (`flutter/lib/mt/mt_info.dart`).
+1. Pendências que bloqueiam a primeira publicação (`docs/superpowers/pendencias.md`): as do portão da seção "Site do produto", abaixo.
 
    Decisões do Manfred em 02/11/2026:
    - a primeira versão sai sem esperar as respostas do advogado, com o risco assumido por ele e a consulta (`docs/legal/CONSULTA-ADVOGADO-mapdesk-agpl-marca-2026-10-05.md`) enviada em paralelo. As questões continuam abertas nas pendências;
@@ -40,7 +39,7 @@ Passo a passo para publicar uma versão (fatia 5 e todas as seguintes). Publicar
 
 ## Depois de publicar
 
-1. Publicar ou atualizar a página do produto (seção "Site do produto", abaixo).
+1. Publicar ou atualizar a página do produto (seção "Site do produto", abaixo), antes de divulgar a versão.
    - Depois da tag, pedir à sessão do site a troca em `manfred.com.br/acesso`: o MapDesk-MT vira o botão principal e o RustDesk oficial fica como alternativa. A decisão é do Manfred, em 02/11/2026, e substitui o "os dois caminhos não se misturam" de 01/11/2026.
 2. Atualizar a "Situação do projeto" do `README-MT.md`.
 3. Nunca apagar tags nem versões antigas que algum cliente recebeu (AGPL-3.0, seção 6).
@@ -52,11 +51,17 @@ A página `https://mapdesk.manfred.com.br/` mora em `public/` deste repositório
 1. Portão antes da tag. O Manfred confirma, ou adia por escrito:
    - cessão do autor para a MT, adiada pelo Manfred em 02/11/2026: não bloqueia a tag, mas precisa estar assinada antes de qualquer venda;
    - respostas do advogado (pendências jurídicas 1 a 6), adiadas pelo Manfred em 02/11/2026 para a primeira versão, conforme a seção "Antes de publicar";
-   - página de privacidade no ar, que pode ser a `privacidade.html` deste site, gravada também em `kMtPrivacidade` numa fatia própria;
+   - texto completo da `privacidade.html` no ramo `mt`, com os itens da verificação de privacidade (seção 5), e o endereço gravado em `kMtPrivacidade`. A página entra no ar no passo 4, antes de a versão ser divulgada;
    - bloco do MapDesk-MT no `README.md` da raiz;
-   - conferência das licenças dos binários de terceiros do build.
+   - licenças dos binários (`docs/legal/licencas-binarios-terceiros-2026-11-02.md`): a conferência não fechou. Cada item abaixo precisa estar resolvido ou adiado pelo Manfred por escrito:
+     - decisão sobre o `usbmmidd_v2`, o driver de impressora e o adaptador;
+     - decisão sobre o `hwcodec`;
+     - arquivo de avisos de terceiros;
+     - instruções do código do FFmpeg nas notas da versão;
+     - perguntas com urgência "antes da primeira tag" em `docs/legal/CONSULTA-ADVOGADO-complemento-2026-11-02.md`, que as decisões de 02/11/2026 não cobrem;
+   - ajuste da linha 17 do `AGENTS-MT.md`, com o ok do Manfred.
 2. Merge do PR do site, com o workflow `MapDesk-MT site` verde.
-3. Tag com o valor de `kMtVersao` (seção "Publicar", acima). O botão da página aponta para essa tag, e a versão traz o `MapDesk-MT.exe` e o `MapDesk-MT.exe.sha256`.
+3. Tag com o valor de `kMtVersao` (seção "Publicar", acima). O botão da página aponta para essa tag, e a versão traz o `MapDesk-MT.exe` e o `MapDesk-MT.exe.sha256`. A tag vem antes do site para o botão nunca apontar para uma versão que não existe. Até o fim do passo 6, a versão não é divulgada a ninguém, porque o link de privacidade do programa só funciona depois do passo 4.
 4. No cPanel da GoDaddy, pelo `roteiro-publicacao-git-cpanel.md`:
    - clonar `https://github.com/manfredjr/mapdesk-mt.git` em `repositories/mapdesk-mt`, sem chave SSH, porque o repositório é público;
    - apontar o subdomínio `mapdesk.manfred.com.br` para a pasta `public` do clone;
@@ -65,7 +70,9 @@ A página `https://mapdesk.manfred.com.br/` mora em `public/` deste repositório
 6. Conferência no ar:
    - a página abre em HTTPS;
    - o botão baixa o arquivo certo, e o SHA-256 confere com o `MapDesk-MT.exe.sha256`;
-   - nenhum script de terceiros carrega.
+   - nenhum script de terceiros carrega;
+   - a tela Sobre do executável abre a página de privacidade.
+7. Só agora a versão é divulgada e a sessão do site troca o `manfred.com.br/acesso`, se o Manfred tiver confirmado o botão principal (`docs/superpowers/pendencias.md`).
 
 A cada versão nova, `kMtVersao` muda e o teste da página exige os links com a tag nova: atualizar o `public/index.html` no mesmo PR.
 

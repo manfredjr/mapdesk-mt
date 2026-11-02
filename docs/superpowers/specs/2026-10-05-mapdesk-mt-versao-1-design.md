@@ -25,7 +25,7 @@ O MapDesk-MT é a versão do cliente RustDesk feita pela MT para os clientes do 
 |---|---|---|
 | 1 | Pasta `MAPDESK-MT` e nome MapDesk-MT | Briefing do projeto |
 | 2 | Repositório público desde o início, como fork de verdade | A AGPL exige o código de cada versão; Actions gratuito em repositório público (docs.github.com, 05/10/2026); merge do oficial mais simples |
-| 3 | Fatias 1 a 3 sem assinatura, só para teste interno; nenhum cliente recebe executável sem assinatura | O certificado demora e não deve travar o desenvolvimento |
+| 3 | Fatias 1 a 3 sem assinatura, só para teste interno; nenhum cliente recebe executável sem assinatura (revista pelo Manfred em 01/11/2026: a primeira versão sai sem certificado, ver `docs/superpowers/pendencias.md`) | O certificado demora e não deve travar o desenvolvimento |
 | 4 | Aprovação por clique como padrão, não travada | O técnico pode configurar senha permanente numa máquina instalada para acesso sem ninguém na frente |
 | 5 | Abordagem A: um único fork alterado; configuração em tempo de execução por `src/mt_config.rs` | Mudança pequena e concentrada; `hbb_common` sem alteração, o que também evita a pendência de licença dele |
 | 6 | Ramos `master` (espelho do oficial) e `mt` (principal) e fork do `hbb_common` sem alteração | Separar o oficial das mudanças da MT; manter o código de cada versão disponível (AGPL, seção 6) |
@@ -151,4 +151,4 @@ Ficam em `docs/superpowers/pendencias.md`: Mac, Linux, Android, iOS e cliente we
 5. Consentimento do Marco Civil, art. 7º, IX, para os registros do servidor (advogado, questão 3).
 6. Papel da MT na sessão de suporte a empresa cliente e a base legal para os empregados (advogado, questão 4).
 
-O envio da consulta ao advogado é decisão do Manfred. As pendências 3, 5 e 6 precisam de resposta antes da fatia 5.
+O envio da consulta ao advogado é decisão do Manfred. As pendências 3, 5 e 6 precisam de resposta antes da fatia 5. Nota de 02/11/2026: o Manfred decidiu que a primeira versão sai sem esperar essas respostas, com o risco assumido por ele (`docs/publicacao.md`).

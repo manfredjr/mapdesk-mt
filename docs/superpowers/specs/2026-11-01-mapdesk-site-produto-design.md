@@ -95,8 +95,8 @@ Depois do CI verde vêm o revisor-mt (Opus) e o revisor-ux (computador e celular
 Cada passo só sai com a frase do Manfred (regras 5 e 7):
 
 1. **Portão antes da tag,** com os itens das pendências e da spec da versão 1, que o Manfred confirma ou decide adiar por escrito:
-   - cessão do autor para a MT;
-   - respostas do advogado (pendências jurídicas 1 a 6);
+   - cessão do autor para a MT (nota de 02/11/2026: adiada pelo Manfred para antes da primeira venda);
+   - respostas do advogado, pendências jurídicas 1 a 6 (nota de 02/11/2026: adiadas pelo Manfred para a primeira versão; o portão atual está em `docs/publicacao.md`);
    - página de privacidade no ar, que pode ser a `privacidade.html` deste site, gravada também em `kMtPrivacidade` numa fatia própria;
    - bloco do MapDesk-MT no `README.md` da raiz;
    - conferência das licenças dos binários de terceiros do build.
