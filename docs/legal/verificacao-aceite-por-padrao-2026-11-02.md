@@ -49,6 +49,16 @@ Por isso, as páginas deixam de dizer que o programa "só se liga" ao servidor d
 
 **REVISÃO PROFISSIONAL.** Este documento não fecha o tema do acesso sem aceite. Seguem abertas as questões 3 (Marco Civil, art. 7º, IX, depois da LGPD) e 4 (papel da MT e base legal para empregados) da consulta de 05/10/2026, e a recomendação daquela verificação de que o cliente empresa decida por escrito o acesso sem presença. A pergunta nova sobre as consultas STUN está na questão 5 da mesma consulta.
 
+## Itens que faltavam na página de privacidade
+
+A tela Sobre passa a apontar para `public/privacidade.html`, então a página precisa dos itens de `verificacao-privacidade-cliente-2026-10-05.md`, seção 5. Base: LGPD, arts. 9º e 18, na biblioteca da `legal-br`, EM DIA no relatório de 02/11/2026. O art. 9º alcança a MT porque ela é controladora dos registros do servidor (mesma verificação, item 4.4).
+
+- **Art. 9º, II:** a página lista o que o programa envia para montar a conexão, pela leitura do código (item 3.1). Ela não diz que o servidor guarda esses dados, porque isso depende do teste de rede, que segue pendente. O que o técnico recebe ao abrir a sessão também depende desse teste e não está na página.
+- **Art. 9º, V:** a página cita a HostGator Brasil LTDA, fonte em `VPS-MT/docs/contratacao-hostgator.md` e na palavra do Manfred em 02/11/2026. O IP da máquina ainda não foi conferido por ele no painel.
+- **Art. 9º, VI:** o trecho do computador de empresa não diz qual é o papel da MT, porque a questão 4 da consulta segue aberta.
+- **Art. 9º, VII:** os direitos do art. 18, I a IX, e §§ 1º e 2º, em linguagem simples. Paráfrase, portanto INTERPRETAÇÃO, e não transcrição.
+- **Canal e encarregado:** a página apresenta o e-mail como canal de atendimento, e não diz que a MT dispensa encarregado. PENDÊNCIA DE VALIDAÇÃO: a dispensa depende de a MT ser agente de pequeno porte (`[FONTE?]`), e a Resolução CD/ANPD nº 2/2022 aparece como MUDOU no relatório de 02/11/2026, então a cópia local não vale como texto vigente.
+
 ## Resultado
 
 Com a ressalva acima, o texto das páginas e a resposta do site da MT descrevem o funcionamento lido no código. A resposta do site só trata do aceite. Se aquela página afirmar que o programa usa "só" o servidor da MT, a afirmação precisa sair.
