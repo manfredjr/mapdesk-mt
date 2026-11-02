@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>MapDesk - MT - acesso remoto do suporte da MT</title>
-<meta name="description" content="Programa de acesso remoto para Windows usado no suporte da MT - Manfred Tecnologia. Usa só o servidor da MT, no Brasil, e, por padrão, a conexão começa depois do seu aceite. Código aberto, derivado do RustDesk, sob a AGPL-3.0.">
+<meta name="description" content="Programa de acesso remoto para Windows usado no suporte da MT - Manfred Tecnologia. Usa o servidor da MT, no Brasil, e, por padrão, a conexão começa depois do seu aceite. Código aberto, derivado do RustDesk, sob a AGPL-3.0.">
 <link rel="icon" type="image/png" href="imagens/mapdesk.png">
 <meta property="og:title" content="MapDesk - MT - acesso remoto do suporte da MT">
 <meta property="og:description" content="Acesso remoto para Windows com servidor da MT no Brasil. Por padrão, a conexão só começa depois do seu aceite.">
@@ -34,17 +34,17 @@
 <section>
   <h2>Por que ele existe</h2>
   <p>Boa parte do suporte de TI se resolve sem ir até o cliente. O técnico precisa ver a tela, mexer no mouse por alguns minutos e, às vezes, mandar um arquivo. Para isso existe o acesso remoto.</p>
-  <p>O MapDesk - MT usa só o servidor da MT, que fica no Brasil. E, como o programa vem, nada acontece sem você: o técnico só entra depois que alguém na frente do computador aceita o pedido.</p>
+  <p>O MapDesk - MT usa o servidor da MT, que fica no Brasil, para ligar os dois computadores. E, como o programa vem, nada acontece sem você: o técnico só entra depois que alguém na frente do computador aceita o pedido.</p>
 </section>
 
 <section>
   <h2>O que ele faz</h2>
   <div class="itens">
     <div><h3>Aceite pelo botão verde</h3><p>É o padrão do programa. O pedido de conexão aparece na tela, e o técnico só vê o computador depois do clique em Aceitar.</p></div>
-    <div><h3>Senha permanente opcional</h3><p>Como o programa vem, ninguém entra por senha. Para atender sem ninguém na frente do computador, é preciso mudar essa configuração naquela máquina. A partir daí, quem tem uma senha válida, a definida ali ou a temporária do programa, entra sem o Aceitar.</p></div>
+    <div><h3>Atendimento com senha, opcional</h3><p>Como o programa vem, ninguém entra por senha. Para atender sem ninguém na frente do computador, é preciso mudar essa configuração naquela máquina, o que o técnico também pode fazer durante um atendimento aceito. A partir daí, quem tem uma senha válida entra sem o Aceitar: a senha definida ali ou a temporária, que o programa mostra na tela.</p></div>
     <div><h3>Transferência de arquivos</h3><p>Envia e recebe arquivos durante o atendimento.</p></div>
     <div><h3>Repasse</h3><p>Quando os dois computadores não conseguem se ligar direto, a conexão passa pelo servidor de repasse da MT.</p></div>
-    <div><h3>Servidor travado</h3><p>O programa só se liga ao servidor e à chave da MT, que já vêm dentro dele. Não dá para apontar para outro servidor.</p></div>
+    <div><h3>Servidor travado</h3><p>O programa usa o servidor e a chave da MT, que já vêm dentro dele. Não dá para apontar para outro servidor.</p></div>
     <div><h3>Marca da MT</h3><p>Nome, ícones e cores da MT, para você reconhecer o programa do seu suporte.</p></div>
   </div>
 </section>
@@ -68,7 +68,7 @@
 
 <section>
   <h2>Privacidade</h2>
-  <p>O servidor da MT registra o número de ID de cada computador, o endereço IP e o horário de cada conexão. Esses registros ficam guardados por 6 meses, com acesso restrito. O servidor não grava a tela nem o conteúdo do atendimento.</p>
+  <p>O servidor da MT registra o número de ID de cada computador, o endereço IP e o horário de cada conexão. Esses registros ficam guardados por 6 meses, com acesso restrito. O servidor não grava a tela nem o conteúdo do atendimento. Ao iniciar, o programa também consulta servidores STUN públicos, que podem ver o IP do computador.</p>
   <p>Os detalhes estão na página de <a href="privacidade.html">privacidade</a>.</p>
 </section>
 

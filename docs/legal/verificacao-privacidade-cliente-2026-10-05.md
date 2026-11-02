@@ -91,6 +91,8 @@ O IP de origem chega ao servidor pela própria conexão.
 
 ### 3.4. O que o MapDesk não pode enviar a terceiros
 
+**Correção de 02/11/2026.** Esta análise não tratou das consultas STUN que o programa faz ao iniciar, e o aceite é um padrão que pode mudar. Valem as ressalvas de `verificacao-aceite-por-padrao-2026-11-02.md`, inclusive sobre as linhas "Controle de quem está na máquina" e "Compartilhamento" do quadro de aviso.
+
 **FATO (código).** Em `src/common.rs` (tag `1.5.0`), `check_software_update` retorna sem consultar nada quando `is_custom_client()` é verdadeiro, e `is_custom_client()` é `get_app_name() != "RustDesk"`. Sem esse desvio, a consulta de versão envia a `https://api.rustdesk.com/version/latest` o sistema operacional, a versão do sistema, a arquitetura e um `device_id` tirado da impressão digital do aparelho (`hbb_common`, `src/lib.rs`, `version_check_request`).
 
 **FATO (código).** Pelo levantamento do projeto (`achados-codigo-1.5.0.md`), sem servidor de API configurado o cliente usa o servidor de ID na porta 21114, e sem servidor personalizado cai em `https://admin.rustdesk.com`; `register-device` = "N" deixa o servidor de API vazio.
