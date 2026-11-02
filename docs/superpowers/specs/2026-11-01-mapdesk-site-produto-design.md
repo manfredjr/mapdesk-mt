@@ -6,9 +6,9 @@ Desenho aprovado pelo Manfred em 01/11/2026, em duas partes. Depende da spec `20
 
 É a página do MapDesk-MT como produto, no mesmo modelo dos irmãos da família Map (MapDisk, MapHard e MapNet). Ela fica em `https://mapdesk.manfred.com.br/` e oferece o `MapDesk-MT.exe` sem assinatura, baixado de uma versão pública do GitHub.
 
-Há dois caminhos de acesso, e eles não se misturam (decisão do Manfred em 01/11/2026):
+Há dois caminhos de acesso. Até a tag, eles ficam separados, como o Manfred decidiu em 01/11/2026. Depois da tag, a decisão do Manfred de 02/11/2026 substitui o "não se misturam" daquela data, e `manfred.com.br/acesso` passa a ter o MapDesk-MT como botão principal e o RustDesk oficial como alternativa.
 
-- **Clientes do suporte:** entram pelo Helpdesk e baixam em `manfred.com.br/acesso` o RustDesk oficial assinado, com a configuração da MT no nome do arquivo. Este site não muda isso.
+- **Clientes do suporte:** entram pelo Helpdesk e baixam em `manfred.com.br/acesso`. Até a tag, a página entrega o RustDesk oficial assinado, com a configuração da MT no nome do arquivo. A troca dos botões é pedida à sessão do site depois da tag (`docs/publicacao.md`).
 - **Produto:** este site. Quando houver o certificado (fatia 4), o mesmo endereço passa a entregar o executável assinado, sem mudar a página.
 
 Fica de fora: preços, MapHub-MT e o botão de login do catálogo de endereços, até existirem.

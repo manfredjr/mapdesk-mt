@@ -44,7 +44,7 @@ A página do produto fica em `public/` e é servida em `https://mapdesk.manfred.
 
 ## Depois de publicar
 
-- Conferir a página do produto no ar (`docs/publicacao.md`, "Site do produto"). A página `manfred.com.br/acesso` dos clientes do suporte continua com o RustDesk oficial (decisão do Manfred em 01/11/2026).
+- Conferir a página do produto no ar (`docs/publicacao.md`, "Site do produto"). Depois da tag, pedir à sessão do site que `manfred.com.br/acesso` tenha o MapDesk-MT como botão principal e o RustDesk oficial como alternativa (decisão do Manfred em 02/11/2026).
 
 ## A confirmar com
 

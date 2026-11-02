@@ -40,7 +40,8 @@ Passo a passo para publicar uma versão (fatia 5 e todas as seguintes). Publicar
 
 ## Depois de publicar
 
-1. Publicar ou atualizar a página do produto (seção "Site do produto", abaixo). A página `manfred.com.br/acesso`, dos clientes do suporte, continua com o RustDesk oficial: os dois caminhos não se misturam (decisão do Manfred em 01/11/2026).
+1. Publicar ou atualizar a página do produto (seção "Site do produto", abaixo).
+   - Depois da tag, pedir à sessão do site a troca em `manfred.com.br/acesso`: o MapDesk-MT vira o botão principal e o RustDesk oficial fica como alternativa. A decisão é do Manfred, em 02/11/2026, e substitui o "os dois caminhos não se misturam" de 01/11/2026.
 2. Atualizar a "Situação do projeto" do `README-MT.md`.
 3. Nunca apagar tags nem versões antigas que algum cliente recebeu (AGPL-3.0, seção 6).
 
