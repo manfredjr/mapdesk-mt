@@ -91,7 +91,7 @@ O IP de origem chega ao servidor pela própria conexão.
 
 ### 3.4. O que o MapDesk não pode enviar a terceiros
 
-**Correção de 02/11/2026.** Esta análise não tratou das consultas STUN que o programa faz ao iniciar, e o aceite é um padrão que pode mudar. Valem as ressalvas de `verificacao-aceite-por-padrao-2026-11-02.md`, inclusive sobre as linhas "Controle de quem está na máquina" e "Compartilhamento" do quadro de aviso.
+**Correção de 02/11/2026.** Esta análise não tratou das consultas STUN que o programa faz ao iniciar, e o aceite é um padrão que pode mudar. No quadro de aviso, a linha "Controle de quem está na máquina" só vale enquanto a aprovação por clique não for mudada, e a linha "Compartilhamento" não vale como está, porque servidores STUN de terceiros podem ver o IP do computador. A análise está em `verificacao-aceite-por-padrao-2026-11-02.md`.
 
 **FATO (código).** Em `src/common.rs` (tag `1.5.0`), `check_software_update` retorna sem consultar nada quando `is_custom_client()` é verdadeiro, e `is_custom_client()` é `get_app_name() != "RustDesk"`. Sem esse desvio, a consulta de versão envia a `https://api.rustdesk.com/version/latest` o sistema operacional, a versão do sistema, a arquitetura e um `device_id` tirado da impressão digital do aparelho (`hbb_common`, `src/lib.rs`, `version_check_request`).
 
@@ -162,8 +162,8 @@ No cenário da empresa, a MT trata por conta do cliente o que aparece na tela: d
 | O que o servidor registra | ID do computador, endereço IP e horário de cada conexão; acrescentar o identificador do aparelho e o endereço local se o teste do item 6 mostrar que o servidor os guarda | Art. 9º, II; item 3.1 |
 | Por quanto tempo | 6 meses, com acesso restrito | Art. 9º, II; VPS-MT, item 3.3 |
 | O que não é gravado | A tela e o conteúdo da sessão não são gravados no servidor | Art. 6º, VI |
-| Controle de quem está na máquina | O técnico só vê a tela depois que a pessoa clica em "Aceitar"; a sessão pode ser encerrada a qualquer momento | Art. 6º, VI |
-| Compartilhamento | O programa não envia dados à RustDesk nem a outros terceiros. O servidor fica em provedor de hospedagem contratado pela MT | Art. 9º, V; VPS-MT, item 3.2 |
+| Controle de quem está na máquina | O técnico só vê a tela depois que a pessoa clica em "Aceitar" (corrigido em 02/11/2026: é o padrão, ver a nota do item 3.4); a sessão pode ser encerrada a qualquer momento | Art. 6º, VI |
+| Compartilhamento | O programa não envia dados à RustDesk nem a outros terceiros (corrigido em 02/11/2026: ver a nota do item 3.4 sobre os servidores STUN). O servidor fica em provedor de hospedagem contratado pela MT | Art. 9º, V; VPS-MT, item 3.2 |
 | Cliente empresa | Quando o computador é da empresa, a MT atende por conta dela, e as dúvidas sobre o uso do equipamento podem ser levadas também à empresa | Art. 9º, VI; item 4.3 (depende da pendência 6) |
 | Direitos | Direitos do art. 18 da LGPD, com o canal de contato | Art. 9º, VII |
 | Política completa | [PREENCHER: endereço da política de privacidade da MT] | Art. 6º, VI |

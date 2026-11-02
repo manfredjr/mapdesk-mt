@@ -27,9 +27,9 @@ Conferido por leitura do código, sem executar o programa nem capturar o tráfeg
 - `src/server/connection.rs`, linhas 2994 a 3012: no modo `click`, um pedido com senha não é autenticado e fica à espera do aceite. A exceção é a opção `allow-logon-screen-password`, que o `mt_config.rs` não liga.
 - Fora do modo `click`, a senha válida autoriza a entrada sem o clique (mesmo arquivo, linhas 3031 a 3041, e `password_security.rs` do submódulo `hbb_common`).
 - O gatilho é mudar o modo, e não definir uma senha. A senha temporária vale nesses modos porque o método padrão é `UseBothPasswords` (`connection.rs`, linhas 2555 a 2566). Ela depende de alguém lê-la na tela.
-- O técnico controla o teclado e o mouse num atendimento aceito, então pode chegar à tela dessa configuração. A mudança por sessão remota não foi testada.
+- O técnico controla o teclado e o mouse num atendimento aceito, então pode chegar à tela dessa configuração. No programa instalado, a tela vem travada, e destravar pede o PIN ou a confirmação de administrador (`flutter/lib/desktop/pages/desktop_setting_page.dart`, linhas 3009 a 3015). Sem instalação, não há essa trava. A mudança por sessão remota não foi testada.
 - A conexão pode ir direto entre os dois computadores, sem passar pelo repasse do servidor.
-- Ao iniciar, o programa consulta servidores STUN públicos: `start_all` chama `test_nat_type`, que chega a `test_ipv6` (`src/common.rs`, linhas 662 e 2654). Os servidores são `stun.cloudflare.com`, `stun.l.google.com`, `stun.antisip.com` e `stun.nextcloud.com` (`webrtc.rs` do `hbb_common`, commit 229b904). Nada em `mt_config.rs` desliga isso. Numa máquina sem IPv6, só deve haver a resolução dos nomes.
+- Ao iniciar, o programa consulta servidores STUN públicos: `start_all` chama `test_nat_type`, que chega a `test_ipv6` (`src/common.rs`, linhas 662 e 2654). Os servidores são `stun.cloudflare.com`, `stun.l.google.com`, `stun.antisip.com` e `stun.nextcloud.com` (`webrtc.rs` do `hbb_common`, commit 229b904). Nada em `mt_config.rs` desliga isso. Numa máquina sem IPv6, só deve haver a resolução dos nomes. Há novas consultas quando a rede muda de modo (`src/common.rs`, linhas 653 a 659) e, em caso fora do padrão, numa conexão recebida com IPv6 do outro lado (`src/rendezvous_mediator.rs`, linha 1454).
 
 Por isso, as páginas deixam de dizer que o programa "só se liga" ao servidor da MT. Não houve inventário completo das saídas de rede, e nenhuma frase pública pode voltar a dizer "só" sem esse inventário e uma captura de tráfego.
 
@@ -47,7 +47,7 @@ Por isso, as páginas deixam de dizer que o programa "só se liga" ao servidor d
 
 **RISCO.** Em computador de empresa, o titular pode ser um empregado que não participou da decisão de mudar a configuração, e o aviso na página pode não alcançá-lo.
 
-**REVISÃO PROFISSIONAL.** Este documento não fecha o tema do acesso sem aceite. Seguem abertas as questões 3 (Marco Civil, art. 7º, IX, depois da LGPD) e 4 (papel da MT e base legal para empregados) da consulta de 05/10/2026, e a recomendação daquela verificação de que o cliente empresa decida por escrito o acesso sem presença. A consulta também precisa da pergunta nova: as consultas STUN a empresas de fora, feitas com o IP do cliente, exigem base legal própria ou tratamento de transferência internacional?
+**REVISÃO PROFISSIONAL.** Este documento não fecha o tema do acesso sem aceite. Seguem abertas as questões 3 (Marco Civil, art. 7º, IX, depois da LGPD) e 4 (papel da MT e base legal para empregados) da consulta de 05/10/2026, e a recomendação daquela verificação de que o cliente empresa decida por escrito o acesso sem presença. A pergunta nova sobre as consultas STUN está na questão 5 da mesma consulta.
 
 ## Resultado
 

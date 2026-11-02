@@ -94,6 +94,16 @@ O projeto tem 6 pendências. Esta consulta trata as pendências 3 a 6, nas quest
 
 **Urgência.** Antes de atender clientes empresa com o MapDesk. Enquanto isso, a MT segue com o modelo atual de suporte.
 
+## Questão 5 (nova, de 02/11/2026): consultas STUN a terceiros
+
+**Fato, por leitura do código, sem captura de tráfego.** Ao iniciar, o programa consulta os servidores STUN públicos `stun.cloudflare.com`, `stun.l.google.com`, `stun.antisip.com` e `stun.nextcloud.com` para descobrir o endereço IPv6 do computador. Em máquina com IPv6, eles podem ver esse endereço. Não recebem a tela nem o conteúdo do atendimento. A análise está em `docs/legal/verificacao-aceite-por-padrao-2026-11-02.md`.
+
+**Pergunta.** Essas consultas, feitas com o IP do cliente, exigem base legal própria na LGPD ou tratamento de transferência internacional (art. 33)? Declarar as consultas na página de privacidade basta, ou é melhor bloqueá-las no programa?
+
+**Impacto prático.** Define se o aviso de privacidade fica como está ou se o programa precisa mudar.
+
+**Urgência.** Antes de atender clientes empresa com o MapDesk, se as consultas continuarem ligadas.
+
 ## Resumo
 
 | Questão | Pendência | Tema | Urgência |
@@ -102,3 +112,4 @@ O projeto tem 6 pendências. Esta consulta trata as pendências 3 a 6, nas quest
 | 2 | 4 | Licença do `hbb_common` | Só se for alterar o `hbb_common` |
 | 3 | 5 | Marco Civil, art. 7º, IX | Antes da página de download |
 | 4 | 6 | Papel da MT na sessão e contrato | Antes de atender empresas com o MapDesk |
+| 5 | nova | Consultas STUN a terceiros | Antes de atender empresas com o MapDesk |
