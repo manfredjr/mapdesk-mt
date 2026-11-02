@@ -2,7 +2,7 @@
 
 | Item | Motivo | O que fecha |
 |---|---|---|
-| Cessão do autor para a MT | A titularidade das mudanças da MT exige documento escrito do autor para a empresa (Lei nº 9.610/1998, arts. 49 e 50). A licença do projeto continua AGPL-3.0 | Cessão única de todos os produtos, assinada antes da tag da primeira versão, que continua bloqueada sem ela (decisão do Manfred em 02/11/2026). Conferir se o projeto está no Anexo I da minuta |
+| Cessão do autor para a MT | A titularidade das mudanças da MT exige documento escrito do autor para a empresa (Lei nº 9.610/1998, arts. 49 e 50). A licença do projeto continua AGPL-3.0 | Cessão única de todos os produtos, assinada antes de qualquer venda. Decisão do Manfred em 02/11/2026: não bloqueia a tag, porque o programa é gratuito. O contrato está com o grupo do contrato único e depende do contador (`docs/legal/verificacao-publicacao-sem-cessao-2026-11-02.md`). Conferir se o projeto está no Anexo I da minuta |
 | Mac, Linux, Android, iOS | Fora da versão 1 (briefing, seção 6) | Nova spec por plataforma |
 | Cliente web | Fora da versão 1; a porta 21118/21119 fica fechada no servidor | Decisão de abrir o cliente web no VPS-MT |
 | Atualização automática própria | Fora da versão 1; o MapDesk-MT não consulta versão no RustDesk | Spec própria, com servidor de atualização da MT |

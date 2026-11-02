@@ -5,10 +5,11 @@ Passo a passo para publicar uma versão (fatia 5 e todas as seguintes). Publicar
 ## Antes de publicar
 
 1. Pendências que bloqueiam a primeira publicação (`docs/superpowers/pendencias.md`):
-   - aviso de privacidade publicado no site da MT e o endereço gravado em `kMtPrivacidade` (`flutter/lib/mt/mt_info.dart`);
-   - cessão do autor para a MT assinada antes da tag.
+   - aviso de privacidade publicado no site da MT e o endereço gravado em `kMtPrivacidade` (`flutter/lib/mt/mt_info.dart`).
 
-   Decisão do Manfred em 02/11/2026: a primeira versão sai sem esperar as respostas do advogado, com o risco assumido por ele e a consulta (`docs/legal/CONSULTA-ADVOGADO-mapdesk-agpl-marca-2026-10-05.md`) enviada em paralelo. As questões continuam abertas nas pendências.
+   Decisões do Manfred em 02/11/2026:
+   - a primeira versão sai sem esperar as respostas do advogado, com o risco assumido por ele e a consulta (`docs/legal/CONSULTA-ADVOGADO-mapdesk-agpl-marca-2026-10-05.md`) enviada em paralelo. As questões continuam abertas nas pendências;
+   - a cessão do autor para a MT não bloqueia a tag, porque o programa é gratuito, e bloqueia a primeira venda. O contrato está com o grupo do contrato único e depende do contador (`docs/legal/verificacao-publicacao-sem-cessao-2026-11-02.md`).
 2. A chave pública de **produção** (VPS-MT, `docs/instalacao.md`, passo G4) está em `CHAVE_PUBLICA` (`src/mt_config.rs`). Feito em 01/11/2026, quando a VPS da HostGator passou a responder por `rustdesk.manfred.com.br`; o teste `mt_config` do workflow confere o valor exato antes de empacotar. A do laboratório nunca vai para a versão distribuída.
 3. Certificado de assinatura: a primeira versão sai sem certificado, por decisão do Manfred em 01/11/2026, registrada aqui em 02/11/2026. Depois que houver certificado, conferir antes de cada versão se ele está válido e se os segredos do GitHub existem (fatia 4).
 4. A versão MT foi atualizada em dois lugares, com o mesmo valor:
@@ -48,7 +49,7 @@ Passo a passo para publicar uma versão (fatia 5 e todas as seguintes). Publicar
 A página `https://mapdesk.manfred.com.br/` mora em `public/` deste repositório (spec `2026-11-01-mapdesk-site-produto-design.md`, seção 8). Cada passo só sai com a frase do Manfred.
 
 1. Portão antes da tag. O Manfred confirma, ou adia por escrito:
-   - cessão do autor para a MT, que não pode ser adiada: sem ela não há tag;
+   - cessão do autor para a MT, adiada pelo Manfred em 02/11/2026: não bloqueia a tag, mas precisa estar assinada antes de qualquer venda;
    - respostas do advogado (pendências jurídicas 1 a 6), adiadas pelo Manfred em 02/11/2026 para a primeira versão, conforme a seção "Antes de publicar";
    - página de privacidade no ar, que pode ser a `privacidade.html` deste site, gravada também em `kMtPrivacidade` numa fatia própria;
    - bloco do MapDesk-MT no `README.md` da raiz;
