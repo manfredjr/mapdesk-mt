@@ -2,7 +2,7 @@
 
 O MapDesk-MT é uma obra derivada do RustDesk. A origem é o repositório `rustdesk/rustdesk`, na tag `1.5.0`, distribuído sob a AGPL-3.0.
 
-Este programa foi modificado pela MT - Manfred Tecnologia. A licença continua a AGPL-3.0, e o arquivo `LICENCE` da raiz continua valendo para o código inteiro, inclusive para as mudanças da MT. Os avisos de copyright do RustDesk ficam como estão.
+Este programa foi modificado pela MT - Manfred Tecnologia. A licença continua a AGPL-3.0, e o arquivo `LICENCE` da raiz continua valendo para o código inteiro, inclusive para as mudanças da MT. Os componentes de terceiros têm licença própria. Os avisos de copyright do RustDesk ficam como estão.
 
 ## Mudanças da MT
 
@@ -40,4 +40,4 @@ Conforme a seção 7 da AGPL-3.0, a licença não dá direito de uso dos nomes "
 
 ## Código-fonte de cada versão
 
-Cada versão distribuída tem uma tag no formato `<versão>-mt.<n>`, por exemplo `1.5.0-mt.1`, em https://github.com/manfredjr/mapdesk-mt. O código correspondente ao executável de cada versão está na tag com o mesmo número, salvo os componentes de terceiros citados acima.
+Cada versão distribuída tem uma tag no formato `<versão>-mt.<n>`, por exemplo `1.5.0-mt.1`, em https://github.com/manfredjr/mapdesk-mt. O código correspondente ao executável de cada versão está na tag com o mesmo número, salvo os componentes de terceiros, que têm licença própria e cujo código pode estar em outro lugar.

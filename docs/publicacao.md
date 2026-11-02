@@ -59,7 +59,7 @@ A página `https://mapdesk.manfred.com.br/` mora em `public/` deste repositório
      - arquivo de avisos de terceiros;
      - instruções do código do FFmpeg nas notas da versão;
      - perguntas com urgência "antes da primeira tag" em `docs/legal/CONSULTA-ADVOGADO-complemento-2026-11-02.md`, que as decisões de 02/11/2026 não cobrem;
-   - ajuste da linha 17 do `AGENTS-MT.md`, com o ok do Manfred;
+   - ajuste da linha 17 do `AGENTS-MT.md` e ressalva de terceiros nas linhas 21, 25 e 27, com o ok do Manfred;
    - decisão sobre as consultas STUN;
    - teste de convivência com o RustDesk oficial na mesma máquina, inclusive a desinstalação do MapDesk-MT;
    - promessas da página sobre o servidor conferidas: IP da máquina no painel, servidor no Brasil, registro de cada conexão, guarda por 6 meses e acesso restrito;
