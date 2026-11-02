@@ -86,7 +86,7 @@ Duas buscas na internet em 02/11/2026 não acharam os termos desse driver no sit
 
 ### 3.2. Driver de impressora e adaptador
 
-**FATO.** Os dois estão na versão `driver` do `rustdesk/hbb_common`, com corpo vazio. No workflow, o passo fica dentro de um `try/catch` e ignora falha de download ou de SHA-256, então um executável pode sair com ou sem esses arquivos, e só o log da compilação diz qual foi o caso. A API do GitHub não acha licença nesse repositório (404), e a verificação de 05/10/2026 já registrava a falta de arquivo de licença. O código-fonte desses pacotes não foi localizado. O programa carrega o adaptador pelo nome `printer_driver_adapter` (`src/server/printer_service.rs`, linha 11).
+**FATO.** Os dois estão na versão `driver` do `rustdesk/hbb_common`, com corpo vazio. Até a retirada de 02/11/2026, o passo do workflow ficava dentro de um `try/catch` e ignorava falha de download ou de SHA-256, então um executável podia sair com ou sem esses arquivos. A API do GitHub não acha licença nesse repositório (404), e a verificação de 05/10/2026 já registrava a falta de arquivo de licença. O código-fonte desses pacotes não foi localizado. O programa carrega o adaptador pelo nome `printer_driver_adapter` (`src/server/printer_service.rs`, linha 11).
 
 **INTERPRETAÇÃO.** A origem aponta para os autores do RustDesk, mas isso não diz sob qual licença os pacotes saem. Se o adaptador for parte da obra, ele cai na AGPL-3.0 e precisa de código correspondente, porque a seção 1 inclui "the source code for shared libraries and dynamically linked subprograms that the work is specifically designed to require". O driver instalado à parte pode ser um "aggregate" da seção 5, mas essa leitura depende de ver o pacote. Licença: `[FONTE?]`.
 
@@ -149,6 +149,6 @@ Estas perguntas estão em `CONSULTA-ADVOGADO-complemento-2026-11-02.md`, questõ
 2. **Driver como "aggregate".** Um driver instalado à parte pelo programa conta como "aggregate" (seção 5) ou como parte da obra? Impacto: dever de oferecer o código do driver. Urgência: antes da primeira tag, se o driver ficar.
 3. **Patentes de H.264 e HEVC.** A distribuição gratuita pela MT, no Brasil, gera obrigação de licença ou de royalties? Impacto: manter ou desligar esses codecs. Urgência: antes da primeira tag.
 
-## 6. Decisão necessária
+## 6. Decisão
 
-Decidido pelo Manfred em 02/11/2026: retirar do build da primeira versão o driver de impressora e o adaptador, e manter o `usbmmidd_v2`. Pela leitura do código, sem o adaptador o serviço da impressora só registra aviso. Esse efeito precisa do teste do Manfred, junto com a conexão em máquina sem monitor ligado.
+Decidido pelo Manfred em 02/11/2026: retirar do build da primeira versão o driver de impressora e o adaptador, e manter o `usbmmidd_v2`. Pela leitura do código, sem o adaptador o programa registra o erro uma vez e não cria o serviço da impressora, e a instalação do driver falha sem interromper a instalação do programa. Esse efeito precisa do teste do Manfred, junto com a conexão em máquina sem monitor ligado.
