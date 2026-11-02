@@ -33,7 +33,7 @@ O print entra quando o Manfred mandar um; até lá, a página sai sem ele.
 ## 3. Seções da página
 
 1. **Topo:** "MapDesk - MT" e uma frase sobre o acesso remoto da MT. O botão "Baixar para Windows" aponta para o arquivo da versão pela tag exata (`releases/download/<tag>/MapDesk-MT.exe`), porque a versão sai como pré-versão e o endereço `latest` não a alcança. O botão "Ver o código" leva ao código dessa tag. Embaixo, o link para o arquivo `MapDesk-MT.exe.sha256` da mesma versão (`releases/download/<tag>/MapDesk-MT.exe.sha256`). O número do SHA-256 fica fora da página até a tag sair, porque o executável só existe depois dela; a conferência do download é pelo arquivo `.sha256`.
-2. **Por que ele existe:** atendimento remoto com servidor próprio da MT, no Brasil, e conexão só depois do aceite.
+2. **Por que ele existe:** atendimento remoto com servidor próprio da MT, no Brasil, e, por padrão, conexão só depois do aceite.
 3. **O que ele faz:**
    - aceite pelo botão verde;
    - senha permanente opcional;
