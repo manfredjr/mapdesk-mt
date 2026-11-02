@@ -1,6 +1,6 @@
 # Parecer técnico e jurídico: monitor virtual e impressora remota
 
-Data: 02/11/2026. Projeto MAPDESK-MT. Feito com a skill `legal-br`. Decisão do Manfred em 02/11/2026: manter o monitor virtual, com o crédito à Amyuni, e deixar a impressora remota fora. Depois de saber que a licença não traz a palavra "redistribute", ele confirmou no mesmo dia: o driver fica, a MT pede autorização escrita à Amyuni e a tag espera a resposta. Se ela não responder, a decisão volta a ele. Corrige `licencas-binarios-terceiros-2026-11-02.md`, itens 3.1 e 3.2, escritos sem abrir os pacotes.
+Data: 02/11/2026. Projeto MAPDESK-MT. Feito com a skill `legal-br`. Decisão do Manfred em 02/11/2026: manter o monitor virtual, com o crédito à Amyuni, e deixar a impressora remota fora. Depois de saber que a licença não traz a palavra "redistribute" e de ler que o risco é médio, ele decidiu no mesmo dia não pedir autorização à Amyuni: "Eles nem vão me responder isso, eu só vou perder tempo", e "seguimos como está a questão do Rust Desk, da mesma forma". O driver fica como no RustDesk, a tag não espera a Amyuni, e o risco médio fica assumido por ele. Corrige `licencas-binarios-terceiros-2026-11-02.md`, itens 3.1 e 3.2, escritos sem abrir os pacotes.
 
 ## 1. Monitor virtual (`usbmmidd_v2`)
 
@@ -32,7 +32,7 @@ Em parágrafo separado, a licença diz que quem usa aceita "to be prompted with 
 
 **RISCO.** Médio, até haver autorização escrita da Amyuni ou resposta do advogado à pergunta 7. A leitura anterior desta verificação, de risco baixo, tratava só das restrições numeradas.
 
-**Caminhos para reduzir o risco.**
+**Caminhos para reduzir o risco.** Nenhum foi adotado na `1.5.0-mt.1`, por decisão do Manfred. Ficam como registro.
 
 - **Pedir à Amyuni autorização escrita para distribuir.** Resolve a permissão e pode resolver o anúncio, conforme a resposta. Não resolve a dúvida da AGPL sobre o código. É mensagem em nome da MT e sai só com a frase do Manfred.
 - **Comprar a versão comercial.** A licença a cita só por causa dos anúncios. Se resolve a permissão, depende dos termos. Preço e termos: `[FONTE?]`. Não resolve a dúvida da AGPL.
@@ -83,8 +83,8 @@ Em parágrafo separado, a licença diz que quem usa aceita "to be prompted with 
 - [x] Citar a Amyuni em `AVISO-DE-MODIFICACAO.md` e nas notas da versão, e declarar os arquivos retirados.
 - [ ] Levar o texto da licença ao arquivo de avisos de terceiros, que acompanha o programa.
 - [ ] Testar se aparece anúncio numa máquina com o monitor virtual ativo, de preferência com captura de rede, e definir como o cliente fica sabendo dessa cláusula.
-- [ ] Obter a autorização escrita da Amyuni. Sem resposta, nova decisão do Manfred.
-- [ ] Ajustar a frase "O código completo desta versão, sob a mesma licença" de `public/index.html`, porque o pacote leva o driver da Amyuni sem código e sob outra licença.
+- [x] Decidir a permissão de distribuir: risco assumido pelo Manfred em 02/11/2026, sem pedido à Amyuni.
+- [x] Ajustar a frase "O código completo desta versão, sob a mesma licença" de `public/index.html`, porque o pacote leva o driver da Amyuni sem código e sob outra licença.
 - [x] Manter a impressora fora, até haver licença e código.
 
 Autor: Manfred Heil Junior

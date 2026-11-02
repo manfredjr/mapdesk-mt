@@ -6,7 +6,7 @@ Objeto: o que o workflow `.github/workflows/mapdesk-windows.yml` baixa ou compil
 
 **Correção de 02/11/2026:** esta verificação foi feita sem abrir os pacotes, e a conclusão sobre o monitor virtual estava errada. O pacote traz a licença da Amyuni. A análise atual está em `verificacao-drivers-2026-11-02.md`.
 
-**Decisões do Manfred em 02/11/2026:** o driver de impressora e o adaptador saem do build, e a primeira versão vai sem impressora remota. Eles só voltam com licença e código, e os itens 2 e 3 da tabela ficam como registro. O `usbmmidd_v2` fica, com o crédito à Amyuni. Como a licença não diz "redistribuir", ele decidiu pedir autorização escrita à Amyuni e segurar a tag até a resposta.
+**Decisões do Manfred em 02/11/2026:** o driver de impressora e o adaptador saem do build, e a primeira versão vai sem impressora remota. Eles só voltam com licença e código, e os itens 2 e 3 da tabela ficam como registro. O `usbmmidd_v2` fica, com o crédito à Amyuni. A licença não diz "redistribuir", e ele decidiu não pedir autorização à Amyuni e assumir o risco médio.
 
 **Resultado:** a conferência não fecha. Ficaram sem licença localizada, marcados com `[FONTE?]`, o driver de impressora e o adaptador, o `hwcodec` e a biblioteca padrão do Rust. A `libyuv` tem texto de licença, mas o tipo exato não foi fechado, e o pacote `flutter_gpu_texture_renderer` volta `NOASSERTION` na API do GitHub. Os demais têm licença localizada, com os avisos e as ressalvas das seções 3 e 4.
 
@@ -136,7 +136,7 @@ Duas buscas na internet em 02/11/2026 não acharam os termos desse driver no sit
 
 - [x] Decidir o destino de `usbmmidd_v2`: fica no build, por decisão do Manfred em 02/11/2026.
 - [x] Achar os termos do `usbmmidd_v2`: `License.txt` do pacote.
-- [ ] Obter a autorização escrita da Amyuni para distribuir o `usbmmidd_v2`. O pedido é mensagem em nome da MT e sai só com a frase do Manfred. Sem resposta, nova decisão dele.
+- [x] Decidir a permissão de distribuir o `usbmmidd_v2`: risco assumido pelo Manfred em 02/11/2026, sem pedido à Amyuni.
 - [x] Decidir o destino do driver de impressora e do adaptador: fora do build, por decisão do Manfred em 02/11/2026.
 - [x] Abrir os três `.zip`: `verificacao-drivers-2026-11-02.md`.
 - [ ] Abrir a engine e procurar arquivo de licença.
@@ -156,4 +156,4 @@ Estas perguntas estão em `CONSULTA-ADVOGADO-complemento-2026-11-02.md`, questõ
 
 ## 6. Decisão
 
-Decidido pelo Manfred em 02/11/2026, depois do parecer de `verificacao-drivers-2026-11-02.md`: retirar do build da primeira versão o driver de impressora e o adaptador, e manter o `usbmmidd_v2` com o crédito à Amyuni. Depois de saber que a licença não diz "redistribuir", ele confirmou o driver, com o pedido de autorização à Amyuni e a tag à espera da resposta. Pela leitura do código, sem o adaptador o programa registra o erro uma vez e não cria o serviço da impressora, e a instalação do driver falha sem interromper a instalação do programa. Esse efeito precisa do teste do Manfred, junto com a conexão em máquina sem monitor ligado.
+Decidido pelo Manfred em 02/11/2026, depois do parecer de `verificacao-drivers-2026-11-02.md`: retirar do build da primeira versão o driver de impressora e o adaptador, e manter o `usbmmidd_v2` com o crédito à Amyuni. Depois de saber que a licença não diz "redistribuir", ele confirmou o driver, sem pedido à Amyuni e com o risco médio assumido: "Eles nem vão me responder isso, eu só vou perder tempo", e "seguimos como está a questão do Rust Desk, da mesma forma". Pela leitura do código, sem o adaptador o programa registra o erro uma vez e não cria o serviço da impressora, e a instalação do driver falha sem interromper a instalação do programa. Esse efeito precisa do teste do Manfred, junto com a conexão em máquina sem monitor ligado.

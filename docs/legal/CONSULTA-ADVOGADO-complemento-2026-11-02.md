@@ -20,7 +20,7 @@ O envio é decisão do Manfred. Os fatos e as leituras estão em `licencas-binar
 
 **Impacto prático.** Define o dever de oferecer o código do driver e se ele pode ficar no build sem autorização escrita da Amyuni.
 
-**Urgência.** Antes da primeira tag, para o `usbmmidd_v2`, salvo decisão escrita do Manfred. Para a impressora, só se ela voltar ao build.
+**Urgência.** A tag não espera esta resposta: em 02/11/2026 o Manfred decidiu manter o `usbmmidd_v2` e assumir o risco. Para a impressora, só se ela voltar ao build.
 
 ## Questão 8: patentes de H.264 e HEVC
 
@@ -45,6 +45,6 @@ O envio é decisão do Manfred. Os fatos e as leituras estão em `licencas-binar
 | Questão | Tema | Urgência |
 |---|---|---|
 | 6 | Componente sem licença localizada | Antes da primeira tag, salvo decisão escrita |
-| 7 | Driver como agregado e licença da Amyuni | Antes da primeira tag, para o `usbmmidd_v2`, salvo decisão escrita |
+| 7 | Driver como agregado e licença da Amyuni | Não segura a tag, por decisão do Manfred em 02/11/2026 |
 | 8 | Patentes de H.264 e HEVC | Antes da primeira tag, salvo decisão escrita |
 | 9 | Titularidade e licença antes da cessão | Antes da primeira venda |
