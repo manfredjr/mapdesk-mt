@@ -82,15 +82,15 @@ Usados só na compilação, sem entrar no pacote como programa próprio (INTERPR
 
 Duas buscas na internet em 02/11/2026 não acharam os termos desse driver no site da Amyuni. Os contratos da Amyuni que apareceram tratam dos produtos de PDF e não citam esse driver.
 
-**INTERPRETAÇÃO, corrigida em 02/11/2026.** A autora é a Amyuni, não o RustDesk. A MIT do `rdev` não prova permissão para este binário, e os contratos de PDF não servem de base. A permissão está no `License.txt` do pacote, que não tinha sido aberto (`verificacao-drivers-2026-11-02.md`).
+**INTERPRETAÇÃO, corrigida em 02/11/2026.** A autora é a Amyuni, não o RustDesk. A MIT do `rdev` não prova permissão para este binário, e os contratos de PDF não servem de base. O `License.txt` do pacote, que não tinha sido aberto, permite usar e não diz "redistribuir" (`verificacao-drivers-2026-11-02.md`).
 
-**RISCO, corrigido em 02/11/2026.** Baixo, cumprindo as condições da licença. A leitura anterior, sem o arquivo aberto, era de risco alto. Sem licença, valeria a regra geral: "Depende de autorização prévia e expressa do autor a utilização da obra", inclusive "a distribuição, quando não intrínseca ao contrato firmado pelo autor com terceiros para uso ou exploração da obra" (Lei nº 9.610/1998, art. 29, VI). A Lei nº 9.609/1998, art. 12, tipifica "Violar direitos de autor de programa de computador". O fato de o RustDesk distribuir o mesmo arquivo não transfere a permissão à MT, se ela existir.
+**RISCO, corrigido em 02/11/2026.** Médio, até haver autorização escrita da Amyuni ou resposta do advogado. A leitura anterior, sem o arquivo aberto, era de risco alto. Vale a regra geral para o que a licença não autoriza: "Depende de autorização prévia e expressa do autor a utilização da obra", inclusive "a distribuição, quando não intrínseca ao contrato firmado pelo autor com terceiros para uso ou exploração da obra" (Lei nº 9.610/1998, art. 29, VI). A Lei nº 9.609/1998, art. 12, tipifica "Violar direitos de autor de programa de computador". O fato de o RustDesk distribuir o mesmo arquivo não transfere à MT uma permissão que ele tenha.
 
 ### 3.2. Driver de impressora e adaptador
 
 **FATO.** Os dois estão na versão `driver` do `rustdesk/hbb_common`, com corpo vazio. Até a retirada de 02/11/2026, o passo do workflow ficava dentro de um `try/catch` e ignorava falha de download ou de SHA-256, então um executável podia sair com ou sem esses arquivos. A API do GitHub não acha licença nesse repositório (404), e a verificação de 05/10/2026 já registrava a falta de arquivo de licença. O código-fonte desses pacotes não foi localizado. O programa carrega o adaptador pelo nome `printer_driver_adapter` (`src/server/printer_service.rs`, linha 11).
 
-**INTERPRETAÇÃO.** A origem aponta para os autores do RustDesk, mas isso não diz sob qual licença os pacotes saem. Se o adaptador for parte da obra, ele cai na AGPL-3.0 e precisa de código correspondente, porque a seção 1 inclui "the source code for shared libraries and dynamically linked subprograms that the work is specifically designed to require". O driver instalado à parte pode ser um "aggregate" da seção 5, mas essa leitura depende de ver o pacote. Licença: `[FONTE?]`.
+**INTERPRETAÇÃO.** A origem aponta para os autores do RustDesk, mas isso não diz sob qual licença os pacotes saem. Se o adaptador for parte da obra, ele cai na AGPL-3.0 e precisa de código correspondente, porque a seção 1 inclui "the source code for shared libraries and dynamically linked subprograms that the work is specifically designed to require". O driver instalado à parte pode ser um "aggregate" da seção 5, mas o pacote aberto não traz licença nem resolve essa leitura. Licença: `[FONTE?]`.
 
 **RISCO.** Médio a alto. Além da permissão de distribuir, a MT pode não conseguir oferecer o código correspondente do adaptador, que é obrigação dela pela seção 6.
 
@@ -136,6 +136,7 @@ Duas buscas na internet em 02/11/2026 não acharam os termos desse driver no sit
 
 - [x] Decidir o destino de `usbmmidd_v2`: fica no build, por decisão do Manfred em 02/11/2026.
 - [x] Achar os termos do `usbmmidd_v2`: `License.txt` do pacote.
+- [ ] Resolver a permissão de distribuir o `usbmmidd_v2`, por autorização escrita da Amyuni, resposta do advogado, outro caminho de `verificacao-drivers-2026-11-02.md` ou risco assumido pelo Manfred por escrito. O pedido à Amyuni é mensagem em nome da MT e sai só com a frase dele.
 - [x] Decidir o destino do driver de impressora e do adaptador: fora do build, por decisão do Manfred em 02/11/2026.
 - [x] Abrir os três `.zip`: `verificacao-drivers-2026-11-02.md`.
 - [ ] Abrir a engine e procurar arquivo de licença.
@@ -149,10 +150,10 @@ Duas buscas na internet em 02/11/2026 não acharam os termos desse driver no sit
 
 Estas perguntas estão em `CONSULTA-ADVOGADO-complemento-2026-11-02.md`, questões 6 a 8.
 
-1. **Componente sem licença localizada.** A MT pode distribuir `usbmmidd_v2`, o driver de impressora, o adaptador, o `hwcodec` e o `hbb_common` compilado sem licença expressa, pelo fato de virem no build oficial de um programa AGPL? Leituras possíveis: (a) não pode sem autorização, o que é o risco maior; (b) no caso dos autores do RustDesk, a seção 5(c) da AGPL cobre as partes da obra, o que não alcança um terceiro como a Amyuni. Impacto: tirar os componentes do build ou mantê-los. Urgência: antes da primeira tag.
-2. **Driver como "aggregate".** Um driver instalado à parte pelo programa conta como "aggregate" (seção 5) ou como parte da obra? Impacto: dever de oferecer o código do driver. Urgência: antes da primeira tag, se o driver ficar.
+1. **Componente sem licença localizada.** A MT pode distribuir o driver de impressora, o adaptador, o `hwcodec` e o `hbb_common` compilado sem licença expressa, pelo fato de virem no build oficial de um programa AGPL? Leituras possíveis: (a) não pode sem autorização, o que é o risco maior; (b) no caso dos autores do RustDesk, a seção 5(c) da AGPL cobre as partes da obra, o que não alcança um terceiro. Impacto: tirar os componentes do build ou mantê-los. Urgência: antes da primeira tag.
+2. **Driver como "aggregate" e licença da Amyuni.** Um driver instalado à parte pelo programa conta como "aggregate" (seção 5) ou como parte da obra? A licença da Amyuni, que permite usar e não diz "redistribuir", autoriza a MT a distribuir o `usbmmidd_v2`? Impacto: dever de oferecer o código do driver e permanência dele no build. Urgência: antes da primeira tag, se o driver ficar.
 3. **Patentes de H.264 e HEVC.** A distribuição gratuita pela MT, no Brasil, gera obrigação de licença ou de royalties? Impacto: manter ou desligar esses codecs. Urgência: antes da primeira tag.
 
 ## 6. Decisão
 
-Decidido pelo Manfred em 02/11/2026, depois do parecer de `verificacao-drivers-2026-11-02.md`: retirar do build da primeira versão o driver de impressora e o adaptador, e manter o `usbmmidd_v2` com o crédito à Amyuni. Pela leitura do código, sem o adaptador o programa registra o erro uma vez e não cria o serviço da impressora, e a instalação do driver falha sem interromper a instalação do programa. Esse efeito precisa do teste do Manfred, junto com a conexão em máquina sem monitor ligado.
+Decidido pelo Manfred em 02/11/2026, depois do parecer de `verificacao-drivers-2026-11-02.md`: retirar do build da primeira versão o driver de impressora e o adaptador, e manter o `usbmmidd_v2` com o crédito à Amyuni. A parte do monitor virtual foi decidida antes de o parecer mostrar que a licença não diz "redistribuir", e precisa ser confirmada. Pela leitura do código, sem o adaptador o programa registra o erro uma vez e não cria o serviço da impressora, e a instalação do driver falha sem interromper a instalação do programa. Esse efeito precisa do teste do Manfred, junto com a conexão em máquina sem monitor ligado.

@@ -8,7 +8,7 @@ O envio é decisão do Manfred. Os fatos e as leituras estão em `licencas-binar
 
 **Pergunta.** A MT pode distribuir o driver de impressora, o adaptador, o `hwcodec` e o `hbb_common` compilado sem licença expressa, pelo fato de virem no build oficial de um programa AGPL?
 
-**Leituras possíveis.** (a) Não pode sem autorização, o que é o risco maior. (b) No caso dos autores do RustDesk, a seção 5(c) da AGPL-3.0 cobre as partes da obra. Correção de 02/11/2026: o `usbmmidd_v2` saiu desta pergunta, porque o pacote traz a licença da Amyuni (`verificacao-drivers-2026-11-02.md`).
+**Leituras possíveis.** (a) Não pode sem autorização, o que é o risco maior. (b) No caso dos autores do RustDesk, a seção 5(c) da AGPL-3.0 cobre as partes da obra. Correção de 02/11/2026: o `usbmmidd_v2` saiu desta pergunta e foi para a questão 7, porque o pacote traz uma licença da Amyuni (`verificacao-drivers-2026-11-02.md`).
 
 **Impacto prático.** Tirar os componentes do build ou mantê-los. O driver de impressora e o adaptador saíram do build em 02/11/2026, e a resposta define se podem voltar.
 
@@ -16,9 +16,9 @@ O envio é decisão do Manfred. Os fatos e as leituras estão em `licencas-binar
 
 ## Questão 7: driver como agregado
 
-**Pergunta.** Um driver instalado à parte pelo programa, como o `usbmmidd_v2` da Amyuni, conta como "aggregate" (AGPL-3.0, seção 5) ou como parte da obra? A licença da Amyuni, estrangeira e sem lei ou foro indicados, vale como autorização no Brasil, com o crédito que ela pede?
+**Pergunta.** Um driver instalado à parte pelo programa, como o `usbmmidd_v2` da Amyuni, conta como "aggregate" (AGPL-3.0, seção 5) ou como parte da obra? A licença da Amyuni, estrangeira e sem lei ou foro indicados, diz "Permission is granted to anyone to use this software for any purpose". Ela segue o modelo da zlib, sem as palavras "including commercial applications" e "redistribute it freely", e fala em "product" e "any distribution" nas restrições. Diante dos arts. 4º e 29, VI, da Lei nº 9.610/1998, esse texto autoriza a MT a distribuir o driver dentro do executável? A cláusula em que quem usa aceita uma página de anúncio cria algum dever da MT perante o cliente?
 
-**Impacto prático.** Define o dever de oferecer o código do driver.
+**Impacto prático.** Define o dever de oferecer o código do driver e se ele pode ficar no build sem autorização escrita da Amyuni.
 
 **Urgência.** Antes da primeira tag, para o `usbmmidd_v2`, salvo decisão escrita do Manfred. Para a impressora, só se ela voltar ao build.
 
