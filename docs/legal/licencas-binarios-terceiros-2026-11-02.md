@@ -4,7 +4,7 @@ Data da consulta: 02/11/2026. Projeto MAPDESK-MT. Feita com a skill `legal-br`.
 
 Objeto: o que o workflow `.github/workflows/mapdesk-windows.yml` baixa ou compila de terceiros para montar o `MapDesk-MT.exe`, item do portão antes da tag (`docs/publicacao.md`, seção "Site do produto").
 
-**Decisão do Manfred em 02/11/2026:** o `usbmmidd_v2`, o driver de impressora e o adaptador saem do build, e a primeira versão vai sem monitor virtual e sem impressora remota. Eles só voltam com licença localizada. Os itens 1 a 3 da tabela ficam como registro do que havia até então.
+**Decisões do Manfred em 02/11/2026:** o driver de impressora e o adaptador saem do build, e a primeira versão vai sem impressora remota. Eles só voltam com licença localizada, e os itens 2 e 3 da tabela ficam como registro. O `usbmmidd_v2` fica, porque o suporte conecta em máquina sem monitor ("Não tira a questão do monitor virtual"). A licença dele segue `[FONTE?]`, e o risco alto do item 3.1 continua aberto.
 
 **Resultado:** a conferência não fecha. Ficaram sem licença localizada, marcados com `[FONTE?]`, o driver de monitor virtual, o driver de impressora e o adaptador, o `hwcodec` e a biblioteca padrão do Rust. A `libyuv` tem texto de licença, mas o tipo exato não foi fechado, e o pacote `flutter_gpu_texture_renderer` volta `NOASSERTION` na API do GitHub. Os demais têm licença localizada, com os avisos e as ressalvas das seções 3 e 4.
 
@@ -132,12 +132,13 @@ Duas buscas na internet em 02/11/2026 não acharam os termos desse driver no sit
 
 ## 4. Requisitos para a versão
 
-- [x] Decidir o destino de `usbmmidd_v2`: fora do build, por decisão do Manfred em 02/11/2026.
+- [x] Decidir o destino de `usbmmidd_v2`: fica no build, por decisão do Manfred em 02/11/2026.
+- [ ] Achar os termos do `usbmmidd_v2` ou pedir permissão por escrito à Amyuni. O pedido é mensagem em nome da MT e sai só com a frase do Manfred.
 - [x] Decidir o destino do driver de impressora e do adaptador: fora do build, por decisão do Manfred em 02/11/2026.
-- [ ] Abrir a engine, com autorização para baixar, e procurar arquivo de licença. Os três `.zip` só precisam disso se forem voltar ao build.
+- [ ] Abrir o `usbmmidd_v2.zip` e a engine, com autorização para baixar, e procurar arquivo de licença. Os dois `.zip` da impressora só precisam disso se forem voltar ao build.
 - [ ] Criar um arquivo de avisos de terceiros que acompanhe o programa, com os textos de licença dos itens 4 a 15 e 17, inclusive o aviso e o arquivo NOTICE que a Apache-2.0 pedir. Hoje o repositório não tem esse arquivo. Conferir antes se o pacote do Flutter já traz parte deles.
 - [ ] Gravar nas notas da versão onde está o código do FFmpeg e das demais bibliotecas compiladas, com a forma de compilação.
-- [ ] Fixar o SHA-256 de `windows-x64-release.zip` no workflow.
+- [ ] Fixar o SHA-256 de `usbmmidd_v2.zip` e de `windows-x64-release.zip` no workflow.
 - [ ] Inventariar as licenças das crates e dos pacotes `pub`, que ficaram fora desta verificação.
 
 ## 5. Pendências de validação para o advogado externo
@@ -150,4 +151,4 @@ Estas perguntas estão em `CONSULTA-ADVOGADO-complemento-2026-11-02.md`, questõ
 
 ## 6. Decisão necessária
 
-Decidido pelo Manfred em 02/11/2026: retirar os dois drivers do build da primeira versão. A retirada mexe no workflow e tira os recursos de monitor virtual e de impressora remota. Pela leitura do código, a instalação do monitor virtual falha com erro quando o arquivo falta, e o serviço da impressora só registra aviso. Esse efeito precisa do teste do Manfred, inclusive em máquina sem monitor ligado.
+Decidido pelo Manfred em 02/11/2026: retirar do build da primeira versão o driver de impressora e o adaptador, e manter o `usbmmidd_v2`. Pela leitura do código, sem o adaptador o serviço da impressora só registra aviso. Esse efeito precisa do teste do Manfred, junto com a conexão em máquina sem monitor ligado.
