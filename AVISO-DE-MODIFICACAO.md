@@ -32,7 +32,7 @@ Este programa foi modificado pela MT - Manfred Tecnologia. A licença continua a
 
 ## Componentes de terceiros
 
-O monitor virtual usa o `usbmmidd_v2`, da Amyuni Technologies Inc. (https://www.amyuni.com), distribuído com a licença dela. O programa não é da MT, e o arquivo `License.txt` acompanha o pacote, na pasta `usbmmidd_v2`. O pacote sai sem a pasta `Win32`, os `deviceinstaller` e o `usbmmidd.bat`, e os demais arquivos não foram alterados. O `idd_instructions.txt`, da Amyuni, ainda cita o `.bat` retirado.
+O monitor virtual usa o `usbmmidd_v2`, da Amyuni Technologies Inc. (https://www.amyuni.com), distribuído com a licença dela. O programa não é da MT, vai no pacote sem código-fonte, e o arquivo `License.txt` o acompanha, na pasta `usbmmidd_v2`. O pacote sai sem a pasta `Win32`, os `deviceinstaller` e o `usbmmidd.bat`, e os demais arquivos não foram alterados. O `idd_instructions.txt`, da Amyuni, ainda cita o `.bat` retirado.
 
 ## Nomes e logotipos
 
@@ -40,4 +40,4 @@ Conforme a seção 7 da AGPL-3.0, a licença não dá direito de uso dos nomes "
 
 ## Código-fonte de cada versão
 
-Cada versão distribuída tem uma tag no formato `<versão>-mt.<n>`, por exemplo `1.5.0-mt.1`, em https://github.com/manfredjr/mapdesk-mt. O código correspondente ao executável de cada versão está na tag com o mesmo número.
+Cada versão distribuída tem uma tag no formato `<versão>-mt.<n>`, por exemplo `1.5.0-mt.1`, em https://github.com/manfredjr/mapdesk-mt. O código correspondente ao executável de cada versão está na tag com o mesmo número, salvo os componentes de terceiros citados acima.

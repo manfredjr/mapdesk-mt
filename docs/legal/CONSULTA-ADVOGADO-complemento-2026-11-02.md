@@ -16,11 +16,11 @@ O envio é decisão do Manfred. Os fatos e as leituras estão em `licencas-binar
 
 ## Questão 7: driver como agregado e licença da Amyuni
 
-**Pergunta.** Um driver instalado à parte pelo programa, como o `usbmmidd_v2` da Amyuni, conta como "aggregate" (AGPL-3.0, seção 5) ou como parte da obra? A licença da Amyuni, estrangeira e sem lei ou foro indicados, diz "Permission is granted to anyone to use this software for any purpose". Ela segue o modelo da zlib, sem as palavras "including commercial applications" e "redistribute it freely", e fala em "product" e "any distribution" nas restrições. Diante dos arts. 4º e 29, VI ("quando não intrínseca ao contrato") e VII, da Lei nº 9.610/1998, esse texto autoriza a MT a distribuir o driver dentro do executável? A cláusula em que quem usa aceita uma página de anúncio cria algum dever da MT perante o cliente?
+**Pergunta.** Um driver instalado à parte pelo programa, como o `usbmmidd_v2` da Amyuni, conta como "aggregate" (AGPL-3.0, seção 5) ou como parte da obra? A exclusão de "generally available free programs" da seção 1 alcança um driver gratuito e fechado, se a AGPL diz que "free" se refere a liberdade? A licença da Amyuni, estrangeira e sem lei ou foro indicados, diz "Permission is granted to anyone to use this software for any purpose". Ela segue o modelo da zlib, sem as palavras "including commercial applications" e "redistribute it freely", e fala em "product" e "any distribution" nas restrições. Diante dos arts. 4º e 29, VI ("quando não intrínseca ao contrato") e VII, da Lei nº 9.610/1998, esse texto autoriza a MT a distribuir o driver dentro do executável? A cláusula em que quem usa aceita uma página de anúncio cria algum dever da MT perante o cliente?
 
 **Impacto prático.** Define o dever de oferecer o código do driver e se ele pode ficar no build sem autorização escrita da Amyuni.
 
-**Urgência.** A tag não espera esta resposta: em 02/11/2026 o Manfred decidiu manter o `usbmmidd_v2` e assumir o risco. Para a impressora, só se ela voltar ao build.
+**Urgência.** A tag não espera esta resposta: em 02/11/2026 o Manfred decidiu manter o `usbmmidd_v2` e assumir a dúvida da permissão e a do código. Para a impressora, só se ela voltar ao build.
 
 ## Questão 8: patentes de H.264 e HEVC
 
