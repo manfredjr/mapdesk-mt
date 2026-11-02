@@ -6,7 +6,7 @@ Objeto: o que o workflow `.github/workflows/mapdesk-windows.yml` baixa ou compil
 
 **Correção de 02/11/2026:** esta verificação foi feita sem abrir os pacotes, e a conclusão sobre o monitor virtual estava errada. O pacote traz a licença da Amyuni. A análise atual está em `verificacao-drivers-2026-11-02.md`.
 
-**Decisões do Manfred em 02/11/2026:** o driver de impressora e o adaptador saem do build, e a primeira versão vai sem impressora remota. Eles só voltam com licença e código, e os itens 2 e 3 da tabela ficam como registro. O `usbmmidd_v2` fica, com o crédito à Amyuni.
+**Decisões do Manfred em 02/11/2026:** o driver de impressora e o adaptador saem do build, e a primeira versão vai sem impressora remota. Eles só voltam com licença e código, e os itens 2 e 3 da tabela ficam como registro. O `usbmmidd_v2` fica, com o crédito à Amyuni, e essa parte precisa ser confirmada por ele, porque a licença não diz "redistribuir".
 
 **Resultado:** a conferência não fecha. Ficaram sem licença localizada, marcados com `[FONTE?]`, o driver de impressora e o adaptador, o `hwcodec` e a biblioteca padrão do Rust. A `libyuv` tem texto de licença, mas o tipo exato não foi fechado, e o pacote `flutter_gpu_texture_renderer` volta `NOASSERTION` na API do GitHub. Os demais têm licença localizada, com os avisos e as ressalvas das seções 3 e 4.
 
@@ -90,7 +90,7 @@ Duas buscas na internet em 02/11/2026 não acharam os termos desse driver no sit
 
 **FATO.** Os dois estão na versão `driver` do `rustdesk/hbb_common`, com corpo vazio. Até a retirada de 02/11/2026, o passo do workflow ficava dentro de um `try/catch` e ignorava falha de download ou de SHA-256, então um executável podia sair com ou sem esses arquivos. A API do GitHub não acha licença nesse repositório (404), e a verificação de 05/10/2026 já registrava a falta de arquivo de licença. O código-fonte desses pacotes não foi localizado. O programa carrega o adaptador pelo nome `printer_driver_adapter` (`src/server/printer_service.rs`, linha 11).
 
-**INTERPRETAÇÃO.** A origem aponta para os autores do RustDesk, mas isso não diz sob qual licença os pacotes saem. Se o adaptador for parte da obra, ele cai na AGPL-3.0 e precisa de código correspondente, porque a seção 1 inclui "the source code for shared libraries and dynamically linked subprograms that the work is specifically designed to require". O driver instalado à parte pode ser um "aggregate" da seção 5, mas o pacote aberto não traz licença nem resolve essa leitura. Licença: `[FONTE?]`.
+**INTERPRETAÇÃO.** A origem aponta para os autores do RustDesk, mas isso não diz sob qual licença os pacotes saem. Se o adaptador for parte da obra, ele cai na AGPL-3.0 e precisa de código correspondente, porque a seção 1 inclui "the source code for shared libraries and dynamically linked subprograms that the work is specifically designed to require, such as by intimate data communication or control flow between those subprograms and other parts of the work". O driver instalado à parte pode ser um "aggregate" da seção 5, mas o pacote aberto não traz licença nem resolve essa leitura. Licença: `[FONTE?]`.
 
 **RISCO.** Médio a alto. Além da permissão de distribuir, a MT pode não conseguir oferecer o código correspondente do adaptador, que é obrigação dela pela seção 6.
 

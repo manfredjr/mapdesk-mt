@@ -2,7 +2,7 @@
 
 Data: 02/11/2026. Projeto MAPDESK-MT. Vai junto com `CONSULTA-ADVOGADO-mapdesk-agpl-marca-2026-10-05.md`. A numeração continua a da consulta, em que a questão 5 trata das consultas STUN.
 
-O envio é decisão do Manfred. Os fatos e as leituras estão em `licencas-binarios-terceiros-2026-11-02.md` e em `verificacao-publicacao-sem-cessao-2026-11-02.md`.
+O envio é decisão do Manfred. Os fatos e as leituras estão em `licencas-binarios-terceiros-2026-11-02.md`, em `verificacao-drivers-2026-11-02.md` e em `verificacao-publicacao-sem-cessao-2026-11-02.md`.
 
 ## Questão 6: componente sem licença localizada
 
@@ -14,9 +14,9 @@ O envio é decisão do Manfred. Os fatos e as leituras estão em `licencas-binar
 
 **Urgência.** Antes da primeira tag, salvo decisão escrita do Manfred.
 
-## Questão 7: driver como agregado
+## Questão 7: driver como agregado e licença da Amyuni
 
-**Pergunta.** Um driver instalado à parte pelo programa, como o `usbmmidd_v2` da Amyuni, conta como "aggregate" (AGPL-3.0, seção 5) ou como parte da obra? A licença da Amyuni, estrangeira e sem lei ou foro indicados, diz "Permission is granted to anyone to use this software for any purpose". Ela segue o modelo da zlib, sem as palavras "including commercial applications" e "redistribute it freely", e fala em "product" e "any distribution" nas restrições. Diante dos arts. 4º e 29, VI, da Lei nº 9.610/1998, esse texto autoriza a MT a distribuir o driver dentro do executável? A cláusula em que quem usa aceita uma página de anúncio cria algum dever da MT perante o cliente?
+**Pergunta.** Um driver instalado à parte pelo programa, como o `usbmmidd_v2` da Amyuni, conta como "aggregate" (AGPL-3.0, seção 5) ou como parte da obra? A licença da Amyuni, estrangeira e sem lei ou foro indicados, diz "Permission is granted to anyone to use this software for any purpose". Ela segue o modelo da zlib, sem as palavras "including commercial applications" e "redistribute it freely", e fala em "product" e "any distribution" nas restrições. Diante dos arts. 4º e 29, VI ("quando não intrínseca ao contrato") e VII, da Lei nº 9.610/1998, esse texto autoriza a MT a distribuir o driver dentro do executável? A cláusula em que quem usa aceita uma página de anúncio cria algum dever da MT perante o cliente?
 
 **Impacto prático.** Define o dever de oferecer o código do driver e se ele pode ficar no build sem autorização escrita da Amyuni.
 
@@ -45,6 +45,6 @@ O envio é decisão do Manfred. Os fatos e as leituras estão em `licencas-binar
 | Questão | Tema | Urgência |
 |---|---|---|
 | 6 | Componente sem licença localizada | Antes da primeira tag, salvo decisão escrita |
-| 7 | Driver como agregado | Antes da primeira tag, para o `usbmmidd_v2`, salvo decisão escrita |
+| 7 | Driver como agregado e licença da Amyuni | Antes da primeira tag, para o `usbmmidd_v2`, salvo decisão escrita |
 | 8 | Patentes de H.264 e HEVC | Antes da primeira tag, salvo decisão escrita |
 | 9 | Titularidade e licença antes da cessão | Antes da primeira venda |
