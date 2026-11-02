@@ -4,7 +4,7 @@ Data: 02/11/2026. Projeto MAPDESK-MT. Feita com a skill `legal-br`.
 
 Objeto: as frases sobre o aceite em `public/index.html` e `public/privacidade.html`, e esta resposta, que a sessão do site da MT usa na página do MapDesk (PR 68 de `manfred-tecnologia-site`):
 
-> Como ele vem, não: a aprovação é por clique, e o técnico só vê o computador depois que alguém clica em Aceitar. O atendimento sem ninguém na frente da máquina existe, mas exige mudar essa configuração naquele computador e definir uma senha. A partir daí, quem tem a senha entra sem o Aceitar.
+> Como ele vem, não: a aprovação é por clique, e o técnico só vê o computador depois que alguém clica em Aceitar. O atendimento sem ninguém na frente da máquina existe, mas exige mudar essa configuração naquele computador. A partir daí, quem tem uma senha válida, a definida ali ou a temporária do programa, entra sem o Aceitar.
 
 ## Contexto e premissas
 
@@ -25,8 +25,9 @@ Conferido por leitura do código, sem teste em execução com senha configurada:
 
 - `src/mt_config.rs` grava `approve-mode` = `click` em `DEFAULT_SETTINGS`. É um padrão, não uma trava.
 - `src/server/connection.rs`, linhas 2994 a 3012: no modo `click`, um pedido com senha não é autenticado e fica à espera do aceite. A exceção é a opção `allow-logon-screen-password`, que o MapDesk - MT não liga.
-- Nos outros modos, a senha válida autoriza a entrada sem o clique (mesmo arquivo, linhas 3031 a 3040, e `password_security.rs` do submódulo `hbb_common`).
-- A senha temporária também vale nesses modos, mas alguém precisa lê-la na tela. Por isso, o atendimento sem ninguém na frente da máquina depende de uma senha definida.
+- Nos outros modos, a senha válida autoriza a entrada sem o clique (mesmo arquivo, linhas 3031 a 3041, e `password_security.rs` do submódulo `hbb_common`).
+- A senha temporária vale nesses modos, sem ninguém definir senha, porque o método padrão é `UseBothPasswords` (`connection.rs`, linhas 2555 a 2566). Uma versão anterior deste texto dizia que era preciso definir uma senha, e a correção veio da revisão do site da MT.
+- O programa também pode ligar direto ao computador do técnico, sem repasse. Por isso, as páginas dizem que ele usa só o servidor da MT, e não que a conexão passa só por ele.
 
 ## Análise
 
