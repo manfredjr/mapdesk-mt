@@ -64,6 +64,7 @@ A página `https://mapdesk.manfred.com.br/` mora em `public/` deste repositório
    - promessas da página sobre o servidor conferidas no VPS-MT: registro de cada conexão e guarda por 6 meses;
    - gravação de sessão desligada no lado do técnico, confirmada pelo Manfred;
    - encarregado ou canal, conforme `docs/superpowers/pendencias.md`;
+   - verificação do provedor, inclusive o acesso do suporte a partir do exterior registrado no VPS-MT;
    - buscas no INPI: o Manfred confirma se ficam para depois, porque a decisão de 02/11/2026 registra só as respostas do advogado.
 2. Merge do PR do site, com o workflow `MapDesk-MT site` verde.
 3. Tag com o valor de `kMtVersao` (seção "Publicar", acima). O botão da página aponta para essa tag, e a versão traz o `MapDesk-MT.exe` e o `MapDesk-MT.exe.sha256`. A tag vem antes do site para o botão nunca apontar para uma versão que não existe. Até o fim do passo 6, a versão não é divulgada a ninguém, porque o link de privacidade do programa só funciona depois do passo 4.
