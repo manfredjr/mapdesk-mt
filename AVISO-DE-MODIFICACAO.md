@@ -30,6 +30,10 @@ Este programa foi modificado pela MT - Manfred Tecnologia. A licença continua a
 | 02/11/2026 | Link da página de privacidade na tela Sobre | `flutter/lib/mt/mt_info.dart` |
 | 02/11/2026 | Versão sem impressora remota: o driver e o adaptador saem do pacote, e as opções da impressora somem das configurações e do instalador | `.github/workflows/mapdesk-windows.yml`, `src/mt_config.rs`, `flutter/lib/desktop/pages/install_page.dart` |
 
+## Componentes de terceiros
+
+O monitor virtual usa o `usbmmidd_v2`, da Amyuni Technologies Inc. (https://www.amyuni.com), distribuído com a licença dela. O programa não é da MT, e o arquivo `License.txt` acompanha o pacote, na pasta `usbmmidd_v2`.
+
 ## Nomes e logotipos
 
 Conforme a seção 7 da AGPL-3.0, a licença não dá direito de uso dos nomes "MapDesk-MT" e "MT - Manfred Tecnologia" nem dos logotipos da MT.

@@ -6,17 +6,17 @@ O envio é decisão do Manfred. Os fatos e as leituras estão em `licencas-binar
 
 ## Questão 6: componente sem licença localizada
 
-**Pergunta.** A MT pode distribuir `usbmmidd_v2`, o driver de impressora, o adaptador, o `hwcodec` e o `hbb_common` compilado sem licença expressa, pelo fato de virem no build oficial de um programa AGPL?
+**Pergunta.** A MT pode distribuir o driver de impressora, o adaptador, o `hwcodec` e o `hbb_common` compilado sem licença expressa, pelo fato de virem no build oficial de um programa AGPL?
 
-**Leituras possíveis.** (a) Não pode sem autorização, o que é o risco maior. (b) No caso dos autores do RustDesk, a seção 5(c) da AGPL-3.0 cobre as partes da obra, o que não alcança um terceiro como a Amyuni.
+**Leituras possíveis.** (a) Não pode sem autorização, o que é o risco maior. (b) No caso dos autores do RustDesk, a seção 5(c) da AGPL-3.0 cobre as partes da obra. Correção de 02/11/2026: o `usbmmidd_v2` saiu desta pergunta, porque o pacote traz a licença da Amyuni (`verificacao-drivers-2026-11-02.md`).
 
-**Impacto prático.** Tirar os componentes do build ou mantê-los. O driver de impressora e o adaptador saíram do build em 02/11/2026, e a resposta define se podem voltar. O `usbmmidd_v2` ficou por decisão do Manfred, e a resposta define se ele pode continuar.
+**Impacto prático.** Tirar os componentes do build ou mantê-los. O driver de impressora e o adaptador saíram do build em 02/11/2026, e a resposta define se podem voltar.
 
 **Urgência.** Antes da primeira tag, salvo decisão escrita do Manfred.
 
 ## Questão 7: driver como agregado
 
-**Pergunta.** Um driver instalado à parte pelo programa conta como "aggregate" (AGPL-3.0, seção 5) ou como parte da obra?
+**Pergunta.** Um driver instalado à parte pelo programa, como o `usbmmidd_v2` da Amyuni, conta como "aggregate" (AGPL-3.0, seção 5) ou como parte da obra? A licença da Amyuni, estrangeira e sem lei ou foro indicados, vale como autorização no Brasil, com o crédito que ela pede?
 
 **Impacto prático.** Define o dever de oferecer o código do driver.
 

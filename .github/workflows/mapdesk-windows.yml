@@ -120,12 +120,15 @@ jobs:
           Rename-Item ./rustdesk/rustdesk.exe MapDesk-MT.exe
 
           Invoke-WebRequest -Uri https://github.com/rustdesk-org/rdev/releases/download/usbmmidd_v2/usbmmidd_v2.zip -OutFile usbmmidd_v2.zip
+          if ((Get-FileHash usbmmidd_v2.zip -Algorithm SHA256).Hash -ne "629b51e9944762bae73948171c65d09a79595cf4c771a82ebc003fbba5b24f51") { throw "usbmmidd_v2.zip mudou" }
           Expand-Archive usbmmidd_v2.zip -DestinationPath .
           Remove-Item -Path usbmmidd_v2\Win32 -Recurse
           Remove-Item -Path "usbmmidd_v2\deviceinstaller64.exe", "usbmmidd_v2\deviceinstaller.exe", "usbmmidd_v2\usbmmidd.bat"
           mv -Force .\usbmmidd_v2 ./rustdesk
 
-          # Sem licenca localizada: decisao do Manfred em 02/11/2026 (docs/legal/licencas-binarios-terceiros-2026-11-02.md).
+          # A licenca da Amyuni pede que o aviso continue na distribuicao (docs/legal/verificacao-drivers-2026-11-02.md).
+          if (-not (Test-Path ./rustdesk/usbmmidd_v2/License.txt)) { throw "License.txt do usbmmidd_v2 precisa ficar no pacote" }
+          # Sem licenca e sem codigo: decisao do Manfred em 02/11/2026 (mesmo documento).
           foreach ($item in "drivers", "printer_driver_adapter.dll") {
             if (Test-Path "./rustdesk/$item") { throw "$item nao pode entrar no pacote" }
           }
