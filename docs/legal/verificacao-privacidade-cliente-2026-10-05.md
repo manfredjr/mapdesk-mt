@@ -47,7 +47,7 @@ A biblioteca local da `legal-br` não tem `STATUS-FONTES.md`; por isso a LGPD e 
 | Tema | Onde | Situação |
 |---|---|---|
 | Base legal do tratamento no servidor | VPS-MT, item 3.1 | Interpretação registrada: art. 7º, V, para pessoa física; para empregado de cliente empresa, depende do papel da MT |
-| Transferência internacional (Hostinger) | VPS-MT, item 3.2 | Risco aceito pelo Manfred em 04/10/2026 |
+| Transferência internacional (Hostinger; corrigido em 02/11/2026: o provedor mudou, e o ponto depende da verificação atualizada no VPS-MT) | VPS-MT, item 3.2 | Risco aceito pelo Manfred em 04/10/2026, para o provedor anterior |
 | Guarda de 6 meses dos registros (Marco Civil, art. 15) | VPS-MT, item 3.3 | Adotada por cautela; enquadramento em risco aceito |
 | Medidas de segurança do servidor (LGPD, art. 46) | VPS-MT, item 4 | Requisitos do servidor |
 | Sessão de suporte como tratamento do serviço, não do servidor | VPS-MT, item 3.5 | Ficou como pendência fora daquele projeto; retomada aqui no item 4.3 |
@@ -202,7 +202,7 @@ O total do projeto é 6, com a mesma numeração na verificação de licença e 
 
 Esta verificação tem **2 pontos** que não foi possível validar em fonte oficial (pendências 5 e 6 do total de 6 do projeto). Os demais foram verificados e estão nas fontes da seção 1.3.
 
-Encaminhado para parecer em `CONSULTA-ADVOGADO-mapdesk-agpl-marca-2026-10-05.md`, questões 3 e 4.
+Encaminhado para parecer em `CONSULTA-ADVOGADO-mapdesk-agpl-marca-2026-10-05.md`, questões 3 e 4. Em 02/11/2026 entrou a questão 5, sobre as consultas STUN (nota do item 3.4).
 
 | # | Ponto | Onde aparece | Por que não foi possível concluir |
 |---|---|---|---|

@@ -51,13 +51,16 @@ Por isso, as páginas deixam de dizer que o programa "só se liga" ao servidor d
 
 ## Itens que faltavam na página de privacidade
 
-A tela Sobre passa a apontar para `public/privacidade.html`, então a página precisa dos itens de `verificacao-privacidade-cliente-2026-10-05.md`, seção 5. Base: LGPD, arts. 9º e 18, na biblioteca da `legal-br`, EM DIA no relatório de 02/11/2026. O art. 9º alcança a MT porque ela é controladora dos registros do servidor (mesma verificação, item 4.4).
+Com o PR 8, a tela Sobre passa a apontar para `public/privacidade.html`, então a página precisa dos itens de `verificacao-privacidade-cliente-2026-10-05.md`, seção 5. Base: LGPD, arts. 9º, 16 e 18, e Marco Civil, art. 15, na biblioteca da `legal-br`, EM DIA no relatório de 02/11/2026. O art. 9º alcança a MT porque ela é controladora dos registros do servidor (mesma verificação, item 4.4).
 
-- **Art. 9º, II:** a página lista o que o programa envia para montar a conexão, pela leitura do código (item 3.1). Ela não diz que o servidor guarda esses dados, porque isso depende do teste de rede, que segue pendente. O que o técnico recebe ao abrir a sessão também depende desse teste e não está na página.
-- **Art. 9º, V:** a página cita a HostGator Brasil LTDA, fonte em `VPS-MT/docs/contratacao-hostgator.md` e na palavra do Manfred em 02/11/2026. O IP da máquina ainda não foi conferido por ele no painel.
-- **Art. 9º, VI:** o trecho do computador de empresa não diz qual é o papel da MT, porque a questão 4 da consulta segue aberta.
-- **Art. 9º, VII:** os direitos do art. 18, I a IX, e §§ 1º e 2º, em linguagem simples. Paráfrase, portanto INTERPRETAÇÃO, e não transcrição.
+- **Art. 9º, II:** a página lista o que o programa envia para montar a conexão, pela leitura do código (item 3.1). Ela não diz que o servidor guarda esses dados, porque isso depende do teste de rede, que segue pendente, e deixou de dizer que o servidor guarda "só o necessário". O que o técnico recebe vem da leitura de `src/server/connection.rs`, linhas 1933 a 1945: nome do usuário, versão, nome do computador e sistema, depois da autorização. Os outros campos dessa mensagem não foram conferidos.
+- **Art. 9º, I:** a finalidade vem da verificação de 05/10, e o motivo da guarda vem da decisão do Manfred de 04/10/2026, registrada no VPS-MT. A guarda é por cautela, e esta verificação não conclui que o art. 15 obriga a MT neste caso.
+- **Art. 9º, V:** a página fala em provedor de hospedagem contratado pela MT, como no quadro da verificação de 05/10, sem nomear a empresa, porque o IP da máquina ainda não foi conferido pelo Manfred no painel. A frase "no Brasil" também depende dessa conferência. Nome do provedor só entra depois dela, com a data registrada.
+- **Art. 9º, VI:** o trecho do computador de empresa é condicional e não diz qual é o papel da MT, porque a questão 4 da consulta segue aberta.
+- **Art. 9º, VII:** os direitos do art. 18, I a IX, e §§ 1º, 2º, 5º e 8º, em linguagem simples. A ressalva sobre a guarda dos registros segue a exceção do inciso VI, que remete ao art. 16. Paráfrase, portanto INTERPRETAÇÃO, e não transcrição.
 - **Canal e encarregado:** a página apresenta o e-mail como canal de atendimento, e não diz que a MT dispensa encarregado. PENDÊNCIA DE VALIDAÇÃO: a dispensa depende de a MT ser agente de pequeno porte (`[FONTE?]`), e a Resolução CD/ANPD nº 2/2022 aparece como MUDOU no relatório de 02/11/2026, então a cópia local não vale como texto vigente.
+- **Política completa:** a própria página cumpre esse item do quadro, por ser o aviso do produto.
+- **"Com acesso restrito":** frase anterior a este PR, que depende de conferência no servidor.
 
 ## Resultado
 

@@ -100,9 +100,11 @@ O projeto tem 6 pendências. Esta consulta trata as pendências 3 a 6, nas quest
 
 **Pergunta.** Essas consultas, feitas com o IP do cliente, exigem base legal própria na LGPD ou tratamento de transferência internacional (art. 33)? Declarar as consultas na página de privacidade basta, ou é melhor bloqueá-las no programa?
 
+**Leituras possíveis.** (a) O IP vai a terceiros por necessidade técnica do programa, e declarar na página basta, com risco menor. (b) A MT responde pelo envio a empresas de fora, o que pede base legal própria e análise do art. 33, com risco maior se nada mudar.
+
 **Impacto prático.** Define se o aviso de privacidade fica como está ou se o programa precisa mudar.
 
-**Urgência.** Antes de atender clientes empresa com o MapDesk, se as consultas continuarem ligadas.
+**Urgência.** Antes de atender clientes com o MapDesk, pessoa física ou empresa, se as consultas continuarem ligadas, salvo decisão escrita do Manfred.
 
 ## Resumo
 
@@ -112,4 +114,4 @@ O projeto tem 6 pendências. Esta consulta trata as pendências 3 a 6, nas quest
 | 2 | 4 | Licença do `hbb_common` | Só se for alterar o `hbb_common` |
 | 3 | 5 | Marco Civil, art. 7º, IX | Antes da página de download |
 | 4 | 6 | Papel da MT na sessão e contrato | Antes de atender empresas com o MapDesk |
-| 5 | nova | Consultas STUN a terceiros | Antes de atender empresas com o MapDesk |
+| 5 | nova | Consultas STUN a terceiros | Antes de atender clientes com o MapDesk |
