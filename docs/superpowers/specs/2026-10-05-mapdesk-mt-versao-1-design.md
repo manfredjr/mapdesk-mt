@@ -1,7 +1,7 @@
 # MapDesk-MT: desenho da versão 1
 
 Data: 05/10/2026. Autor: Manfred Heil Junior.
-Briefing de origem: `C:\COWORK\CODE\VPS-MT\.superpowers\rascunho\briefing-projeto-mapdesk.md`.
+Briefing de origem: `VPS-MT/.superpowers/rascunho/briefing-projeto-mapdesk.md`.
 Verificações jurídicas: `docs/legal/verificacao-licenca-agpl-e-marcas-2026-10-05.md` e `docs/legal/verificacao-privacidade-cliente-2026-10-05.md`.
 Levantamento do código: `.superpowers/rascunho/achados-codigo-1.5.0.md`.
 
@@ -23,7 +23,7 @@ O MapDesk-MT é a versão do cliente RustDesk feita pela MT para os clientes do 
 
 | # | Decisão | Motivo |
 |---|---|---|
-| 1 | Pasta `C:\COWORK\CODE\MAPDESK-MT` e nome MapDesk-MT | Briefing do projeto |
+| 1 | Pasta `MAPDESK-MT` e nome MapDesk-MT | Briefing do projeto |
 | 2 | Repositório público desde o início, como fork de verdade | A AGPL exige o código de cada versão; Actions gratuito em repositório público (docs.github.com, 05/10/2026); merge do oficial mais simples |
 | 3 | Fatias 1 a 3 sem assinatura, só para teste interno; nenhum cliente recebe executável sem assinatura | O certificado demora e não deve travar o desenvolvimento |
 | 4 | Aprovação por clique como padrão, não travada | O técnico pode configurar senha permanente numa máquina instalada para acesso sem ninguém na frente |
@@ -39,7 +39,7 @@ O MapDesk-MT é a versão do cliente RustDesk feita pela MT para os clientes do 
 - Ramo `master`: espelho do oficial. Nunca recebe mudança da MT.
 - Ramo `mt`: ramo principal do repositório no GitHub. Toda fatia sai de `mt` e volta por PR.
 - Versão nova do oficial: a tag nova (por exemplo `1.5.1`) entra em `mt` por merge, num PR próprio, nunca por rebase. O PR sobe também o submódulo, depois de sincronizar o fork do `hbb_common`.
-- Pasta local: `C:\COWORK\CODE\MAPDESK-MT` vira o clone do fork. As regras da MT ficam em `AGENTS-MT.md`; o `AGENTS.md` do RustDesk (guia do código) fica intacto, e o `CLAUDE.md` do RustDesk passa a carregar os dois (`@AGENTS-MT.md` e `@AGENTS.md`). `AGENTS-MT.md` vale mais em processo, autoria e textos; o `AGENTS.md` vale para as regras de código. `docs/legal/` e `docs/superpowers/` entram no ramo `mt` no primeiro commit da MT. `.superpowers/` fica no `.gitignore`.
+- Pasta local: `MAPDESK-MT` vira o clone do fork. As regras da MT ficam em `AGENTS-MT.md`; o `AGENTS.md` do RustDesk (guia do código) fica intacto, e o `CLAUDE.md` do RustDesk passa a carregar os dois (`@AGENTS-MT.md` e `@AGENTS.md`). `AGENTS-MT.md` vale mais em processo, autoria e textos; o `AGENTS.md` vale para as regras de código. `docs/legal/` e `docs/superpowers/` entram no ramo `mt` no primeiro commit da MT. `.superpowers/` fica no `.gitignore`.
 - Os workflows do oficial ficam desligados no fork. Só roda o da MT.
 
 ## 4. Configuração embutida (`src/mt_config.rs`)

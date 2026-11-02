@@ -16,8 +16,8 @@ Privacidade do cliente fica em `verificacao-privacidade-cliente-2026-10-05.md`. 
 | Distribuidora: MANFRED TECNOLOGIA LTDA, CNPJ 21.075.901/0001-12 (MT - Manfred Tecnologia), gratuitamente, aos clientes do suporte remoto | `AGENTS-MT.md`, seção "Autoria e licença"; pedido do Manfred |
 | Forma de distribuição: executável Windows em versões (releases) de um repositório público no GitHub, oferecido também na página de download do site da MT | `AGENTS-MT.md`, seção "O que é" |
 | Mudanças da MT: servidor de ID e repasse `rustdesk.manfred.com.br` e chave pública embutidos, nome "MapDesk", ícones e cores da MT, aprovação por clique como padrão, servidor de API desligado | pedido do Manfred; `achados-codigo-1.5.0.md` |
-| O servidor (RustDesk Server OSS) roda a imagem oficial sem modificação, no projeto VPS-MT | `C:\COWORK\CODE\VPS-MT\docs\legal\verificacao-servidor-rustdesk-2026-10-04.md`, item 3.4 |
-| Decisão do Manfred em 05/10/2026: a marca não será registrada; busca exata "mapdesk" no INPI sem resultado (base até 29/09/2026) | `C:\COWORK\CODE\VPS-MT\.superpowers\rascunho\briefing-projeto-mapdesk.md`, seção 1 |
+| O servidor (RustDesk Server OSS) roda a imagem oficial sem modificação, no projeto VPS-MT | `VPS-MT/docs/legal/verificacao-servidor-rustdesk-2026-10-04.md`, item 3.4 |
+| Decisão do Manfred em 05/10/2026: a marca não será registrada; busca exata "mapdesk" no INPI sem resultado (base até 29/09/2026) | `VPS-MT/.superpowers/rascunho/briefing-projeto-mapdesk.md`, seção 1 |
 
 Nome definido: "MapDesk-MT", repositório `manfredjr/mapdesk-mt`, executável `MapDesk-MT.exe` (briefing do projeto, atualizado em 05/10/2026). Uma versão anterior do `AGENTS-MT.md` usava "MapDesk"; já foi corrigida. Em 05/10/2026 o repositório ainda não existia (API do GitHub devolveu 404).
 
@@ -52,7 +52,7 @@ Nome definido: "MapDesk-MT", repositório `manfredjr/mapdesk-mt`, executável `M
 
 A biblioteca local da `legal-br` (coleta de 21/08/2026) não tem `STATUS-FONTES.md`. Por isso toda norma brasileira citada aqui foi conferida no Planalto em 05/10/2026, como indicado acima.
 
-Verificação anterior reaproveitada: `C:\COWORK\CODE\VPS-MT\docs\legal\verificacao-servidor-rustdesk-2026-10-04.md` (04/10/2026), item 3.4, que tratou a AGPL-3.0 do instalador oficial sem modificação. Aquela conclusão (seção 13 não incide porque não há modificação) não vale para o MapDesk, que é modificado. Esta verificação a substitui para o cliente.
+Verificação anterior reaproveitada: `VPS-MT/docs/legal/verificacao-servidor-rustdesk-2026-10-04.md` (04/10/2026), item 3.4, que tratou a AGPL-3.0 do instalador oficial sem modificação. Aquela conclusão (seção 13 não incide porque não há modificação) não vale para o MapDesk, que é modificado. Esta verificação a substitui para o cliente.
 
 ## 2. AGPL-3.0
 

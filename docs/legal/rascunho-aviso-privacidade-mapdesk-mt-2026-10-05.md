@@ -4,7 +4,7 @@ Data: 05/10/2026. Projeto MAPDESK-MT. Feito com a skill `legal-br`.
 
 **Situação: RASCUNHO. Não publicar.** Destino: página de download do site-mt e link "Aviso de privacidade" da tela Sobre (`kMtPrivacidade` em `flutter/lib/mt/mt_info.dart`, hoje vazio).
 
-Base: `docs/legal/verificacao-privacidade-cliente-2026-10-05.md` (seções 3 a 5), `docs/legal/CONSULTA-ADVOGADO-mapdesk-agpl-marca-2026-10-05.md` (questões 3 e 4), `C:\COWORK\CODE\VPS-MT\docs\legal\verificacao-servidor-rustdesk-2026-10-04.md`, `C:\COWORK\CODE\VPS-MT\docs\contratacao-hostgator.md`, `C:\COWORK\CODE\VPS-MT\docs\superpowers\pendencias.md`, `C:\COWORK\CODE\VPS-MT\servidor\registros\vps-mt.conf` e a biblioteca `legal-br` (`fontes-md/leis/03-lgpd...`, `04-marco-civil...`, `fontes-md/anpd/39-resolucao-anpd-2-2022...`).
+Base: `docs/legal/verificacao-privacidade-cliente-2026-10-05.md` (seções 3 a 5), `docs/legal/CONSULTA-ADVOGADO-mapdesk-agpl-marca-2026-10-05.md` (questões 3 e 4), `VPS-MT/docs/legal/verificacao-servidor-rustdesk-2026-10-04.md`, `VPS-MT/docs/contratacao-hostgator.md`, `VPS-MT/docs/superpowers/pendencias.md`, `VPS-MT/servidor/registros/vps-mt.conf` e a biblioteca `legal-br` (`fontes-md/leis/03-lgpd...`, `04-marco-civil...`, `fontes-md/anpd/39-resolucao-anpd-2-2022...`).
 
 ### O que impede publicar
 
@@ -161,7 +161,7 @@ Versão [PREENCHER: número da versão], de [PREENCHER: data].
 | 23 | A MT não vende nem repassa; ninguém além da MT usa os dados | Verificação de privacidade, item 5, linha "Compartilhamento"; LGPD, art. 9º, V | RECOMENDAÇÃO (compromisso da MT, a confirmar pelo Manfred) |
 | 24 | Provedor de hospedagem guarda a máquina por conta da MT | LGPD, arts. 5º, VII, e 39; `VPS-MT/docs/contratacao-hostgator.md` (HostGator Brasil LTDA, CNPJ 15.754.475/0001-40, sobre Oracle Cloud). A verificação do VPS-MT ainda analisa a Hostinger (pendência 6) | INTERPRETAÇÃO; nome do provedor [PREENCHER] |
 | 25 | Registros entregues a autoridade só com ordem judicial | Marco Civil, art. 10, § 1º, e art. 15, § 3º | FATO LEGAL |
-| 26 | Dados no Brasil, em São Paulo | `VPS-MT/docs/contratacao-hostgator.md`, seções 1 e 6 (VPS vpsbr-16184648 "em São Paulo"; "Servidores Oracle Cloud no Brasil") | FATO, válido enquanto a VPS da HostGator for mantida (pendência 6) |
+| 26 | Dados no Brasil, em São Paulo | `VPS-MT/docs/contratacao-hostgator.md`, seções 1 e 6 (VPS da HostGator em São Paulo; "Servidores Oracle Cloud no Brasil") | FATO, válido enquanto a VPS da HostGator for mantida (pendência 6) |
 | 27 | Lista de direitos | LGPD, art. 18, I a IX, e §§ 1º e 2º | FATO LEGAL |
 | 28 | Atendimento gratuito | LGPD, art. 18, § 5º | FATO LEGAL |
 | 29 | Registros podem ser mantidos até o fim dos 6 meses mesmo com pedido de eliminação, se a lei exigir | LGPD, art. 16, I; Marco Civil, art. 15 (incidência sobre a MT ficou como risco aceito no VPS-MT, item 3.3) | INTERPRETAÇÃO |

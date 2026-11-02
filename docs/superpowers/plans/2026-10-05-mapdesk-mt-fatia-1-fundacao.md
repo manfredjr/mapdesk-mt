@@ -12,7 +12,7 @@
 
 ## Restrições globais
 
-- Pasta: só `C:\COWORK\CODE\MAPDESK-MT`. Rascunhos em `.superpowers/rascunho/`, ignorada pelo git. Nunca `find /`.
+- Pasta: só `MAPDESK-MT`. Rascunhos em `.superpowers/rascunho/`, ignorada pelo git. Nunca `find /`.
 - Autor: Manfred Heil Junior. Nenhum commit, arquivo ou PR credita ferramenta de IA; nunca `Co-Authored-By` nem "Generated with". Toda mensagem de commit termina com a linha `Autor: Manfred Heil Junior`.
 - Commit: título com verbo na 3ª pessoa, sem acento; corpo com o porquê. A mensagem vai num arquivo em `.superpowers/rascunho/` e entra com `git commit -F`.
 - Nunca `--amend`, `rebase`, `reset` nem `push --force` em commit enviado.
@@ -85,7 +85,7 @@ Esperado: nenhuma linha "NAO DESLIGOU"; na lista, esses nove aparecem como `disa
 
 ### Tarefa 2: Clone local e ramo `mt`
 
-**Arquivos:** a pasta `C:\COWORK\CODE\MAPDESK-MT` vira o repositório git.
+**Arquivos:** a pasta `MAPDESK-MT` vira o repositório git.
 
 **Consome:** os forks da tarefa 1.
 
@@ -94,7 +94,7 @@ Esperado: nenhuma linha "NAO DESLIGOU"; na lista, esses nove aparecem como `disa
 - [ ] **Passo 1: Iniciar o repositório e configurar a identidade só neste projeto**
 
 ```bash
-cd /c/COWORK/CODE/MAPDESK-MT
+cd MAPDESK-MT
 git init
 git config user.name "Manfred Heil Junior"
 git config user.email "manfred@manfred.com.br"
@@ -155,7 +155,7 @@ git checkout -b fundacao mt
 
 ```bash
 mkdir -p .githooks
-cp /c/COWORK/CODE/UNITASK/.githooks/post-commit /c/COWORK/CODE/UNITASK/.githooks/post-merge .githooks/
+cp ../UNITASK/.githooks/post-commit ../UNITASK/.githooks/post-merge .githooks/
 chmod +x .githooks/post-commit .githooks/post-merge
 git config core.hooksPath .githooks
 ```

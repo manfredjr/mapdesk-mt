@@ -12,7 +12,7 @@ Análises que sustentam as perguntas, no repositório do projeto:
 
 - `docs/legal/verificacao-licenca-agpl-e-marcas-2026-10-05.md`
 - `docs/legal/verificacao-privacidade-cliente-2026-10-05.md`
-- `C:\COWORK\CODE\VPS-MT\docs\legal\verificacao-servidor-rustdesk-2026-10-04.md` (servidor)
+- `VPS-MT/docs/legal/verificacao-servidor-rustdesk-2026-10-04.md` (servidor)
 
 O projeto tem 6 pendências. Esta consulta trata as pendências 3 a 6, nas questões 1 a 4. As pendências 1 (registro de "RustDesk" no INPI) e 2 (busca de "MapDesk" por radical no INPI) são buscas que o Manfred faz no INPI e não vêm para cá, salvo se acharem algo.
 
