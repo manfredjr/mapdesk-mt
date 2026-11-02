@@ -28,6 +28,7 @@ Este programa foi modificado pela MT - Manfred Tecnologia. A licença continua a
 | 01/11/2026 | SHA-256 e notas publicados junto da versão | `.github/workflows/mapdesk-windows.yml`, `docs/notas-versao.md` |
 | 02/11/2026 | Bloco do MapDesk-MT no topo do README | `README.md` |
 | 02/11/2026 | Link da página de privacidade na tela Sobre | `flutter/lib/mt/mt_info.dart` |
+| 02/11/2026 | Versão sem monitor virtual e sem impressora remota: os drivers saem do pacote, e as opções da impressora somem das configurações e do instalador | `.github/workflows/mapdesk-windows.yml`, `src/mt_config.rs`, `flutter/lib/desktop/pages/install_page.dart` |
 
 ## Nomes e logotipos
 

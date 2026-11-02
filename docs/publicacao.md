@@ -54,7 +54,6 @@ A página `https://mapdesk.manfred.com.br/` mora em `public/` deste repositório
    - texto completo da `privacidade.html` no ramo `mt`, com os itens da verificação de privacidade (seção 5), e o endereço gravado em `kMtPrivacidade`. A página entra no ar no passo 4, antes de a versão ser divulgada;
    - bloco do MapDesk-MT no `README.md` da raiz;
    - licenças dos binários (`docs/legal/licencas-binarios-terceiros-2026-11-02.md`): a conferência não fechou. Cada item abaixo precisa estar resolvido ou adiado pelo Manfred por escrito:
-     - decisão sobre o `usbmmidd_v2`, o driver de impressora e o adaptador;
      - decisão sobre o `hwcodec`;
      - arquivo de avisos de terceiros;
      - instruções do código do FFmpeg nas notas da versão;

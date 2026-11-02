@@ -6,6 +6,8 @@ O programa é distribuído sob a AGPL-3.0, a mesma licença do RustDesk (arquivo
 
 O submódulo libs/hbb_common aponta para o fork https://github.com/manfredjr/hbb_common, no commit {HBB_COMMIT}.
 
+Esta versão não traz o monitor virtual nem a impressora remota do RustDesk, porque os drivers ficaram de fora do pacote.
+
 O MapDesk-MT.exe não tem assinatura digital. Na primeira vez, o SmartScreen do Windows pode pedir confirmação ("Mais informações" e depois "Executar assim mesmo"). Nos computadores com o Controle Inteligente de Aplicativos ligado, o programa não abre até ter a assinatura.
 
 Para conferir o download, compare o SHA-256 do arquivo com o do MapDesk-MT.exe.sha256 desta versão.

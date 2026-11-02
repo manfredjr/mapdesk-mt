@@ -10,7 +10,7 @@ O envio é decisão do Manfred. Os fatos e as leituras estão em `licencas-binar
 
 **Leituras possíveis.** (a) Não pode sem autorização, o que é o risco maior. (b) No caso dos autores do RustDesk, a seção 5(c) da AGPL-3.0 cobre as partes da obra, o que não alcança um terceiro como a Amyuni.
 
-**Impacto prático.** Tirar os componentes do build ou mantê-los.
+**Impacto prático.** Tirar os componentes do build ou mantê-los. O `usbmmidd_v2`, o driver de impressora e o adaptador saíram do build em 02/11/2026; a resposta define se podem voltar.
 
 **Urgência.** Antes da primeira tag, salvo decisão escrita do Manfred.
 
@@ -20,7 +20,7 @@ O envio é decisão do Manfred. Os fatos e as leituras estão em `licencas-binar
 
 **Impacto prático.** Define o dever de oferecer o código do driver.
 
-**Urgência.** Antes da primeira tag, se o driver ficar, salvo decisão escrita do Manfred.
+**Urgência.** Só se os drivers voltarem ao build.
 
 ## Questão 8: patentes de H.264 e HEVC
 
@@ -45,6 +45,6 @@ O envio é decisão do Manfred. Os fatos e as leituras estão em `licencas-binar
 | Questão | Tema | Urgência |
 |---|---|---|
 | 6 | Componente sem licença localizada | Antes da primeira tag, salvo decisão escrita |
-| 7 | Driver como agregado | Antes da primeira tag, se o driver ficar |
+| 7 | Driver como agregado | Só se os drivers voltarem ao build |
 | 8 | Patentes de H.264 e HEVC | Antes da primeira tag, salvo decisão escrita |
 | 9 | Titularidade e licença antes da cessão | Antes da primeira venda |
