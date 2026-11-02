@@ -38,9 +38,33 @@ Passo a passo para publicar uma versão (fatia 5 e todas as seguintes). Publicar
 
 ## Depois de publicar
 
-1. Avisar a sessão do site-mt para trocar, na página de download, o RustDesk oficial renomeado pelo `MapDesk-MT.exe` da versão. A página mantém o aviso de privacidade, a licença e o link do código.
+1. Publicar ou atualizar a página do produto (seção "Site do produto", abaixo). A página `manfred.com.br/acesso`, dos clientes do suporte, continua com o RustDesk oficial: os dois caminhos não se misturam (decisão do Manfred em 01/11/2026).
 2. Atualizar a "Situação do projeto" do `README-MT.md`.
 3. Nunca apagar tags nem versões antigas que algum cliente recebeu (AGPL-3.0, seção 6).
+
+## Site do produto
+
+A página `https://mapdesk.manfred.com.br/` mora em `public/` deste repositório (spec `2026-11-01-mapdesk-site-produto-design.md`, seção 8). Cada passo só sai com a frase do Manfred.
+
+1. Portão antes da tag. O Manfred confirma, ou adia por escrito:
+   - cessão do autor para a MT;
+   - respostas do advogado (pendências jurídicas 1 a 6);
+   - página de privacidade no ar, que pode ser a `privacidade.html` deste site, gravada também em `kMtPrivacidade` numa fatia própria;
+   - bloco do MapDesk-MT no `README.md` da raiz;
+   - conferência das licenças dos binários de terceiros do build.
+2. Merge do PR do site, com o workflow `MapDesk-MT site` verde.
+3. Tag com o valor de `kMtVersao` (seção "Publicar", acima). O botão da página aponta para essa tag, e a versão traz o `MapDesk-MT.exe` e o `MapDesk-MT.exe.sha256`.
+4. No cPanel da GoDaddy, pelo `roteiro-publicacao-git-cpanel.md`:
+   - clonar `https://github.com/manfredjr/mapdesk-mt.git` em `repositories/mapdesk-mt`, sem chave SSH, porque o repositório é público;
+   - apontar o subdomínio `mapdesk.manfred.com.br` para a pasta `public` do clone;
+   - rodar "Update from Remote" e depois "Deploy HEAD Commit".
+5. No Cloudflare: bloqueio de robôs de IA no subdomínio.
+6. Conferência no ar:
+   - a página abre em HTTPS;
+   - o botão baixa o arquivo certo, e o SHA-256 confere com o `MapDesk-MT.exe.sha256`;
+   - nenhum script de terceiros carrega.
+
+A cada versão nova, `kMtVersao` muda e o teste da página exige os links com a tag nova: atualizar o `public/index.html` no mesmo PR.
 
 ## Versão nova do RustDesk
 
