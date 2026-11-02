@@ -4,7 +4,7 @@ Data da consulta: 02/11/2026. Projeto MAPDESK-MT. Feita com a skill `legal-br`.
 
 Objeto: o que o workflow `.github/workflows/mapdesk-windows.yml` baixa ou compila de terceiros para montar o `MapDesk-MT.exe`, item do portão antes da tag (`docs/publicacao.md`, seção "Site do produto").
 
-**Resultado:** a conferência não fecha. Ficaram sem licença localizada, marcados com `[FONTE?]`, o driver de monitor virtual, o driver de impressora e o adaptador, o `hwcodec` e a biblioteca padrão do Rust. A `libyuv` tem texto de licença, mas o tipo exato não foi fechado, e o plugin `flutter_gpu_texture_renderer` volta `NOASSERTION` na API do GitHub. Os demais têm licença localizada, com os avisos e as ressalvas das seções 3 e 4.
+**Resultado:** a conferência não fecha. Ficaram sem licença localizada, marcados com `[FONTE?]`, o driver de monitor virtual, o driver de impressora e o adaptador, o `hwcodec` e a biblioteca padrão do Rust. A `libyuv` tem texto de licença, mas o tipo exato não foi fechado, e o pacote `flutter_gpu_texture_renderer` volta `NOASSERTION` na API do GitHub. Os demais têm licença localizada, com os avisos e as ressalvas das seções 3 e 4.
 
 ## 1. Contexto e premissas
 
@@ -38,13 +38,14 @@ Relação de consumo, dados pessoais e menores não entram nesta verificação: 
 | nv-codec-headers n12.1.14.0 | https://raw.githubusercontent.com/FFmpeg/nv-codec-headers/n12.1.14.0/include/ffnvcodec/nvEncodeAPI.h | Aviso da NVIDIA no cabeçalho, com texto de permissão no formato MIT |
 | AMF v1.4.35 | https://raw.githubusercontent.com/GPUOpen-LibrariesAndSDKs/AMF/v1.4.35/LICENSE.txt | Permissão no formato MIT e aviso sobre padrões |
 | `hwcodec`, commit do `Cargo.lock` | https://github.com/rustdesk-org/hwcodec/tree/778df1f99597722473b29443bac22ae6c23946fe | Ver item 3.7 |
+| Pacotes do item 17 | https://api.github.com/repos/ seguido do dono e do nome em `flutter/pubspec.yaml`, campo `license` | Consulta de 02/11/2026 |
 
 As duas leis foram conferidas no Planalto. Correção: o clone da `legal-br` usado aqui não tinha `STATUS-FONTES.md`, mas a cópia instalada tem, gerado em 02/11/2026, e as duas leis estão EM DIA nele.
 
 **O que esta verificação não cobriu:**
 
 - Os pacotes `.zip` não foram baixados nem abertos, porque baixar depende de autorização do Manfred. Se algum deles traz um arquivo de licença dentro, ele não foi lido.
-- As licenças das dependências de código (crates do Cargo e pacotes do `pub`) ficaram de fora, salvo o `hwcodec`, que traz os codecs, e os plugins nativos vindos do git (item 17). O objeto aqui são os binários e as bibliotecas nativas do build.
+- As licenças das dependências de código (crates do Cargo e pacotes do `pub`) ficaram de fora, salvo o `hwcodec`, que traz os codecs, e os pacotes vindos do git (item 17). O objeto aqui são os binários e as bibliotecas nativas do build.
 - Os avisos de terceiros que o próprio Flutter possa embutir no pacote não foram conferidos no executável.
 
 ## 3. O que entra no executável
@@ -67,7 +68,7 @@ As duas leis foram conferidas no Planalto. Correção: o clone da `legal-br` usa
 | 14 | nv-codec-headers 12.1.14.0 (`ffnvcodec`) | Sobrescrita no `vcpkg.json` | Formato MIT, no cabeçalho lido | Versão fixa |
 | 15 | AMF 1.4.35 (`amd-amf`) | Sobrescrita no `vcpkg.json` | Formato MIT | Versão fixa |
 | 16 | `hwcodec`, commit `778df1f` | Dependência git do Cargo | `[FONTE?]` | Commit fixo no `Cargo.lock` |
-| 17 | Plugins nativos de `flutter/pubspec.yaml` vindos do git: `Dash-Chat-2`, `window_manager`, `rustdesk_desktop_multi_window`, `flutter_custom_cursor`, `flutter-desktop-embedding`, `uni_links`, `flutter_texture_rgba_renderer`, `flutter_gpu_texture_renderer`, `dynamic_layouts` | Dependência git do `pub` | Pela API do GitHub: MIT nos dois primeiros, Apache-2.0 em `rustdesk_desktop_multi_window`, `flutter_custom_cursor`, `flutter-desktop-embedding` e `flutter_texture_rgba_renderer`, BSD-2-Clause em `uni_links`, BSD-3-Clause em `dynamic_layouts`. `flutter_gpu_texture_renderer`: `NOASSERTION`, ou seja, `[FONTE?]` | Quais geram DLL no pacote não foi conferido |
+| 17 | Pacotes de `flutter/pubspec.yaml` vindos do git: `Dash-Chat-2`, `window_manager`, `rustdesk_desktop_multi_window`, `flutter_custom_cursor`, `flutter-desktop-embedding`, `uni_links`, `flutter_texture_rgba_renderer`, `flutter_gpu_texture_renderer`, `dynamic_layouts` | Dependência git do `pub` | Pela API do GitHub: MIT nos dois primeiros, Apache-2.0 em `rustdesk_desktop_multi_window`, `flutter_custom_cursor`, `flutter-desktop-embedding` e `flutter_texture_rgba_renderer`, BSD-2-Clause em `uni_links`, BSD-3-Clause em `dynamic_layouts`. `flutter_gpu_texture_renderer`: `NOASSERTION`, ou seja, `[FONTE?]` | Licença lida no ramo padrão, não na referência fixada. `window_size` vem de subpasta de `flutter-desktop-embedding`. Quais têm parte nativa ou geram DLL não foi conferido |
 
 Usados só na compilação, sem entrar no pacote como programa próprio (INTERPRETAÇÃO, pela leitura do workflow): vcpkg, LLVM 15.0.6, `flutter_rust_bridge_codegen`, `cargo-expand`, `brotli` do `pip` e as actions do GitHub. Suas licenças não foram consultadas (`[FONTE?]`) porque não mudam o que a MT distribui. O Rust 1.75 também compila, mas a biblioteca padrão entra no executável, e a licença dela também está `[FONTE?]`.
 
@@ -141,7 +142,7 @@ Duas buscas na internet em 02/11/2026 não acharam os termos desse driver no sit
 
 Estas perguntas estão em `CONSULTA-ADVOGADO-complemento-2026-11-02.md`, questões 6 a 8.
 
-1. **Componente sem licença localizada.** A MT pode distribuir `usbmmidd_v2`, o driver de impressora, o adaptador e o `hwcodec` sem licença expressa, pelo fato de virem no build oficial de um programa AGPL? Leituras possíveis: (a) não pode sem autorização, o que é o risco maior; (b) no caso dos autores do RustDesk, a seção 5(c) da AGPL cobre as partes da obra, o que não alcança um terceiro como a Amyuni. Impacto: tirar os componentes do build ou mantê-los. Urgência: antes da primeira tag.
+1. **Componente sem licença localizada.** A MT pode distribuir `usbmmidd_v2`, o driver de impressora, o adaptador, o `hwcodec` e o `hbb_common` compilado sem licença expressa, pelo fato de virem no build oficial de um programa AGPL? Leituras possíveis: (a) não pode sem autorização, o que é o risco maior; (b) no caso dos autores do RustDesk, a seção 5(c) da AGPL cobre as partes da obra, o que não alcança um terceiro como a Amyuni. Impacto: tirar os componentes do build ou mantê-los. Urgência: antes da primeira tag.
 2. **Driver como "aggregate".** Um driver instalado à parte pelo programa conta como "aggregate" (seção 5) ou como parte da obra? Impacto: dever de oferecer o código do driver. Urgência: antes da primeira tag, se o driver ficar.
 3. **Patentes de H.264 e HEVC.** A distribuição gratuita pela MT, no Brasil, gera obrigação de licença ou de royalties? Impacto: manter ou desligar esses codecs. Urgência: antes da primeira tag.
 

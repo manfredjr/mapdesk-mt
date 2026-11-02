@@ -38,12 +38,12 @@ A página do produto fica em `public/` e é servida em `https://mapdesk.manfred.
 
 ## Antes de publicar
 
-- O que bloqueia a primeira versão está no portão de `docs/publicacao.md` e em `docs/superpowers/pendencias.md`. As respostas do advogado às pendências 1 a 6, as buscas no INPI e a assinatura (fatia 4) não bloqueiam, por decisão do Manfred em 01/11/2026 e 02/11/2026.
+- O que bloqueia a primeira versão está no portão de `docs/publicacao.md` e em `docs/superpowers/pendencias.md`. As respostas do advogado às pendências 1 a 6 e a assinatura (fatia 4) não bloqueiam, por decisão do Manfred em 01/11/2026 e 02/11/2026.
 - Teste de rede: nenhuma conexão a `*.rustdesk.com`.
 
 ## Depois de publicar
 
-- Conferir a página do produto no ar (`docs/publicacao.md`, "Site do produto"). Depois da tag, pedir à sessão do site que `manfred.com.br/acesso` tenha o MapDesk-MT como botão principal e o RustDesk oficial como alternativa (decisão do Manfred em 02/11/2026).
+- Conferir a página do produto no ar (`docs/publicacao.md`, "Site do produto"). Depois dessa conferência e com a confirmação do Manfred, pedir à sessão do site que `manfred.com.br/acesso` tenha o MapDesk-MT como botão principal e o RustDesk oficial como alternativa (decisão do Manfred em 02/11/2026).
 
 ## A confirmar com
 

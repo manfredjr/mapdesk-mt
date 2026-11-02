@@ -6,7 +6,7 @@ O envio é decisão do Manfred. Os fatos e as leituras estão em `licencas-binar
 
 ## Questão 6: componente sem licença localizada
 
-**Pergunta.** A MT pode distribuir `usbmmidd_v2`, o driver de impressora, o adaptador e o `hwcodec` sem licença expressa, pelo fato de virem no build oficial de um programa AGPL?
+**Pergunta.** A MT pode distribuir `usbmmidd_v2`, o driver de impressora, o adaptador, o `hwcodec` e o `hbb_common` compilado sem licença expressa, pelo fato de virem no build oficial de um programa AGPL?
 
 **Leituras possíveis.** (a) Não pode sem autorização, o que é o risco maior. (b) No caso dos autores do RustDesk, a seção 5(c) da AGPL-3.0 cobre as partes da obra, o que não alcança um terceiro como a Amyuni.
 

@@ -6,9 +6,9 @@ Desenho aprovado pelo Manfred em 01/11/2026, em duas partes. Depende da spec `20
 
 É a página do MapDesk-MT como produto, no mesmo modelo dos irmãos da família Map (MapDisk, MapHard e MapNet). Ela fica em `https://mapdesk.manfred.com.br/` e oferece o `MapDesk-MT.exe` sem assinatura, baixado de uma versão pública do GitHub.
 
-Há dois caminhos de acesso. Até a tag, eles ficam separados, como o Manfred decidiu em 01/11/2026. Depois da tag, a decisão do Manfred de 02/11/2026 substitui o "não se misturam" daquela data, e `manfred.com.br/acesso` passa a ter o MapDesk-MT como botão principal e o RustDesk oficial como alternativa.
+Há dois caminhos de acesso. Até a tag, eles ficam separados, como o Manfred decidiu em 01/11/2026. A decisão do Manfred de 02/11/2026 substitui o "não se misturam" daquela data: depois da conferência no ar e se o Manfred tiver confirmado (`docs/publicacao.md`, "Site do produto", passo 7), `manfred.com.br/acesso` passa a ter o MapDesk-MT como botão principal e o RustDesk oficial como alternativa.
 
-- **Clientes do suporte:** entram pelo Helpdesk e baixam em `manfred.com.br/acesso`. Até a tag, a página entrega o RustDesk oficial assinado, com a configuração da MT no nome do arquivo. A troca dos botões é pedida à sessão do site depois da tag (`docs/publicacao.md`).
+- **Clientes do suporte:** entram pelo Helpdesk e baixam em `manfred.com.br/acesso`. Até a tag, a página entrega o RustDesk oficial assinado, com a configuração da MT no nome do arquivo. A troca dos botões é pedida à sessão do site depois da conferência no ar e se o Manfred tiver confirmado (`docs/publicacao.md`, "Site do produto", passo 7).
 - **Produto:** este site. Quando houver o certificado (fatia 4), o mesmo endereço passa a entregar o executável assinado, sem mudar a página.
 
 Fica de fora: preços, MapHub-MT e o botão de login do catálogo de endereços, até existirem.
@@ -97,7 +97,7 @@ Cada passo só sai com a frase do Manfred (regras 5 e 7):
 1. **Portão antes da tag,** com os itens das pendências e da spec da versão 1, que o Manfred confirma ou decide adiar por escrito:
    - cessão do autor para a MT (nota de 02/11/2026: adiada pelo Manfred para antes da primeira venda);
    - respostas do advogado, pendências jurídicas 1 a 6 (nota de 02/11/2026: adiadas pelo Manfred para a primeira versão; o portão atual está em `docs/publicacao.md`);
-   - página de privacidade no ar, que pode ser a `privacidade.html` deste site, gravada também em `kMtPrivacidade` numa fatia própria;
+   - página de privacidade no ar, que pode ser a `privacidade.html` deste site, gravada também em `kMtPrivacidade` numa fatia própria (nota de 02/11/2026: antes da tag vale o texto completo no ramo `mt`, e a página entra no ar antes da divulgação, conforme `docs/publicacao.md`);
    - bloco do MapDesk-MT no `README.md` da raiz;
    - conferência das licenças dos binários de terceiros do build.
 2. **Merge** do PR do site.

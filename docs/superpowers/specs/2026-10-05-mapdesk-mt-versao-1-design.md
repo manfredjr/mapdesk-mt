@@ -92,7 +92,7 @@ Registro de 01/11/2026: a chave de produção entrou antes da fatia 5 (PR #6), p
 
 O programa trata dados pessoais na sessão de suporte. Ao servidor da MT vão ID, identificador do aparelho, chave pública, versão, tipo de NAT e endereços público e local. O servidor guarda ID, IP e horário por 6 meses (VPS-MT). A tela não é gravada.
 
-- O aviso de privacidade fica na página de download do site-mt (outro projeto), com os itens do art. 9º da LGPD listados na verificação de privacidade. Aqui entra só o link: [PREENCHER: endereço do aviso].
+- O aviso de privacidade fica na página de download do site-mt (outro projeto), com os itens do art. 9º da LGPD listados na verificação de privacidade. Aqui entra só o link: [PREENCHER: endereço do aviso]. Nota de 02/11/2026: o aviso fica em `public/privacidade.html` deste repositório, e o endereço está em `kMtPrivacidade`.
 - Não há caixa de consentimento até a resposta da questão 3 da consulta ao advogado.
 - Nada vai para servidor da RustDesk. O teste de rede confere isso a cada versão.
 

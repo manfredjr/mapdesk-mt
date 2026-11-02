@@ -40,7 +40,7 @@ Passo a passo para publicar uma versão (fatia 5 e todas as seguintes). Publicar
 ## Depois de publicar
 
 1. Publicar ou atualizar a página do produto (seção "Site do produto", abaixo), antes de divulgar a versão.
-   - Depois da tag, pedir à sessão do site a troca em `manfred.com.br/acesso`: o MapDesk-MT vira o botão principal e o RustDesk oficial fica como alternativa. A decisão é do Manfred, em 02/11/2026, e substitui o "os dois caminhos não se misturam" de 01/11/2026.
+   - Depois da conferência no ar e com a confirmação do Manfred ("Site do produto", passo 7), pedir à sessão do site a troca em `manfred.com.br/acesso`: o MapDesk-MT vira o botão principal e o RustDesk oficial fica como alternativa. A decisão é do Manfred, em 02/11/2026, e substitui o "os dois caminhos não se misturam" de 01/11/2026.
 2. Atualizar a "Situação do projeto" do `README-MT.md`.
 3. Nunca apagar tags nem versões antigas que algum cliente recebeu (AGPL-3.0, seção 6).
 
@@ -59,7 +59,12 @@ A página `https://mapdesk.manfred.com.br/` mora em `public/` deste repositório
      - arquivo de avisos de terceiros;
      - instruções do código do FFmpeg nas notas da versão;
      - perguntas com urgência "antes da primeira tag" em `docs/legal/CONSULTA-ADVOGADO-complemento-2026-11-02.md`, que as decisões de 02/11/2026 não cobrem;
-   - ajuste da linha 17 do `AGENTS-MT.md`, com o ok do Manfred.
+   - ajuste da linha 17 do `AGENTS-MT.md`, com o ok do Manfred;
+   - decisão sobre as consultas STUN;
+   - promessas da página sobre o servidor conferidas no VPS-MT: registro de cada conexão e guarda por 6 meses;
+   - gravação de sessão desligada no lado do técnico, confirmada pelo Manfred;
+   - encarregado ou canal, conforme `docs/superpowers/pendencias.md`;
+   - buscas no INPI: o Manfred confirma se ficam para depois, porque a decisão de 02/11/2026 registra só as respostas do advogado.
 2. Merge do PR do site, com o workflow `MapDesk-MT site` verde.
 3. Tag com o valor de `kMtVersao` (seção "Publicar", acima). O botão da página aponta para essa tag, e a versão traz o `MapDesk-MT.exe` e o `MapDesk-MT.exe.sha256`. A tag vem antes do site para o botão nunca apontar para uma versão que não existe. Até o fim do passo 6, a versão não é divulgada a ninguém, porque o link de privacidade do programa só funciona depois do passo 4.
 4. No cPanel da GoDaddy, pelo `roteiro-publicacao-git-cpanel.md`:

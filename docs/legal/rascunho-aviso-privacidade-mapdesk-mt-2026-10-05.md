@@ -2,7 +2,7 @@
 
 Data: 05/10/2026. Projeto MAPDESK-MT. Feito com a skill `legal-br`.
 
-**Situação em 02/11/2026: rascunho de trabalho, não publicar este texto.** O aviso que vai ao ar é `public/privacidade.html`, e o link da tela Sobre (`kMtPrivacidade`) aponta para ele. Este arquivo fica como base do que ainda falta. As frases dele que dizem que o programa "só" fala com o servidor da MT não valem, porque não tratam das consultas STUN (`verificacao-aceite-por-padrao-2026-11-02.md`).
+**Situação em 02/11/2026: rascunho de trabalho, não publicar este texto.** O aviso que vai ao ar é `public/privacidade.html`, e o link da tela Sobre (`kMtPrivacidade`) aponta para ele. Este arquivo fica como base do texto. O que ainda falta está em `docs/superpowers/pendencias.md`, e a tabela abaixo ficou como registro. As frases dele que dizem que o programa "só" fala com o servidor da MT não valem, porque não tratam das consultas STUN (`verificacao-aceite-por-padrao-2026-11-02.md`).
 
 Base: `docs/legal/verificacao-privacidade-cliente-2026-10-05.md` (seções 3 a 5), `docs/legal/CONSULTA-ADVOGADO-mapdesk-agpl-marca-2026-10-05.md` (questões 3 e 4), `VPS-MT/docs/legal/verificacao-servidor-rustdesk-2026-10-04.md`, `VPS-MT/docs/contratacao-hostgator.md`, `VPS-MT/docs/superpowers/pendencias.md`, `VPS-MT/servidor/registros/vps-mt.conf` e a biblioteca `legal-br` (`fontes-md/leis/03-lgpd...`, `04-marco-civil...`, `fontes-md/anpd/39-resolucao-anpd-2-2022...`).
 
