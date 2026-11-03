@@ -16,19 +16,43 @@
 <header class="topo">
   <a href="./"><img class="topo__simbolo" src="imagens/mapdesk.png" alt="MapDesk - MT, página inicial" width="56" height="56"></a>
   <h1>Privacidade</h1>
-  <p class="topo__frase">O servidor da MT guarda só o necessário para ligar o técnico ao seu computador e não grava a tela. Esta página não tem formulário, propaganda nem ferramenta de estatística.</p>
+  <p class="topo__frase">O servidor da MT registra dados da conexão para ligar o técnico ao seu computador e não grava a tela. Esta página não tem formulário, propaganda nem ferramenta de estatística.</p>
 </header>
 
 <section>
   <h2>O servidor da MT</h2>
   <p>O servidor da MT registra o número de ID de cada computador, o endereço IP e o horário de cada conexão. Esses registros ficam guardados por 6 meses, com acesso restrito. A tela e o conteúdo do atendimento não são gravados.</p>
+  <p>A MT usa esses dados para o suporte remoto: achar o computador e ligar o do técnico ao seu. Os registros são guardados por cautela, pela regra de guarda de registros do Marco Civil da Internet (art. 15).</p>
+  <p>Para montar a conexão, o programa também envia ao servidor um identificador do aparelho, a chave pública dele, a versão do programa, o tipo de rede e o endereço do computador na rede local.</p>
+  <p>O servidor fica numa máquina de um provedor de hospedagem contratado pela MT.</p>
 </section>
 
 <section>
   <h2>O programa</h2>
-  <p>O MapDesk - MT só se liga ao servidor da MT (rustdesk.manfred.com.br) e ao computador do técnico. Ele vem configurado para não se cadastrar nos serviços da RustDesk, e o endereço do servidor não pode ser trocado.</p>
-  <p>Durante o atendimento, depois que você aceita, o técnico vê a sua tela e pode usar o teclado e o mouse. Antes de aceitar, feche o que não tem a ver com o atendimento, como e-mails e documentos pessoais. Você pode encerrar a conexão a qualquer momento.</p>
+  <p>O MapDesk - MT usa o servidor da MT (rustdesk.manfred.com.br) para ligar o seu computador ao do técnico, e a conexão pode ir direto entre os dois. Ao iniciar, ele também consulta servidores STUN públicos (Cloudflare, Google, Antisip e Nextcloud) para descobrir o endereço IPv6 do computador. Esses servidores podem ver o IP dele, mas não recebem a tela nem o conteúdo do atendimento. Ele vem configurado para não se cadastrar nos serviços da RustDesk, e o endereço do servidor não pode ser trocado.</p>
+  <p>Durante o atendimento, depois que você aceita, o técnico vê a sua tela e pode usar o teclado e o mouse. Ele também recebe dados do computador, como o nome dele, o nome do usuário conectado, o sistema e a versão do programa. Esse aceite é o padrão, e a aprovação por clique pode ser mudada naquele computador, inclusive pelo técnico durante um atendimento aceito. Depois da mudança, quem tem uma senha válida entra sem esse aceite. Antes de aceitar, feche o que não tem a ver com o atendimento, como e-mails e documentos pessoais. Você pode encerrar a conexão a qualquer momento.</p>
   <p>As configurações e os registros do programa ficam no seu computador.</p>
+</section>
+
+<section>
+  <h2>Computador de empresa</h2>
+  <p>Se a empresa em que você trabalha contratou o atendimento, dúvidas sobre o uso do equipamento também podem ser levadas a ela.</p>
+</section>
+
+<section>
+  <h2>Seus direitos</h2>
+  <p>A Lei Geral de Proteção de Dados (art. 18) garante a você, a qualquer momento, mediante pedido e sem custo:</p>
+  <ul>
+    <li>saber se a MT trata dados seus e ter acesso a eles;</li>
+    <li>corrigir dados incompletos, errados ou desatualizados;</li>
+    <li>pedir a anonimização, o bloqueio ou a eliminação de dados desnecessários, excessivos ou tratados fora da lei;</li>
+    <li>pedir a portabilidade dos dados a outro fornecedor, conforme a regulamentação da ANPD;</li>
+    <li>saber com quem a MT compartilhou os dados;</li>
+    <li>quando um tratamento depender do seu consentimento, saber que pode não dar e o que acontece nesse caso, revogar o consentimento e pedir a eliminação dos dados tratados com ele;</li>
+    <li>opor-se a um tratamento feito sem consentimento, se ele descumprir a lei;</li>
+    <li>reclamar à Autoridade Nacional de Proteção de Dados (ANPD) ou a órgãos de defesa do consumidor.</li>
+  </ul>
+  <p>Os registros do servidor podem continuar guardados até o fim dos 6 meses mesmo com pedido de eliminação, se a lei exigir a guarda.</p>
 </section>
 
 <section>
@@ -40,7 +64,7 @@
 
 <section>
   <h2>Quem responde</h2>
-  <p>MANFRED TECNOLOGIA LTDA, CNPJ 21.075.901/0001-12. Para dúvidas ou pedidos sobre dados pessoais, escreva para <a href="mailto:manfred@manfred.com.br">manfred@manfred.com.br</a>.</p>
+  <p>MANFRED TECNOLOGIA LTDA, CNPJ 21.075.901/0001-12. Para dúvidas ou pedidos sobre dados pessoais, o canal de atendimento é <a href="mailto:manfred@manfred.com.br">manfred@manfred.com.br</a>.</p>
   <p><a href="./">Voltar para o MapDesk - MT</a></p>
 </section>
 
