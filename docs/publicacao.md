@@ -61,7 +61,6 @@ A página `https://mapdesk.manfred.com.br/` mora em `public/` deste repositório
    - ajuste da linha 17 do `AGENTS-MT.md` e ressalva de terceiros nas linhas 21, 25 e 27, com o ok do Manfred;
    - teste de convivência com o RustDesk oficial na mesma máquina, inclusive a desinstalação do MapDesk-MT;
    - promessas da página sobre o servidor conferidas: IP da máquina no painel, servidor no Brasil, registro de cada conexão, guarda por 6 meses e acesso restrito;
-   - gravação de sessão desligada no lado do técnico, confirmada pelo Manfred;
    - encarregado ou canal, conforme `docs/superpowers/pendencias.md`;
    - verificação do provedor, inclusive o acesso do suporte a partir do exterior registrado no VPS-MT;
    - buscas no INPI: o Manfred confirma se ficam para depois, porque a decisão de 02/11/2026 registra só as respostas do advogado.
