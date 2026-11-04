@@ -12,7 +12,7 @@ O envio é decisão do Manfred. Os fatos e as leituras estão em `licencas-binar
 
 **Impacto prático.** Tirar os componentes do build ou mantê-los. O driver de impressora e o adaptador saíram do build em 02/11/2026, e a resposta define se podem voltar.
 
-**Urgência.** Antes da primeira tag, salvo decisão escrita do Manfred.
+**Urgência.** Antes da primeira tag, para o `hwcodec` e o `hbb_common`, salvo decisão escrita do Manfred. Para o driver de impressora e o adaptador, só se voltarem ao build.
 
 ## Questão 7: driver como agregado e licença da Amyuni
 
@@ -44,7 +44,7 @@ O envio é decisão do Manfred. Os fatos e as leituras estão em `licencas-binar
 
 | Questão | Tema | Urgência |
 |---|---|---|
-| 6 | Componente sem licença localizada | Antes da primeira tag, salvo decisão escrita |
+| 6 | Componente sem licença localizada | Antes da primeira tag, para o `hwcodec` e o `hbb_common`, salvo decisão escrita |
 | 7 | Driver como agregado e licença da Amyuni | Não segura a tag, por decisão do Manfred em 02/11/2026 |
 | 8 | Patentes de H.264 e HEVC | Antes da primeira tag, salvo decisão escrita |
 | 9 | Titularidade e licença antes da cessão | Antes da primeira venda |
