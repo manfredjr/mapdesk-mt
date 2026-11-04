@@ -40,6 +40,22 @@ O envio é decisão do Manfred. Os fatos e as leituras estão em `licencas-binar
 
 **Urgência.** Antes da primeira venda.
 
+## Questão 10: alto risco no suporte remoto
+
+**Pergunta.** O técnico pode ver na tela, por acaso, dados sensíveis ou de crianças, adolescentes e idosos. Isso enquadra o suporte remoto como tratamento de alto risco (Resolução CD/ANPD nº 2/2022, Anexo I, art. 4º), o que tiraria a dispensa de encarregado do art. 11?
+
+**Impacto prático.** Define se a MT precisa indicar encarregado.
+
+**Urgência.** Não segura a tag, por decisão do Manfred em 04/11/2026.
+
+## Questão 11: gravação do atendimento
+
+**Pergunta.** Qual base legal da LGPD serve melhor para gravar um atendimento, combinado antes por escrito, em dois usos: curso para o cliente e registro do serviço pedido? O aceite da empresa cobre o funcionário que aparece na tela? Contexto em `verificacao-gravacao-2026-11-04.md`.
+
+**Impacto prático.** Define o modelo do combinado.
+
+**Urgência.** Antes da primeira gravação de atendimento.
+
 ## Resumo
 
 | Questão | Tema | Urgência |
@@ -48,3 +64,5 @@ O envio é decisão do Manfred. Os fatos e as leituras estão em `licencas-binar
 | 7 | Driver como agregado e licença da Amyuni | Não segura a tag, por decisão do Manfred em 02/11/2026 |
 | 8 | Patentes de H.264 e HEVC | Antes da primeira tag, salvo decisão escrita |
 | 9 | Titularidade e licença antes da cessão | Antes da primeira venda |
+| 10 | Alto risco no suporte remoto | Não segura a tag, por decisão do Manfred em 04/11/2026 |
+| 11 | Gravação do atendimento | Antes da primeira gravação |
