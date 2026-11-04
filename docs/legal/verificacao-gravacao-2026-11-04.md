@@ -12,6 +12,8 @@ Data: 04/11/2026. Projeto MAPDESK-MT. Feito com a skill `legal-br`. Decisão do 
 
 **INTERPRETAÇÃO.** Uma finalidade como "gravar este processo para o curso interno da empresa X" é determinada, e "gravar para melhorar o atendimento" fica genérica. O aceite da empresa não resolve sozinho o caso do funcionário dela, nem o de terceiros que apareçam na tela.
 
+**Segundo uso, pedido pelo Manfred em 04/11/2026.** Gravar para guardar o registro do que o técnico fez a pedido do cliente, como instalar um programa ou apagar um arquivo. A regra é a mesma: combinado prévio por escrito. INTERPRETAÇÃO: "registro do serviço pedido" é finalidade determinada, e o combinado pode ser uma mensagem ou uma cláusula do contrato, desde que diga isso, quem assiste e o prazo de guarda. Consentimento pode não ser a melhor base aqui, porque a pessoa pode retirá-lo. Execução de contrato e exercício regular de direitos são candidatas, e a escolha fica para o advogado.
+
 **RECOMENDAÇÃO.** Gravar com dados fictícios ou só as telas necessárias, editar o vídeo antes de entregar e combinar por escrito a finalidade, quem pode assistir e por quanto tempo o vídeo fica guardado.
 
 **REVISÃO PROFISSIONAL.** A base legal da gravação para curso e o caso do funcionário que aparece na tela ficam para o advogado. O modelo do combinado ainda não existe, e nenhuma gravação de atendimento sai antes dele.
