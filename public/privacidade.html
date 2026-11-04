@@ -21,7 +21,7 @@
 
 <section>
   <h2>O servidor da MT</h2>
-  <p>O servidor da MT registra o número de ID de cada computador, o endereço IP e o horário de cada conexão. Esses registros ficam guardados por 6 meses, com acesso restrito. A tela e o conteúdo do atendimento não são gravados.</p>
+  <p>O servidor da MT registra o número de ID de cada computador, o endereço IP e o horário de cada conexão. Esses registros ficam guardados por 6 meses, com acesso restrito. O servidor não grava a tela nem o conteúdo do atendimento.</p>
   <p>A MT usa esses dados para o suporte remoto: achar o computador e ligar o do técnico ao seu. Os registros são guardados por cautela, pela regra de guarda de registros do Marco Civil da Internet (art. 15).</p>
   <p>Para montar a conexão, o programa também envia ao servidor um identificador do aparelho, a chave pública dele, a versão do programa, o tipo de rede e o endereço do computador na rede local.</p>
   <p>O servidor fica numa máquina de um provedor de hospedagem contratado pela MT.</p>
@@ -31,6 +31,7 @@
   <h2>O programa</h2>
   <p>O MapDesk - MT usa o servidor da MT (rustdesk.manfred.com.br) para ligar o seu computador ao do técnico, e a conexão pode ir direto entre os dois. Ao iniciar, ele também consulta servidores STUN públicos (Cloudflare, Google, Antisip e Nextcloud) para descobrir o endereço IPv6 do computador. Esses servidores podem ver o IP dele, mas não recebem a tela nem o conteúdo do atendimento. Ele vem configurado para não se cadastrar nos serviços da RustDesk, e o endereço do servidor não pode ser trocado.</p>
   <p>Durante o atendimento, depois que você aceita, o técnico vê a sua tela e pode usar o teclado e o mouse. Ele também recebe dados do computador, como o nome dele, o nome do usuário conectado, o sistema e a versão do programa. Esse aceite é o padrão, e a aprovação por clique pode ser mudada naquele computador, inclusive pelo técnico durante um atendimento aceito. Depois da mudança, quem tem uma senha válida entra sem esse aceite. Antes de aceitar, feche o que não tem a ver com o atendimento, como e-mails e documentos pessoais. Você pode encerrar a conexão a qualquer momento.</p>
+  <p>O programa permite gravar a sessão no computador do técnico. Nas máquinas da MT, a gravação automática fica desligada, e o técnico só grava um atendimento depois de combinar com você por escrito para que serve o vídeo, quem pode assistir e por quanto tempo ele fica guardado.</p>
   <p>As configurações e os registros do programa ficam no seu computador.</p>
 </section>
 
