@@ -2,7 +2,7 @@
 
 O MapDesk-MT é uma obra derivada do RustDesk. A origem é o repositório `rustdesk/rustdesk`, na tag `1.5.0`, distribuído sob a AGPL-3.0.
 
-Este programa foi modificado pela MT - Manfred Tecnologia. A licença continua a AGPL-3.0, e o arquivo `LICENCE` da raiz continua valendo para o código inteiro, inclusive para as mudanças da MT. Os avisos de copyright do RustDesk ficam como estão.
+Este programa foi modificado pela MT - Manfred Tecnologia. A licença continua a AGPL-3.0, e o arquivo `LICENCE` da raiz continua valendo para o código inteiro, inclusive para as mudanças da MT. Os componentes de terceiros têm licença própria. Os avisos de copyright do RustDesk ficam como estão.
 
 ## Mudanças da MT
 
@@ -28,6 +28,11 @@ Este programa foi modificado pela MT - Manfred Tecnologia. A licença continua a
 | 01/11/2026 | SHA-256 e notas publicados junto da versão | `.github/workflows/mapdesk-windows.yml`, `docs/notas-versao.md` |
 | 02/11/2026 | Bloco do MapDesk-MT no topo do README | `README.md` |
 | 02/11/2026 | Link da página de privacidade na tela Sobre | `flutter/lib/mt/mt_info.dart` |
+| 02/11/2026 | Versão sem impressora remota: o driver e o adaptador saem do pacote, e as opções da impressora somem das configurações e do instalador | `.github/workflows/mapdesk-windows.yml`, `src/mt_config.rs`, `flutter/lib/desktop/pages/install_page.dart` |
+
+## Componentes de terceiros
+
+O monitor virtual usa o `usbmmidd_v2`, da Amyuni Technologies Inc. (https://www.amyuni.com), distribuído com a licença dela. O programa não é da MT, vai no pacote sem código-fonte, e o arquivo `License.txt` o acompanha, na pasta `usbmmidd_v2`. O pacote sai sem a pasta `Win32`, os `deviceinstaller` e o `usbmmidd.bat`, e os demais arquivos não foram alterados. O `idd_instructions.txt`, da Amyuni, ainda cita o `.bat` retirado.
 
 ## Nomes e logotipos
 
@@ -35,4 +40,4 @@ Conforme a seção 7 da AGPL-3.0, a licença não dá direito de uso dos nomes "
 
 ## Código-fonte de cada versão
 
-Cada versão distribuída tem uma tag no formato `<versão>-mt.<n>`, por exemplo `1.5.0-mt.1`, em https://github.com/manfredjr/mapdesk-mt. O código correspondente ao executável de cada versão está na tag com o mesmo número.
+Cada versão distribuída tem uma tag no formato `<versão>-mt.<n>`, por exemplo `1.5.0-mt.1`, em https://github.com/manfredjr/mapdesk-mt. O código correspondente ao executável de cada versão está na tag com o mesmo número, salvo os componentes de terceiros, que têm licença própria e cujo código pode estar em outro lugar.

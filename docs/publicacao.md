@@ -54,13 +54,14 @@ A página `https://mapdesk.manfred.com.br/` mora em `public/` deste repositório
    - texto completo da `privacidade.html` no ramo `mt`, com os itens da verificação de privacidade (seção 5), e o endereço gravado em `kMtPrivacidade`. A página entra no ar no passo 4, antes de a versão ser divulgada;
    - bloco do MapDesk-MT no `README.md` da raiz;
    - licenças dos binários (`docs/legal/licencas-binarios-terceiros-2026-11-02.md`): a conferência não fechou. Cada item abaixo precisa estar resolvido ou adiado pelo Manfred por escrito:
-     - decisão sobre o `usbmmidd_v2`, o driver de impressora e o adaptador;
+     - anúncio do `usbmmidd_v2` testado numa máquina com o monitor virtual ativo, com a decisão sobre como avisar o cliente;
      - decisão sobre o `hwcodec`;
      - arquivo de avisos de terceiros;
      - instruções do código do FFmpeg nas notas da versão;
      - perguntas com urgência "antes da primeira tag" em `docs/legal/CONSULTA-ADVOGADO-complemento-2026-11-02.md`, que as decisões de 02/11/2026 não cobrem;
-   - ajuste da linha 17 do `AGENTS-MT.md`, com o ok do Manfred;
+   - ajuste da linha 17 do `AGENTS-MT.md` e ressalva de terceiros nas linhas 21, 25 e 27, com o ok do Manfred;
    - decisão sobre as consultas STUN;
+   - teste de convivência com o RustDesk oficial na mesma máquina, inclusive a desinstalação do MapDesk-MT;
    - promessas da página sobre o servidor conferidas: IP da máquina no painel, servidor no Brasil, registro de cada conexão, guarda por 6 meses e acesso restrito;
    - gravação de sessão desligada no lado do técnico, confirmada pelo Manfred;
    - encarregado ou canal, conforme `docs/superpowers/pendencias.md`;

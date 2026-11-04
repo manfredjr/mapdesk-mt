@@ -28,6 +28,11 @@ pub fn aplicar() {
     builtin.insert(keys::OPTION_REGISTER_DEVICE.to_owned(), "N".to_owned());
     builtin.insert(keys::OPTION_HIDE_POWERED_BY_ME.to_owned(), "Y".to_owned());
     builtin.insert(keys::OPTION_HIDE_SERVER_SETTINGS.to_owned(), "Y".to_owned());
+    // The printer driver is not in the package, so the settings tab would only fail.
+    builtin.insert(
+        keys::OPTION_HIDE_REMOTE_PRINTER_SETTINGS.to_owned(),
+        "Y".to_owned(),
+    );
 }
 
 #[cfg(test)]
@@ -70,6 +75,11 @@ mod tests {
             .unwrap()
             .get(keys::OPTION_HIDE_SERVER_SETTINGS)
             .cloned();
+        let hide_printer = config::BUILTIN_SETTINGS
+            .read()
+            .unwrap()
+            .get(keys::OPTION_HIDE_REMOTE_PRINTER_SETTINGS)
+            .cloned();
 
         *config::APP_NAME.write().unwrap() = "RustDesk".to_owned();
         config::DEFAULT_SETTINGS
@@ -87,6 +97,7 @@ mod tests {
             builtin.remove(keys::OPTION_REGISTER_DEVICE);
             builtin.remove(keys::OPTION_HIDE_POWERED_BY_ME);
             builtin.remove(keys::OPTION_HIDE_SERVER_SETTINGS);
+            builtin.remove(keys::OPTION_HIDE_REMOTE_PRINTER_SETTINGS);
         }
 
         assert_eq!(app_name, "MapDesk-MT");
@@ -106,5 +117,6 @@ mod tests {
             Some("96OfYKuqwMseAJ9QQ7N1p32LLStUOKUq3rYIA91EDvo=")
         );
         assert_eq!(hide_server.as_deref(), Some("Y"));
+        assert_eq!(hide_printer.as_deref(), Some("Y"));
     }
 }
