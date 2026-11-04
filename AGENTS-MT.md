@@ -8,7 +8,7 @@ Este arquivo tem as regras da MT. O `AGENTS.md` da raiz é o guia de código do 
 
 Versão própria do cliente do RustDesk, com a cara da MT, para os clientes do suporte remoto: fork do `rustdesk/rustdesk` com servidor e chave pública embutidos, nome "MapDesk-MT", ícones e cores da MT. Produção: executável `MapDesk-MT.exe` (Windows 64 bits) publicado como versão (release) do repositório `manfredjr/mapdesk-mt` e oferecido na página de download do site-mt. O servidor é o do projeto VPS-MT (`rustdesk.manfred.com.br`), que não muda.
 
-Briefing de origem: `C:\COWORK\CODE\VPS-MT\.superpowers\rascunho\briefing-projeto-mapdesk.md`, lido junto com `C:\COWORK\CODE\ROTEIROS_PADRÕES\briefing-inicio-projeto-mt.md`. Desenho em `docs/superpowers/specs/AAAA-MM-DD-mapdesk-<tema>-design.md`.
+Briefing de origem: projeto VPS-MT, `.superpowers/rascunho/briefing-projeto-mapdesk.md`, lido junto com o `briefing-inicio-projeto-mt.md`, dos roteiros padrão da MT. Desenho em `docs/superpowers/specs/AAAA-MM-DD-mapdesk-<tema>-design.md`.
 
 Ordem de precedência: este arquivo, depois o briefing do projeto, depois o briefing de início.
 
@@ -96,7 +96,7 @@ Na dúvida, perguntar com opções fechadas e a recomendação primeiro.
 
 ## Onde ler e gravar
 
-Só dentro de `C:\COWORK\CODE\MAPDESK-MT`. Rascunhos em `.superpowers/rascunho`, ignorada pelo git. A memória do agente é a única exceção. Arquivo fora da pasta só quando o Manfred aponta o caminho (por exemplo, os documentos do VPS-MT).
+Só dentro da pasta do projeto (`MAPDESK-MT`). Rascunhos em `.superpowers/rascunho`, ignorada pelo git. A memória do agente é a única exceção. Arquivo fora da pasta só quando o Manfred aponta o caminho (por exemplo, os documentos do VPS-MT).
 
 Subagentes: buscas só dentro do repositório, nunca `find /`. Todo prompt de subagente repete estas proibições.
 

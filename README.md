@@ -1,3 +1,6 @@
+> [!NOTE]
+> **MapDesk-MT.** Este repositório é o fork do RustDesk mantido pela MT - Manfred Tecnologia. O programa foi modificado e continua sob a AGPL-3.0, sem ser um produto oficial do RustDesk. As mudanças e as datas estão em [AVISO-DE-MODIFICACAO.md](AVISO-DE-MODIFICACAO.md), e a página do produto é https://mapdesk.manfred.com.br/. Daqui para baixo, o texto é o README original do RustDesk.
+
 <p align="center">
   <img src="res/logo-header.svg" alt="RustDesk - Your remote desktop"><br>
   <a href="#raw-steps-to-build">Build</a> •

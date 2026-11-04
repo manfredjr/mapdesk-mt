@@ -16,7 +16,7 @@ Licença e marcas ficam em `verificacao-licenca-agpl-e-marcas-2026-10-05.md`. Po
 | O cliente fala só com o servidor de ID e repasse da MT (`rustdesk.manfred.com.br`), com a chave pública da MT embutida | pedido do Manfred; briefing do projeto, seção 4 |
 | Servidor de API desligado: o cliente não envia dados a nenhum servidor de API | pedido do Manfred; `.superpowers/rascunho/achados-codigo-1.5.0.md`, seção "O que o register-device = N desliga" |
 | Aprovação por clique como padrão (`approve-mode` = "click") | pedido do Manfred; `achados-codigo-1.5.0.md`, seção "Aprovação por clique" |
-| O servidor registra ID, IP e horário das máquinas e guarda por 6 meses; não grava conteúdo de sessão | `C:\COWORK\CODE\VPS-MT\docs\legal\verificacao-servidor-rustdesk-2026-10-04.md`, itens 3.3 e 4 |
+| O servidor registra ID, IP e horário das máquinas e guarda por 6 meses; não grava conteúdo de sessão | `VPS-MT/docs/legal/verificacao-servidor-rustdesk-2026-10-04.md`, itens 3.3 e 4 |
 | Clientes: empresas e pessoas físicas, cerca de 150 a 200 máquinas Windows | mesma verificação do VPS-MT, item 1 |
 
 ### 1.2. Premissas de incidência
@@ -37,8 +37,8 @@ Licença e marcas ficam em `verificacao-licenca-agpl-e-marcas-2026-10-05.md`. Po
 | Código do RustDesk 1.5.0: `src/common.rs` (`check_software_update`, linha 1020; `is_custom_client`, linha 2560) | https://github.com/rustdesk/rustdesk/blob/1.5.0/src/common.rs |
 | `hbb_common`, commit `229b904...`: `src/lib.rs` (`version_check_request`, linha 510) e `protos/rendezvous.proto` (`RegisterPeer`, linha 15; `RegisterPk`, linha 112) | https://github.com/rustdesk/hbb_common |
 | Tela "Sobre" do RustDesk 1.5.0 | `flutter/lib/desktop/pages/desktop_setting_page.dart`, classe `_About`, tag `1.5.0` |
-| Verificação do servidor no VPS-MT, de 04/10/2026 | `C:\COWORK\CODE\VPS-MT\docs\legal\verificacao-servidor-rustdesk-2026-10-04.md` |
-| Briefing da página de download, de 05/10/2026 | `C:\COWORK\CODE\VPS-MT\.superpowers\rascunho\briefing-site-mt-pagina-acesso.md`, seção "PRIVACIDADE" |
+| Verificação do servidor no VPS-MT, de 04/10/2026 | `VPS-MT/docs/legal/verificacao-servidor-rustdesk-2026-10-04.md` |
+| Briefing da página de download, de 05/10/2026 | `VPS-MT/.superpowers/rascunho/briefing-site-mt-pagina-acesso.md`, seção "PRIVACIDADE" |
 
 A biblioteca local da `legal-br` não tem `STATUS-FONTES.md`; por isso a LGPD e o Marco Civil foram conferidos no Planalto em 05/10/2026. O texto da LGPD no Planalto traz nova redação do art. 5º, VIII, dada pela Lei nº 15.352/2026; o inciso não é usado aqui.
 

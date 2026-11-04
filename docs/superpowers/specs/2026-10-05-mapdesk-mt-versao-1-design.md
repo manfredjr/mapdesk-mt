@@ -1,7 +1,7 @@
 # MapDesk-MT: desenho da versão 1
 
 Data: 05/10/2026. Autor: Manfred Heil Junior.
-Briefing de origem: `C:\COWORK\CODE\VPS-MT\.superpowers\rascunho\briefing-projeto-mapdesk.md`.
+Briefing de origem: `VPS-MT/.superpowers/rascunho/briefing-projeto-mapdesk.md`.
 Verificações jurídicas: `docs/legal/verificacao-licenca-agpl-e-marcas-2026-10-05.md` e `docs/legal/verificacao-privacidade-cliente-2026-10-05.md`.
 Levantamento do código: `.superpowers/rascunho/achados-codigo-1.5.0.md`.
 
@@ -23,9 +23,9 @@ O MapDesk-MT é a versão do cliente RustDesk feita pela MT para os clientes do 
 
 | # | Decisão | Motivo |
 |---|---|---|
-| 1 | Pasta `C:\COWORK\CODE\MAPDESK-MT` e nome MapDesk-MT | Briefing do projeto |
+| 1 | Pasta `MAPDESK-MT` e nome MapDesk-MT | Briefing do projeto |
 | 2 | Repositório público desde o início, como fork de verdade | A AGPL exige o código de cada versão; Actions gratuito em repositório público (docs.github.com, 05/10/2026); merge do oficial mais simples |
-| 3 | Fatias 1 a 3 sem assinatura, só para teste interno; nenhum cliente recebe executável sem assinatura | O certificado demora e não deve travar o desenvolvimento |
+| 3 | Fatias 1 a 3 sem assinatura, só para teste interno; nenhum cliente recebe executável sem assinatura (revista pelo Manfred em 01/11/2026: a primeira versão sai sem certificado, ver `docs/superpowers/pendencias.md`) | O certificado demora e não deve travar o desenvolvimento |
 | 4 | Aprovação por clique como padrão, não travada | O técnico pode configurar senha permanente numa máquina instalada para acesso sem ninguém na frente |
 | 5 | Abordagem A: um único fork alterado; configuração em tempo de execução por `src/mt_config.rs` | Mudança pequena e concentrada; `hbb_common` sem alteração, o que também evita a pendência de licença dele |
 | 6 | Ramos `master` (espelho do oficial) e `mt` (principal) e fork do `hbb_common` sem alteração | Separar o oficial das mudanças da MT; manter o código de cada versão disponível (AGPL, seção 6) |
@@ -39,7 +39,7 @@ O MapDesk-MT é a versão do cliente RustDesk feita pela MT para os clientes do 
 - Ramo `master`: espelho do oficial. Nunca recebe mudança da MT.
 - Ramo `mt`: ramo principal do repositório no GitHub. Toda fatia sai de `mt` e volta por PR.
 - Versão nova do oficial: a tag nova (por exemplo `1.5.1`) entra em `mt` por merge, num PR próprio, nunca por rebase. O PR sobe também o submódulo, depois de sincronizar o fork do `hbb_common`.
-- Pasta local: `C:\COWORK\CODE\MAPDESK-MT` vira o clone do fork. As regras da MT ficam em `AGENTS-MT.md`; o `AGENTS.md` do RustDesk (guia do código) fica intacto, e o `CLAUDE.md` do RustDesk passa a carregar os dois (`@AGENTS-MT.md` e `@AGENTS.md`). `AGENTS-MT.md` vale mais em processo, autoria e textos; o `AGENTS.md` vale para as regras de código. `docs/legal/` e `docs/superpowers/` entram no ramo `mt` no primeiro commit da MT. `.superpowers/` fica no `.gitignore`.
+- Pasta local: `MAPDESK-MT` vira o clone do fork. As regras da MT ficam em `AGENTS-MT.md`; o `AGENTS.md` do RustDesk (guia do código) fica intacto, e o `CLAUDE.md` do RustDesk passa a carregar os dois (`@AGENTS-MT.md` e `@AGENTS.md`). `AGENTS-MT.md` vale mais em processo, autoria e textos; o `AGENTS.md` vale para as regras de código. `docs/legal/` e `docs/superpowers/` entram no ramo `mt` no primeiro commit da MT. `.superpowers/` fica no `.gitignore`.
 - Os workflows do oficial ficam desligados no fork. Só roda o da MT.
 
 ## 4. Configuração embutida (`src/mt_config.rs`)
@@ -92,7 +92,7 @@ Registro de 01/11/2026: a chave de produção entrou antes da fatia 5 (PR #6), p
 
 O programa trata dados pessoais na sessão de suporte. Ao servidor da MT vão ID, identificador do aparelho, chave pública, versão, tipo de NAT e endereços público e local. O servidor guarda ID, IP e horário por 6 meses (VPS-MT). A tela não é gravada.
 
-- O aviso de privacidade fica na página de download do site-mt (outro projeto), com os itens do art. 9º da LGPD listados na verificação de privacidade. Aqui entra só o link: [PREENCHER: endereço do aviso].
+- O aviso de privacidade fica na página de download do site-mt (outro projeto), com os itens do art. 9º da LGPD listados na verificação de privacidade. Aqui entra só o link: [PREENCHER: endereço do aviso]. Nota de 02/11/2026: o aviso fica em `public/privacidade.html` deste repositório, e o endereço está em `kMtPrivacidade`.
 - Não há caixa de consentimento até a resposta da questão 3 da consulta ao advogado.
 - Nada vai para servidor da RustDesk. O teste de rede confere isso a cada versão.
 
@@ -151,4 +151,4 @@ Ficam em `docs/superpowers/pendencias.md`: Mac, Linux, Android, iOS e cliente we
 5. Consentimento do Marco Civil, art. 7º, IX, para os registros do servidor (advogado, questão 3).
 6. Papel da MT na sessão de suporte a empresa cliente e a base legal para os empregados (advogado, questão 4).
 
-O envio da consulta ao advogado é decisão do Manfred. As pendências 3, 5 e 6 precisam de resposta antes da fatia 5.
+O envio da consulta ao advogado é decisão do Manfred. As pendências 3, 5 e 6 precisam de resposta antes da fatia 5. Nota de 02/11/2026: o Manfred decidiu que a primeira versão sai sem esperar essas respostas, com o risco assumido por ele (`docs/publicacao.md`).

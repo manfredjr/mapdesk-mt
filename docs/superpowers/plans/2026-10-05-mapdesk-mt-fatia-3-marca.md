@@ -18,7 +18,7 @@
 
 ## Restrições globais
 
-- Pasta: só `C:\COWORK\CODE\MAPDESK-MT`. Rascunhos em `.superpowers/rascunho/`. Nunca `find /`.
+- Pasta: só `MAPDESK-MT`. Rascunhos em `.superpowers/rascunho/`. Nunca `find /`.
 - Autor: Manfred Heil Junior. Nenhum crédito a IA; nunca `Co-Authored-By`. Toda mensagem de commit termina com `Autor: Manfred Heil Junior`, tem título com verbo na 3ª pessoa sem acento e corpo com o porquê, em arquivo `.superpowers/rascunho/msg-*.txt` e `git commit -F`.
 - Antes de cada commit: `sh .superpowers/rascunho/portoes.sh <arquivo-da-mensagem>` precisa terminar com `PORTOES OK`.
 - Nunca `--amend`, `rebase`, `reset`, `push --force`. O gancho envia cada commit ao GitHub.
@@ -70,7 +70,7 @@ O `custom.txt` assinado continua lido depois de `aplicar()`, sem mudança. Ningu
 - Substituir: `flutter/windows/runner/resources/app_icon.ico`, `res/icon.ico`, `res/tray-icon.ico`, `flutter/assets/icon.svg`, `libs/portable/src/res/label.png`.
 - Criar: `flutter/assets/icon.ico`, `flutter/assets/icon.png`, `flutter/assets/logo.png`.
 
-O `gerar-marca.py` usa o Inkscape (`C:\Program Files\Inkscape\bin\inkscape`) para gerar PNG a partir do SVG, e o Pillow para montar os `.ico`. Os `.ico` saem em DIB de 32 bits com máscara AND, como o `gerar-icone.py` do MapDisk-MT (`C:\COWORK\CODE\MAPDISK-MT\ferramentas\gerar-icone.py`, só leitura). Esse formato evita o bloqueio visto no CronoAula com ícone só PNG.
+O `gerar-marca.py` usa o Inkscape instalado na máquina para gerar PNG a partir do SVG, e o Pillow para montar os `.ico`. Os `.ico` saem em DIB de 32 bits com máscara AND, como o `gerar-icone.py` do MapDisk-MT (projeto MapDisk-MT, `ferramentas/gerar-icone.py`, só leitura). Esse formato evita o bloqueio visto no CronoAula com ícone só PNG.
 
 | Saída | Conteúdo |
 |---|---|
@@ -173,7 +173,7 @@ Versão modificada pela MT - Manfred Tecnologia. Este programa é distribuído s
   "Como testar":
   1. baixar `MapDesk-MT.exe` do artefato;
   2. abrir e conferir janela, ícone, bandeja, tela Sobre e cores;
-  3. clicar em "Instalar" e conferir `C:\Program Files\MapDesk-MT`, o serviço `MapDesk-MT` e o atalho;
+  3. clicar em "Instalar" e conferir a pasta `MapDesk-MT` em Arquivos de Programas, o serviço `MapDesk-MT` e o atalho;
   4. conferir que o RustDesk oficial, se instalado, continua funcionando (teste 4 da spec);
   5. aviso: ainda conecta pelos servidores públicos do RustDesk até a fatia 2.
 - [ ] `gh pr create -R manfredjr/mapdesk-mt --base mt --head marca --title "Fatia 3: marca do MapDesk-MT" --body-file ...`

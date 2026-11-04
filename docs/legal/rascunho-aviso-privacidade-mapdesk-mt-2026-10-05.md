@@ -2,9 +2,9 @@
 
 Data: 05/10/2026. Projeto MAPDESK-MT. Feito com a skill `legal-br`.
 
-**Situação: RASCUNHO. Não publicar.** Destino: página de download do site-mt e link "Aviso de privacidade" da tela Sobre (`kMtPrivacidade` em `flutter/lib/mt/mt_info.dart`, hoje vazio).
+**Situação em 02/11/2026: rascunho de trabalho, não publicar este texto.** O aviso que vai ao ar é `public/privacidade.html`, e o link da tela Sobre (`kMtPrivacidade`) aponta para ele. Este arquivo fica como base do texto. O que ainda falta está em `docs/superpowers/pendencias.md`, e a tabela abaixo ficou como registro. As frases dele que dizem que o programa "só" fala com o servidor da MT não valem, porque não tratam das consultas STUN (`verificacao-aceite-por-padrao-2026-11-02.md`).
 
-Base: `docs/legal/verificacao-privacidade-cliente-2026-10-05.md` (seções 3 a 5), `docs/legal/CONSULTA-ADVOGADO-mapdesk-agpl-marca-2026-10-05.md` (questões 3 e 4), `C:\COWORK\CODE\VPS-MT\docs\legal\verificacao-servidor-rustdesk-2026-10-04.md`, `C:\COWORK\CODE\VPS-MT\docs\contratacao-hostgator.md`, `C:\COWORK\CODE\VPS-MT\docs\superpowers\pendencias.md`, `C:\COWORK\CODE\VPS-MT\servidor\registros\vps-mt.conf` e a biblioteca `legal-br` (`fontes-md/leis/03-lgpd...`, `04-marco-civil...`, `fontes-md/anpd/39-resolucao-anpd-2-2022...`).
+Base: `docs/legal/verificacao-privacidade-cliente-2026-10-05.md` (seções 3 a 5), `docs/legal/CONSULTA-ADVOGADO-mapdesk-agpl-marca-2026-10-05.md` (questões 3 e 4), `VPS-MT/docs/legal/verificacao-servidor-rustdesk-2026-10-04.md`, `VPS-MT/docs/contratacao-hostgator.md`, `VPS-MT/docs/superpowers/pendencias.md`, `VPS-MT/servidor/registros/vps-mt.conf` e a biblioteca `legal-br` (`fontes-md/leis/03-lgpd...`, `04-marco-civil...`, `fontes-md/anpd/39-resolucao-anpd-2-2022...`).
 
 ### O que impede publicar
 
@@ -15,8 +15,8 @@ Base: `docs/legal/verificacao-privacidade-cliente-2026-10-05.md` (seções 3 a 5
 | 3 | Campos `[PREENCHER]`: contato do titular, encarregado ou canal, provedor, prazo do cadastro, prazo de resposta, versão e data | Manfred |
 | 4 | Teste de rede no executável compilado ainda não rodou (só o roteiro foi testado, sem o programa aberto). As frases "não manda dados à RustDesk" e a lista de dados enviados dependem dele | `ferramentas-mt/teste-rede.ps1` com resultado "OK" guardado no repositório |
 | 5 | Não se sabe ainda se o servidor guarda o identificador do aparelho e o endereço local, nem o que o técnico recebe do aparelho ao abrir a sessão (`[FONTE?]` no texto) | Mesmo teste, item 6 da verificação de privacidade |
-| 6 | O servidor ainda não está em produção. O provedor mudou de Hostinger para HostGator Brasil LTDA (Oracle Cloud, São Paulo), mas a verificação do VPS-MT ainda analisa a Hostinger como operadora e a transferência internacional. O contrato com a HostGator está em disputa, com prazo até 07/10/2026 | Verificação do VPS-MT atualizada para o provedor real |
-| 7 | Segurança do servidor: em 04/10/2026 a VPS tinha login por senha e do root ligados, `ufw` inativo e chaves de terceiros (`# keyserv`) no root. As medidas da seção "Segurança" só entram no texto depois de aplicadas e conferidas | `VPS-MT/docs/instalacao.md`, passos D, E e F |
+| 6 | A verificação do servidor precisa analisar o provedor em uso (HostGator Brasil LTDA) como operador | Verificação do VPS-MT atualizada para o provedor real |
+| 7 | As medidas da seção "Segurança" só entram no texto depois de aplicadas e conferidas no servidor | `VPS-MT/docs/instalacao.md` |
 | 8 | Registros de conexão direta (sem repasse) ainda não conferidos; `SystemMaxUse=2G` pode apagar registro antes de 6 meses | Pendências do VPS-MT ("Guarda de registros" e "Uso do journal") |
 | 9 | O compromisso "a MT não grava a tela" vale para o servidor (fato) e para o técnico (prática). O lado do técnico no RustDesk tem gravação de sessão; confirmar que fica desligada | Manfred |
 | 10 | Texto final passa pela `humanizar-ptbr` | Antes de publicar |
@@ -161,7 +161,7 @@ Versão [PREENCHER: número da versão], de [PREENCHER: data].
 | 23 | A MT não vende nem repassa; ninguém além da MT usa os dados | Verificação de privacidade, item 5, linha "Compartilhamento"; LGPD, art. 9º, V | RECOMENDAÇÃO (compromisso da MT, a confirmar pelo Manfred) |
 | 24 | Provedor de hospedagem guarda a máquina por conta da MT | LGPD, arts. 5º, VII, e 39; `VPS-MT/docs/contratacao-hostgator.md` (HostGator Brasil LTDA, CNPJ 15.754.475/0001-40, sobre Oracle Cloud). A verificação do VPS-MT ainda analisa a Hostinger (pendência 6) | INTERPRETAÇÃO; nome do provedor [PREENCHER] |
 | 25 | Registros entregues a autoridade só com ordem judicial | Marco Civil, art. 10, § 1º, e art. 15, § 3º | FATO LEGAL |
-| 26 | Dados no Brasil, em São Paulo | `VPS-MT/docs/contratacao-hostgator.md`, seções 1 e 6 (VPS vpsbr-16184648 "em São Paulo"; "Servidores Oracle Cloud no Brasil") | FATO, válido enquanto a VPS da HostGator for mantida (pendência 6) |
+| 26 | Dados no Brasil, em São Paulo | `VPS-MT/docs/contratacao-hostgator.md`, seções 1 e 6 (VPS da HostGator em São Paulo; "Servidores Oracle Cloud no Brasil") | FATO, válido enquanto a VPS da HostGator for mantida (pendência 6) |
 | 27 | Lista de direitos | LGPD, art. 18, I a IX, e §§ 1º e 2º | FATO LEGAL |
 | 28 | Atendimento gratuito | LGPD, art. 18, § 5º | FATO LEGAL |
 | 29 | Registros podem ser mantidos até o fim dos 6 meses mesmo com pedido de eliminação, se a lei exigir | LGPD, art. 16, I; Marco Civil, art. 15 (incidência sobre a MT ficou como risco aceito no VPS-MT, item 3.3) | INTERPRETAÇÃO |
