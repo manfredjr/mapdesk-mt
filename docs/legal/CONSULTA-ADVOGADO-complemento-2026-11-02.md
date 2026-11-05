@@ -24,11 +24,11 @@ O envio é decisão do Manfred. Os fatos e as leituras estão em `licencas-binar
 
 ## Questão 8: patentes de H.264 e HEVC
 
-**Pergunta.** A distribuição gratuita pela MT, no Brasil, gera obrigação de licença ou de royalties?
+**Pergunta.** A distribuição gratuita pela MT, no Brasil, e o uso do programa nos atendimentos aos clientes da MT, que é uso comercial, geram obrigação de licença ou de royalties?
 
 **Impacto prático.** Manter ou desligar esses codecs.
 
-**Urgência.** Não segura a tag, por decisão do Manfred em 04/11/2026.
+**Urgência.** Não segura a tag, por decisão do Manfred em 05/11/2026.
 
 ## Questão 9: titularidade e licença das mudanças antes da cessão
 
@@ -70,7 +70,7 @@ O envio é decisão do Manfred. Os fatos e as leituras estão em `licencas-binar
 |---|---|---|
 | 6 | Componente sem licença localizada | Não segura a tag, por decisão do Manfred em 04/11/2026 |
 | 7 | Driver como agregado e licença da Amyuni | Não segura a tag, por decisão do Manfred em 02/11/2026 |
-| 8 | Patentes de H.264 e HEVC | Não segura a tag, por decisão do Manfred em 04/11/2026 |
+| 8 | Patentes de H.264 e HEVC | Não segura a tag, por decisão do Manfred em 05/11/2026 |
 | 9 | Titularidade e licença antes da cessão | Antes da primeira venda |
 | 10 | Alto risco no suporte remoto | Não segura a tag, por decisão do Manfred em 04/11/2026 |
 | 11 | Gravação do atendimento | Antes da primeira gravação |

@@ -154,7 +154,7 @@ Estas perguntas estão em `CONSULTA-ADVOGADO-complemento-2026-11-02.md`, questõ
 
 1. **Componente sem licença localizada.** A MT pode distribuir o driver de impressora, o adaptador, o `hwcodec`, o `flutter_gpu_texture_renderer` e o `hbb_common` compilado sem licença expressa, pelo fato de virem no build oficial de um programa AGPL? Leituras possíveis: (a) não pode sem autorização, o que é o risco maior; (b) no caso dos autores do RustDesk, a seção 5(c) da AGPL cobre as partes da obra, o que não alcança um terceiro. Impacto: tirar os componentes do build ou mantê-los. Urgência: não segura a tag, por decisão do Manfred em 04/11/2026, para o `hwcodec`, o `flutter_gpu_texture_renderer` e o `hbb_common`; para o driver de impressora e o adaptador, só se voltarem ao build.
 2. **Driver como "aggregate" e licença da Amyuni.** Um driver instalado à parte pelo programa conta como "aggregate" (seção 5) ou como parte da obra? A licença da Amyuni, que permite usar e não diz "redistribuir", autoriza a MT a distribuir o `usbmmidd_v2`? Impacto: dever de oferecer o código do driver e permanência dele no build. Urgência: não segura a tag, por decisão do Manfred em 02/11/2026.
-3. **Patentes de H.264 e HEVC.** A distribuição gratuita pela MT, no Brasil, gera obrigação de licença ou de royalties? Impacto: manter ou desligar esses codecs. Urgência: não segura a tag, por decisão do Manfred em 04/11/2026.
+3. **Patentes de H.264 e HEVC.** A distribuição gratuita pela MT, no Brasil, gera obrigação de licença ou de royalties? Impacto: manter ou desligar esses codecs. Urgência: não segura a tag, por decisão do Manfred em 05/11/2026, que assumiu o risco também no uso com clientes.
 
 ## 6. Decisão
 
