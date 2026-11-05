@@ -42,7 +42,7 @@ O envio é decisão do Manfred. Os fatos e as leituras estão em `licencas-binar
 
 ## Questão 10: alto risco no suporte remoto
 
-**Pergunta.** O técnico pode ver na tela, por acaso, dados sensíveis ou de crianças, adolescentes e idosos. Isso enquadra o suporte remoto como tratamento de alto risco (Resolução CD/ANPD nº 2/2022, Anexo I, art. 4º), o que tiraria a dispensa de encarregado do art. 11?
+**Pergunta.** O técnico pode ver na tela, por acaso, dados sensíveis ou de crianças, adolescentes e idosos, e um acesso remoto indevido poderia causar danos como os do art. 4º, § 2º. Isso enquadra o suporte remoto como tratamento de alto risco (Resolução CD/ANPD nº 2/2022, Anexo I, art. 4º), o que tiraria a dispensa de encarregado do art. 11?
 
 **Impacto prático.** Define se a MT precisa indicar encarregado.
 

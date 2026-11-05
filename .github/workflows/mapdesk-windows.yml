@@ -71,6 +71,7 @@ jobs:
           flutter doctor -v
           flutter precache --windows
           Invoke-WebRequest -Uri https://github.com/rustdesk/engine/releases/download/main/windows-x64-release.zip -OutFile windows-x64-release.zip
+          (Get-FileHash windows-x64-release.zip -Algorithm SHA256).Hash
           Expand-Archive -Path windows-x64-release.zip -DestinationPath windows-x64-release
           mv -Force windows-x64-release/*  C:/hostedtoolcache/windows/flutter/stable-${{ env.FLUTTER_VERSION }}-x64/bin/cache/artifacts/engine/windows-x64-release/
 
@@ -155,7 +156,7 @@ jobs:
         shell: bash
         run: |
           sed -i '/dpiAware/d' res/manifest.xml
-          cp AVISOS-DE-TERCEIROS.md ./rustdesk/
+          cp AVISOS-DE-TERCEIROS.md LICENCE AVISO-DE-MODIFICACAO.md ./rustdesk/
           pushd ./libs/portable
           pip3 install -r requirements.txt
           python3 ./generate.py -f ../../rustdesk/ -o . -e ../../rustdesk/MapDesk-MT.exe
@@ -194,5 +195,7 @@ jobs:
           body_path: ./SaidaMT/notas-versao.md
           files: |
             ./AVISOS-DE-TERCEIROS.md
+            ./LICENCE
+            ./AVISO-DE-MODIFICACAO.md
             ./SaidaMT/MapDesk-MT.exe
             ./SaidaMT/MapDesk-MT.exe.sha256

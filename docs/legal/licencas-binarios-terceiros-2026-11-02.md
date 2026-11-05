@@ -10,6 +10,8 @@ Objeto: o que o workflow `.github/workflows/mapdesk-windows.yml` baixa ou compil
 
 **Resultado:** a conferência não fecha. Ficaram sem licença localizada, marcados com `[FONTE?]`, o driver de impressora e o adaptador, o `hwcodec` e a biblioteca padrão do Rust. A `libyuv` tem texto de licença, mas o tipo exato não foi fechado, e o pacote `flutter_gpu_texture_renderer` volta `NOASSERTION` na API do GitHub. Os demais têm licença localizada, com os avisos e as ressalvas das seções 3 e 4.
 
+**Atualização de 04/11/2026:** a biblioteca padrão do Rust e a `libyuv` têm o texto em `AVISOS-DE-TERCEIROS.md`, e o `[FONTE?]` acima fica como registro de 02/11/2026.
+
 ## 1. Contexto e premissas
 
 | Premissa | O que aciona | Fundamento |
@@ -140,7 +142,7 @@ Duas buscas na internet em 02/11/2026 não acharam os termos desse driver no sit
 - [x] Decidir o destino do driver de impressora e do adaptador: fora do build, por decisão do Manfred em 02/11/2026.
 - [x] Abrir os três `.zip`: `verificacao-drivers-2026-11-02.md`.
 - [ ] Abrir a engine e procurar arquivo de licença.
-- [ ] Parcial em 04/11/2026, em `AVISOS-DE-TERCEIROS.md`, sem a engine, os avisos internos do Flutter, as crates e os pacotes `pub`. Criar um arquivo de avisos de terceiros que acompanhe o programa, com os textos de licença dos itens 1, 4 a 15 e 17, inclusive o aviso e o arquivo NOTICE que a Apache-2.0 pedir. Hoje o repositório não tem esse arquivo. Conferir antes se o pacote do Flutter já traz parte deles.
+- [ ] Parcial em 04/11/2026, em `AVISOS-DE-TERCEIROS.md`, sem a engine, os avisos internos do Flutter, as crates e os pacotes `pub`. Criar um arquivo de avisos de terceiros que acompanhe o programa, com os textos de licença dos itens 1, 4 a 15 e 17, inclusive o aviso e o arquivo NOTICE que a Apache-2.0 pedir. Conferir antes se o pacote do Flutter já traz parte deles.
 - [x] Gravar nas notas da versão onde está o código do FFmpeg e das demais bibliotecas compiladas, com a forma de compilação.
 - [x] Fixar o SHA-256 de `usbmmidd_v2.zip` no workflow.
 - [ ] Fixar o SHA-256 de `windows-x64-release.zip` no workflow.
@@ -150,9 +152,9 @@ Duas buscas na internet em 02/11/2026 não acharam os termos desse driver no sit
 
 Estas perguntas estão em `CONSULTA-ADVOGADO-complemento-2026-11-02.md`, questões 6 a 8.
 
-1. **Componente sem licença localizada.** A MT pode distribuir o driver de impressora, o adaptador, o `hwcodec` e o `hbb_common` compilado sem licença expressa, pelo fato de virem no build oficial de um programa AGPL? Leituras possíveis: (a) não pode sem autorização, o que é o risco maior; (b) no caso dos autores do RustDesk, a seção 5(c) da AGPL cobre as partes da obra, o que não alcança um terceiro. Impacto: tirar os componentes do build ou mantê-los. Urgência: antes da primeira tag, para o `hwcodec` e o `hbb_common`; para o driver de impressora e o adaptador, só se voltarem ao build.
+1. **Componente sem licença localizada.** A MT pode distribuir o driver de impressora, o adaptador, o `hwcodec`, o `flutter_gpu_texture_renderer` e o `hbb_common` compilado sem licença expressa, pelo fato de virem no build oficial de um programa AGPL? Leituras possíveis: (a) não pode sem autorização, o que é o risco maior; (b) no caso dos autores do RustDesk, a seção 5(c) da AGPL cobre as partes da obra, o que não alcança um terceiro. Impacto: tirar os componentes do build ou mantê-los. Urgência: não segura a tag, por decisão do Manfred em 04/11/2026, para o `hwcodec`, o `flutter_gpu_texture_renderer` e o `hbb_common`; para o driver de impressora e o adaptador, só se voltarem ao build.
 2. **Driver como "aggregate" e licença da Amyuni.** Um driver instalado à parte pelo programa conta como "aggregate" (seção 5) ou como parte da obra? A licença da Amyuni, que permite usar e não diz "redistribuir", autoriza a MT a distribuir o `usbmmidd_v2`? Impacto: dever de oferecer o código do driver e permanência dele no build. Urgência: não segura a tag, por decisão do Manfred em 02/11/2026.
-3. **Patentes de H.264 e HEVC.** A distribuição gratuita pela MT, no Brasil, gera obrigação de licença ou de royalties? Impacto: manter ou desligar esses codecs. Urgência: antes da primeira tag.
+3. **Patentes de H.264 e HEVC.** A distribuição gratuita pela MT, no Brasil, gera obrigação de licença ou de royalties? Impacto: manter ou desligar esses codecs. Urgência: não segura a tag, por decisão do Manfred em 04/11/2026.
 
 ## 6. Decisão
 
