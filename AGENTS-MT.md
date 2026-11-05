@@ -22,9 +22,9 @@ Nada atribui autoria a outra pessoa ou ferramenta. Não use `Co-Authored-By` nem
 
 1. aviso de que foi modificada, com a data;
 2. aviso de que é distribuída sob a AGPL-3.0;
-3. código inteiro sob a AGPL-3.0 para quem receber uma cópia, salvo os componentes de terceiros, que têm licença própria e estão em `AVISOS-DE-TERCEIROS.md`;
+3. código inteiro sob a AGPL-3.0 para quem receber uma cópia. Leitura da MT, pendente da questão 7 da consulta ao advogado: o driver da Amyuni fica fora disso, porque a MT não tem o código dele;
 4. avisos legais nas telas que já os mostram (por exemplo, "Sobre");
-5. código-fonte correspondente oferecido a quem recebe o executável, com a mesma ressalva. O driver da Amyuni vai sem código, por decisão do Manfred em 02/11/2026.
+5. código-fonte correspondente oferecido a quem recebe o executável, com o caminho do código dos terceiros nas notas da versão. O driver da Amyuni vai sem código, por decisão do Manfred em 02/11/2026, com a mesma ressalva.
 
 O programa nunca se apresenta como o RustDesk oficial. A marca "RustDesk" não é coberta pela licença do código. A marca "MapDesk-MT" não será registrada (decisão do Manfred em 05/10/2026); não abrir item de registro.
 

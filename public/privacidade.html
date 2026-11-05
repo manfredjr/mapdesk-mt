@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Privacidade - MapDesk - MT</title>
-<meta name="description" content="O que o MapDesk - MT, o servidor da MT e esta página fazem com dados: o servidor registra ID, IP e horário do cadastro e das sessões por repasse, e não grava a tela.">
+<meta name="description" content="O que o MapDesk - MT, o servidor da MT e esta página fazem com dados: o servidor registra ID, IP e horário do cadastro e das trocas de IP, e IP e horário das sessões por repasse. Ele não grava a tela, e o técnico só grava com combinado por escrito.">
 <link rel="icon" type="image/png" href="imagens/mapdesk.png">
 <link rel="canonical" href="https://mapdesk.manfred.com.br/privacidade.html">
 <link rel="stylesheet" href="css/site.css">
@@ -16,12 +16,12 @@
 <header class="topo">
   <a href="./"><img class="topo__simbolo" src="imagens/mapdesk.png" alt="MapDesk - MT, página inicial" width="56" height="56"></a>
   <h1>Privacidade</h1>
-  <p class="topo__frase">O servidor da MT registra dados da conexão para ligar o técnico ao seu computador e não grava a tela. Esta página não tem formulário, propaganda nem ferramenta de estatística.</p>
+  <p class="topo__frase">O servidor da MT registra dados da conexão para ligar o técnico ao seu computador e não grava a tela. O técnico só grava um atendimento com combinado prévio por escrito. Esta página não tem formulário, propaganda nem ferramenta de estatística.</p>
 </header>
 
 <section>
   <h2>O servidor da MT</h2>
-  <p>O servidor da MT registra o ID, o IP e o horário do cadastro e das trocas de IP de cada computador, e o IP e o horário das sessões que passam pelo repasse. Esses registros ficam guardados por até 6 meses. O banco do servidor guarda também o ID e o último IP de cada computador, enquanto o computador usar o serviço, e quem deixar de usar pode pedir a exclusão pelo canal indicado nesta página. Têm acesso a esses dados a MT e o suporte técnico do provedor de hospedagem, que tem acesso de administrador à máquina. A MT ainda confere com o provedor de onde esse suporte acessa, e isso pode incluir outro país. O servidor não grava a tela nem o conteúdo do atendimento.</p>
+  <p>O servidor da MT registra o ID, o IP e o horário do cadastro e das trocas de IP de cada computador, com o identificador e a chave pública do aparelho, e o IP, o horário e um identificador das sessões que passam pelo repasse. Esses registros ficam guardados por até 6 meses. O banco do servidor guarda também o ID e o último IP de cada computador, sem exclusão automática, e esse dado não segue o limite de 6 meses. Você pode pedir a exclusão pelo canal indicado nesta página. Têm acesso a esses dados a MT e o suporte técnico do provedor de hospedagem, que tem acesso de administrador à máquina. A MT ainda confere com o provedor de onde esse suporte acessa, e isso pode incluir outro país. O servidor não grava a tela nem o conteúdo do atendimento.</p>
   <p>A MT usa esses dados para o suporte remoto: achar o computador e ligar o do técnico ao seu. Os registros são guardados por cautela, pela regra de guarda de registros do Marco Civil da Internet (art. 15).</p>
   <p>Para montar a conexão, o programa também envia ao servidor um identificador do aparelho, a chave pública dele, a versão do programa, o tipo de rede e o endereço do computador na rede local.</p>
   <p>O servidor fica numa máquina da HostGator, em São Paulo.</p>
@@ -31,7 +31,7 @@
   <h2>O programa</h2>
   <p>O MapDesk - MT usa o servidor da MT (rustdesk.manfred.com.br) para ligar o seu computador ao do técnico, e a conexão pode ir direto entre os dois. Ao iniciar, ele também consulta servidores STUN públicos (Cloudflare, Google, Antisip e Nextcloud) para descobrir o endereço IPv6 do computador. Esses servidores podem ver o IP dele, mas não recebem a tela nem o conteúdo do atendimento. Ele vem configurado para não se cadastrar nos serviços da RustDesk, e o endereço do servidor não pode ser trocado.</p>
   <p>Durante o atendimento, depois que você aceita, o técnico vê a sua tela e pode usar o teclado e o mouse. Ele também recebe dados do computador, como o nome dele, o nome do usuário conectado, o sistema e a versão do programa. Esse aceite é o padrão, e a aprovação por clique pode ser mudada naquele computador, inclusive pelo técnico durante um atendimento aceito. Depois da mudança, quem tem uma senha válida entra sem esse aceite. Antes de aceitar, feche o que não tem a ver com o atendimento, como e-mails e documentos pessoais. Você pode encerrar a conexão a qualquer momento.</p>
-  <p>O programa permite gravar a sessão no computador do técnico. Nas máquinas da MT, a gravação automática fica desligada, e o técnico só grava um atendimento depois de combinar com você por escrito para que serve o vídeo, quem pode assistir e por quanto tempo ele fica guardado.</p>
+  <p>O programa permite gravar a sessão no computador do técnico. A MT não usa a gravação automática, e o técnico só grava um atendimento depois de combinar por escrito com o cliente para que serve o vídeo, quem pode assistir e por quanto tempo ele fica guardado. A permissão de gravar vem ligada no programa, e quem está no computador atendido pode desligá-la nas configurações.</p>
   <p>As configurações e os registros do programa ficam no seu computador.</p>
 </section>
 

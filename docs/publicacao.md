@@ -56,7 +56,9 @@ A página `https://mapdesk.manfred.com.br/` mora em `public/` deste repositório
    - licenças dos binários (`docs/legal/licencas-binarios-terceiros-2026-11-02.md`): a conferência não fechou. Cada item abaixo precisa estar resolvido ou adiado pelo Manfred por escrito:
      - perguntas com urgência "antes da primeira tag" em `docs/legal/CONSULTA-ADVOGADO-complemento-2026-11-02.md`, que as decisões de 02/11/2026 e 04/11/2026 não cobrem. A questão 6, do `hwcodec` e do `hbb_common`, está coberta: o Manfred assumiu a dúvida em 04/11/2026;
    - teste de convivência com o RustDesk oficial na mesma máquina, inclusive a desinstalação do MapDesk-MT;
-   - verificação do provedor, inclusive o acesso do suporte a partir do exterior registrado no VPS-MT;
+   - gravação automática conferida como desligada em cada máquina de técnico da MT;
+   - `flutter_gpu_texture_renderer`, sem licença no commit usado, com a decisão do Manfred;
+   - ok do Manfred, na junção do PR 11, para seguir com: o aviso do anúncio; o banco sem exclusão automática; o teste G5 e o limite de 6 meses não vistos; a origem do suporte da HostGator em conferência; os avisos sem as dependências de código, a engine e os avisos internos do Flutter; as mudanças no `AGENTS-MT.md`;
    - buscas no INPI: o Manfred confirma se ficam para depois, porque a decisão de 02/11/2026 registra só as respostas do advogado.
 2. Merge do PR do site, com o workflow `MapDesk-MT site` verde.
 3. Tag com o valor de `kMtVersao` (seção "Publicar", acima). O botão da página aponta para essa tag, e a versão traz o `MapDesk-MT.exe` e o `MapDesk-MT.exe.sha256`. A tag vem antes do site para o botão nunca apontar para uma versão que não existe. Até o fim do passo 6, a versão não é divulgada a ninguém, porque o link de privacidade do programa só funciona depois do passo 4.
