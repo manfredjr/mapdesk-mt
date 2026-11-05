@@ -12,6 +12,6 @@ Data: 04/11/2026. Projeto MAPDESK-MT. Feito com a skill `legal-br`. Decisão do 
 
 **RECOMENDAÇÃO.** Deixar pronto o documento da receita e da ausência de grupo, por causa do prazo do art. 5º.
 
-**O que esta verificação não cobriu.** A receita da MT e a existência de grupo econômico, que vêm da confirmação do Manfred, sem documento conferido.
+**O que esta verificação não cobriu.** A larga escala (art. 4º, I, a), o enquadramento do art. 2º, a Resolução CD/ANPD nº 18/2024, a receita da MT e a existência de grupo econômico, que vêm da confirmação do Manfred, sem documento conferido.
 
 Autor: Manfred Heil Junior

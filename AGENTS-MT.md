@@ -22,7 +22,7 @@ Nada atribui autoria a outra pessoa ou ferramenta. Não use `Co-Authored-By` nem
 
 1. aviso de que foi modificada, com a data;
 2. aviso de que é distribuída sob a AGPL-3.0;
-3. código inteiro sob a AGPL-3.0 para quem receber uma cópia. Leitura da MT, pendente da questão 7 da consulta ao advogado: o driver da Amyuni, instalado à parte, conta como agregado (seção 5 da AGPL-3.0) e fica fora disso. Os outros componentes de terceiros seguem a licença de cada um, com os textos em `AVISOS-DE-TERCEIROS.md`;
+3. código inteiro sob a AGPL-3.0 para quem receber uma cópia. Leitura da MT, pendente da questão 7 da consulta ao advogado: o driver da Amyuni, instalado à parte, conta como agregado (seção 5 da AGPL-3.0) e fica fora disso. Os outros componentes de terceiros seguem a licença de cada um, com os textos em `AVISOS-DE-TERCEIROS.md` quando localizados. O que falta está listado nesse arquivo;
 4. avisos legais nas telas que já os mostram (por exemplo, "Sobre");
 5. código-fonte correspondente oferecido a quem recebe o executável, com o caminho do código dos terceiros nas notas da versão. Na engine do Flutter, as notas ainda não indicam o commit exato (`docs/superpowers/pendencias.md`). O driver da Amyuni vai sem código, por decisão do Manfred em 02/11/2026, com a mesma ressalva.
 

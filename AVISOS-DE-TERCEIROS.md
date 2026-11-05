@@ -1,6 +1,6 @@
 # Avisos de terceiros do MapDesk-MT
 
-O MapDesk-MT inclui programas de terceiros, cada um com a sua licença. Este arquivo reúne os avisos que essas licenças pedem. O MapDesk-MT em si está sob a AGPL-3.0, e as mudanças da MT estão no aviso de modificação. Os dois arquivos, `LICENCE` e `AVISO-DE-MODIFICACAO.md`, ficam no código de cada versão, em https://github.com/manfredjr/mapdesk-mt.
+O MapDesk-MT inclui programas de terceiros, cada um com a sua licença. Este arquivo reúne os avisos que essas licenças pedem. O MapDesk-MT em si está sob a AGPL-3.0, e as mudanças da MT estão no aviso de modificação. Os dois arquivos, `LICENCE` e `AVISO-DE-MODIFICACAO.md`, acompanham o programa e ficam no código de cada versão, em https://github.com/manfredjr/mapdesk-mt.
 
 Os textos das licenças estão em inglês, como os autores os publicaram, e não foram alterados.
 

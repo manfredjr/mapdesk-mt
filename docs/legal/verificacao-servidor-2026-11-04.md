@@ -16,6 +16,6 @@ Data: 04/11/2026. Projeto MAPDESK-MT. Feito com a skill `legal-br`. Base: confer
 
 **REVISÃO PROFISSIONAL.** Se o suporte acessar do exterior, a base da transferência (LGPD, art. 33) fica para o advogado.
 
-**O que esta verificação não cobriu.** O teste cronometrado G5, os contratos da HostGator e os dados que o servidor guarda além dos lidos pelo VPS-MT.
+**O que esta verificação não cobriu.** O teste cronometrado G5, os contratos da HostGator, o acesso de empresas da infraestrutura, como a Oracle Cloud citada em `VPS-MT/docs/contratacao-hostgator.md`, o resto do disco e os dados que o servidor guarda além dos lidos pelo VPS-MT.
 
 Autor: Manfred Heil Junior
