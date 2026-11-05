@@ -91,4 +91,4 @@ A cessão assinada depois não apaga o que já saiu. Quem recebeu a versão sob 
 
 Esta pergunta está em `CONSULTA-ADVOGADO-complemento-2026-11-02.md`, questão 9.
 
-**Pergunta.** Sem contrato específico, o art. 4º da Lei nº 9.609/1998 alcança as mudanças feitas por quem é sócio ou administrador da MT? Leituras possíveis: (a) não alcança, e os direitos ficam com a pessoa física até a cessão; (b) alcança, se houver vínculo de serviço com esse objeto, e a cessão só confirma a situação. Impacto: define quem assina o quê e como a minuta descreve as mudanças já feitas. Urgência: antes da primeira venda.
+**Pergunta.** Sem contrato específico, o art. 4º da Lei nº 9.609/1998 alcança as mudanças feitas por quem é sócio ou administrador da MT? Leituras possíveis: (a) não alcança, e os direitos ficam com a pessoa física até a cessão; (b) alcança, se houver vínculo de serviço com esse objeto, e a cessão só confirma a situação. Impacto: define quem assina o quê e como a minuta descreve as mudanças já feitas. Urgência: antes da primeira venda. Nota de 05/11/2026: a questão 9 do complemento ganhou os fatos do uso com clientes.
