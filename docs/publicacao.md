@@ -8,7 +8,7 @@ Passo a passo para publicar uma versão (fatia 5 e todas as seguintes). Publicar
 
    Decisões do Manfred em 02/11/2026:
    - a primeira versão sai sem esperar as respostas do advogado, com o risco assumido por ele e a consulta (`docs/legal/CONSULTA-ADVOGADO-mapdesk-agpl-marca-2026-10-05.md`) enviada em paralelo. As questões continuam abertas nas pendências;
-   - a cessão do autor para a MT não bloqueia a tag, porque o programa é gratuito, e bloqueia a primeira venda. O contrato está com o grupo do contrato único e depende do contador (`docs/legal/verificacao-publicacao-sem-cessao-2026-11-02.md`).
+   - a cessão do autor para a MT não bloqueia a tag, porque o programa é gratuito, e bloqueia a primeira venda. Decisão do Manfred em 05/11/2026: o programa é gratuito, nunca é cobrado e serve de ferramenta do serviço de suporte aos clientes, e por isso a cessão não bloqueia a tag. Pacote em que o programa entre como item cobrado pede a cessão antes (interpretação em `docs/legal/verificacao-publicacao-sem-cessao-2026-11-02.md`, seção 2, sem resposta do advogado). O contrato está com o grupo do contrato único e depende do contador (`docs/legal/verificacao-publicacao-sem-cessao-2026-11-02.md`).
 2. A chave pública de **produção** (VPS-MT, `docs/instalacao.md`, passo G4) está em `CHAVE_PUBLICA` (`src/mt_config.rs`). Feito em 01/11/2026, quando a VPS da HostGator passou a responder por `rustdesk.manfred.com.br`; o teste `mt_config` do workflow confere o valor exato antes de empacotar. A do laboratório nunca vai para a versão distribuída.
 3. Certificado de assinatura: a primeira versão sai sem certificado, por decisão do Manfred em 01/11/2026, registrada aqui em 02/11/2026. Depois que houver certificado, conferir antes de cada versão se ele está válido e se os segredos do GitHub existem (fatia 4).
 4. A versão MT foi atualizada em dois lugares, com o mesmo valor:
@@ -34,7 +34,8 @@ Passo a passo para publicar uma versão (fatia 5 e todas as seguintes). Publicar
 3. Conferir na página da versão:
    - o executável, o `.sha256` e os três arquivos de licença e avisos estão lá;
    - o link do código abre a árvore da tag;
-   - o SHA-256 do log bate com o do arquivo baixado.
+   - o SHA-256 do log bate com o do arquivo baixado;
+   - o SHA-256 da engine no log da tag bate com o registrado em `docs/superpowers/pendencias.md`. Se mudou, avisar o Manfred antes de divulgar, porque o arquivo vem de uma versão móvel.
 4. Só depois do certificado: baixar o executável da versão e conferir a assinatura (Propriedades e depois Assinaturas digitais).
 
 ## Depois de publicar
@@ -42,7 +43,9 @@ Passo a passo para publicar uma versão (fatia 5 e todas as seguintes). Publicar
 1. Publicar ou atualizar a página do produto (seção "Site do produto", abaixo), antes de divulgar a versão.
    - Depois da conferência no ar e com a confirmação do Manfred ("Site do produto", passo 7), pedir à sessão do site a troca em `manfred.com.br/acesso`: o MapDesk-MT vira o botão principal e o RustDesk oficial fica como alternativa. A decisão é do Manfred, em 02/11/2026, e substitui o "os dois caminhos não se misturam" de 01/11/2026.
 2. Atualizar a "Situação do projeto" do `README-MT.md`.
-3. Nunca apagar tags nem versões antigas que algum cliente recebeu (AGPL-3.0, seção 6).
+3. Trocar pela versão com tag as cópias de teste que ficaram com clientes (`docs/superpowers/pendencias.md`, "Cópias de teste com clientes"). Nenhum cliente fica com compilação sem tag.
+4. Mover as análises de risco para o repositório privado, com o ok do Manfred para criá-lo, sem apagar o histórico nem a tag (decisão de 05/11/2026).
+5. Nunca apagar tags nem versões antigas que algum cliente recebeu (AGPL-3.0, seção 6).
 
 ## Site do produto
 

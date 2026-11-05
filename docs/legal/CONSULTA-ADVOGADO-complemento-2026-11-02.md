@@ -32,7 +32,7 @@ O envio é decisão do Manfred. Os fatos e as leituras estão em `licencas-binar
 
 ## Questão 9: titularidade e licença das mudanças antes da cessão
 
-**Pergunta.** Sem contrato específico, o art. 4º da Lei nº 9.609/1998 alcança as mudanças feitas por quem é sócio ou administrador da MT? Se não alcançar, quem concede a AGPL-3.0 sobre essas mudanças, e uma autorização escrita curta do autor à MT resolve o período até a cessão? O art. 49, III, da Lei nº 9.610/1998 limita essa autorização?
+**Pergunta.** Sem contrato específico, o art. 4º da Lei nº 9.609/1998 alcança as mudanças feitas por quem é sócio ou administrador da MT? Se não alcançar, quem concede a AGPL-3.0 sobre essas mudanças, e uma autorização escrita curta do autor à MT resolve o período até a cessão? O art. 49, III, da Lei nº 9.610/1998 limita essa autorização? O programa já é usado como ferramenta do serviço de suporte da MT aos clientes, sem cobrança pelo programa (fato dito pelo Manfred em 05/11/2026). Isso muda a resposta ou o que conta como venda?
 
 **Leituras possíveis.** (a) Os direitos ficam com a pessoa física até a cessão, e a MT precisa de autorização dela para distribuir. (b) O art. 4º alcança as mudanças, se houver vínculo de serviço com esse objeto, e a cessão só confirma a situação.
 
