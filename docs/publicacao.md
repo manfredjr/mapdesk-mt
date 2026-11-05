@@ -54,13 +54,8 @@ A página `https://mapdesk.manfred.com.br/` mora em `public/` deste repositório
    - texto completo da `privacidade.html` no ramo `mt`, com os itens da verificação de privacidade (seção 5), e o endereço gravado em `kMtPrivacidade`. A página entra no ar no passo 4, antes de a versão ser divulgada;
    - bloco do MapDesk-MT no `README.md` da raiz;
    - licenças dos binários (`docs/legal/licencas-binarios-terceiros-2026-11-02.md`): a conferência não fechou. Cada item abaixo precisa estar resolvido ou adiado pelo Manfred por escrito:
-     - decisão sobre como avisar o cliente do anúncio do `usbmmidd_v2`. O teste de 04/11/2026, com o monitor virtual ativo, não mostrou anúncio;
-     - arquivo de avisos de terceiros;
-     - instruções do código do FFmpeg nas notas da versão;
      - perguntas com urgência "antes da primeira tag" em `docs/legal/CONSULTA-ADVOGADO-complemento-2026-11-02.md`, que as decisões de 02/11/2026 e 04/11/2026 não cobrem. A questão 6, do `hwcodec` e do `hbb_common`, está coberta: o Manfred assumiu a dúvida em 04/11/2026;
-   - ajuste da linha 17 do `AGENTS-MT.md` e ressalva de terceiros nas linhas 21, 25 e 27, com o ok do Manfred;
    - teste de convivência com o RustDesk oficial na mesma máquina, inclusive a desinstalação do MapDesk-MT;
-   - promessas da página sobre o servidor conferidas: registro de cada conexão, guarda por 6 meses e acesso restrito. IP e servidor no Brasil conferidos no painel em 04/11/2026;
    - verificação do provedor, inclusive o acesso do suporte a partir do exterior registrado no VPS-MT;
    - buscas no INPI: o Manfred confirma se ficam para depois, porque a decisão de 02/11/2026 registra só as respostas do advogado.
 2. Merge do PR do site, com o workflow `MapDesk-MT site` verde.

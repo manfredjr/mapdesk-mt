@@ -32,6 +32,8 @@ Este programa foi modificado pela MT - Manfred Tecnologia. A licença continua a
 
 ## Componentes de terceiros
 
+Os avisos dos componentes de terceiros estão em `AVISOS-DE-TERCEIROS.md`.
+
 O monitor virtual usa o `usbmmidd_v2`, da Amyuni Technologies Inc. (https://www.amyuni.com), distribuído com a licença dela. O programa não é da MT, vai no pacote sem código-fonte, e o arquivo `License.txt` o acompanha, na pasta `usbmmidd_v2`. O pacote sai sem a pasta `Win32`, os `deviceinstaller` e o `usbmmidd.bat`, e os demais arquivos não foram alterados. O `idd_instructions.txt`, da Amyuni, ainda cita o `.bat` retirado.
 
 ## Nomes e logotipos

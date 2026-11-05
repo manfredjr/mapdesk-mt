@@ -140,8 +140,8 @@ Duas buscas na internet em 02/11/2026 não acharam os termos desse driver no sit
 - [x] Decidir o destino do driver de impressora e do adaptador: fora do build, por decisão do Manfred em 02/11/2026.
 - [x] Abrir os três `.zip`: `verificacao-drivers-2026-11-02.md`.
 - [ ] Abrir a engine e procurar arquivo de licença.
-- [ ] Criar um arquivo de avisos de terceiros que acompanhe o programa, com os textos de licença dos itens 1, 4 a 15 e 17, inclusive o aviso e o arquivo NOTICE que a Apache-2.0 pedir. Hoje o repositório não tem esse arquivo. Conferir antes se o pacote do Flutter já traz parte deles.
-- [ ] Gravar nas notas da versão onde está o código do FFmpeg e das demais bibliotecas compiladas, com a forma de compilação.
+- [x] Criar um arquivo de avisos de terceiros que acompanhe o programa, com os textos de licença dos itens 1, 4 a 15 e 17, inclusive o aviso e o arquivo NOTICE que a Apache-2.0 pedir. Hoje o repositório não tem esse arquivo. Conferir antes se o pacote do Flutter já traz parte deles.
+- [x] Gravar nas notas da versão onde está o código do FFmpeg e das demais bibliotecas compiladas, com a forma de compilação.
 - [x] Fixar o SHA-256 de `usbmmidd_v2.zip` no workflow.
 - [ ] Fixar o SHA-256 de `windows-x64-release.zip` no workflow.
 - [ ] Inventariar as licenças das crates e dos pacotes `pub`, que ficaram fora desta verificação.

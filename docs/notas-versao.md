@@ -8,7 +8,11 @@ O submódulo libs/hbb_common aponta para o fork https://github.com/manfredjr/hbb
 
 Esta versão não traz a impressora remota do RustDesk, porque o driver ficou de fora do pacote.
 
-O monitor virtual usa o usbmmidd_v2, da Amyuni Technologies Inc. (https://www.amyuni.com), que vai sem código-fonte e com a licença dela, no arquivo License.txt da pasta usbmmidd_v2.
+O monitor virtual usa o usbmmidd_v2, da Amyuni Technologies Inc. (https://www.amyuni.com), que vai sem código-fonte e com a licença dela, no arquivo License.txt da pasta usbmmidd_v2. A licença desse driver prevê que uma página de anúncio pode aparecer ao usar o monitor virtual. Isso não aconteceu no nosso teste, mas não há garantia de que nunca aconteça.
+
+Os avisos dos componentes de terceiros estão no arquivo AVISOS-DE-TERCEIROS.md, que acompanha esta versão.
+
+O FFmpeg 7.1.1 entra no programa com ligação estática, sob a GPL v2 ou posterior. O código dele está em https://github.com/FFmpeg/FFmpeg/tree/n7.1.1. A forma de compilar, com os patches, está em res/vcpkg/ffmpeg nesta tag, e os passos estão em .github/workflows/mapdesk-windows.yml. As demais bibliotecas compiladas seguem o mesmo caminho, em res/vcpkg e vcpkg.json, com a origem de cada uma em AVISOS-DE-TERCEIROS.md.
 
 O MapDesk-MT.exe não tem assinatura digital. Na primeira vez, o SmartScreen do Windows pode pedir confirmação ("Mais informações" e depois "Executar assim mesmo"). Nos computadores com o Controle Inteligente de Aplicativos ligado, o programa não abre até ter a assinatura.
 
