@@ -18,6 +18,12 @@ pub fn aplicar() {
     {
         let mut overwrite = config::OVERWRITE_SETTINGS.write().unwrap();
         overwrite.insert(keys::OPTION_ALLOW_AUTO_UPDATE.to_owned(), "N".to_owned());
+        // Would save every incoming session on the attended computer, and it does not
+        // check the recording permission. Recording started by the technician stays.
+        overwrite.insert(
+            keys::OPTION_ALLOW_AUTO_RECORD_INCOMING.to_owned(),
+            "N".to_owned(),
+        );
         overwrite.insert(
             keys::OPTION_CUSTOM_RENDEZVOUS_SERVER.to_owned(),
             SERVIDOR.to_owned(),
@@ -60,6 +66,7 @@ mod tests {
             .unwrap()
             .get(keys::OPTION_ALLOW_AUTO_UPDATE)
             .cloned();
+        let auto_record_incoming = Config::get_option(keys::OPTION_ALLOW_AUTO_RECORD_INCOMING);
         let key = config::OVERWRITE_SETTINGS
             .read()
             .unwrap()
@@ -89,6 +96,7 @@ mod tests {
         {
             let mut overwrite = config::OVERWRITE_SETTINGS.write().unwrap();
             overwrite.remove(keys::OPTION_ALLOW_AUTO_UPDATE);
+            overwrite.remove(keys::OPTION_ALLOW_AUTO_RECORD_INCOMING);
             overwrite.remove(keys::OPTION_CUSTOM_RENDEZVOUS_SERVER);
             overwrite.remove(keys::OPTION_KEY);
         }
@@ -105,6 +113,7 @@ mod tests {
         assert!(no_register_device);
         assert_eq!(api_server, "");
         assert_eq!(auto_update.as_deref(), Some("N"));
+        assert_eq!(auto_record_incoming, "N");
         assert_eq!(powered_by.as_deref(), Some("Y"));
         assert_eq!(
             rendezvous_server,
