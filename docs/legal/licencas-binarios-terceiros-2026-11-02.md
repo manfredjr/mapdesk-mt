@@ -130,7 +130,7 @@ Duas buscas na internet em 02/11/2026 não acharam os termos desse driver no sit
 
 **INTERPRETAÇÃO.** É o mesmo quadro do `hbb_common`, tratado na questão 2 da consulta ao advogado. A questão 2 olha para a alteração do `hbb_common`. Ela não responde se a MT pode distribuir compilados esses dois componentes sem alterá-los, e isso vale para ambos (questão 6 do complemento à consulta). Licença do `hwcodec`: `[FONTE?]`.
 
-**RISCO.** Médio. Decisão do Manfred em 04/11/2026: manter o `hwcodec` e o `hbb_common` e assumir a dúvida até a resposta do advogado à questão 6. A decisão registra quem assume o risco e não dá licença nenhuma.
+**RISCO.** Médio. Decisão do Manfred em 04/11/2026: manter o `hwcodec`, o `hbb_common` e o `flutter_gpu_texture_renderer` e assumir a dúvida até a resposta do advogado à questão 6. A decisão registra quem assume o risco e não dá licença nenhuma.
 
 ## 4. Requisitos para a versão
 

@@ -6,13 +6,13 @@ O envio é decisão do Manfred. Os fatos e as leituras estão em `licencas-binar
 
 ## Questão 6: componente sem licença localizada
 
-**Pergunta.** A MT pode distribuir o driver de impressora, o adaptador, o `hwcodec` e o `hbb_common` compilado sem licença expressa, pelo fato de virem no build oficial de um programa AGPL?
+**Pergunta.** A MT pode distribuir o driver de impressora, o adaptador, o `hwcodec`, o `flutter_gpu_texture_renderer` e o `hbb_common` compilado sem licença expressa, pelo fato de virem no build oficial de um programa AGPL?
 
 **Leituras possíveis.** (a) Não pode sem autorização, o que é o risco maior. (b) No caso dos autores do RustDesk, a seção 5(c) da AGPL-3.0 cobre as partes da obra. Correção de 02/11/2026: o `usbmmidd_v2` saiu desta pergunta e foi para a questão 7, porque o pacote traz uma licença da Amyuni (`verificacao-drivers-2026-11-02.md`).
 
 **Impacto prático.** Tirar os componentes do build ou mantê-los. O driver de impressora e o adaptador saíram do build em 02/11/2026, e a resposta define se podem voltar.
 
-**Urgência.** Antes da primeira tag, para o `hwcodec` e o `hbb_common`, salvo decisão escrita do Manfred. Para o driver de impressora e o adaptador, só se voltarem ao build.
+**Urgência.** Não segura a tag para o `hwcodec`, o `flutter_gpu_texture_renderer` e o `hbb_common`, por decisão do Manfred em 04/11/2026. Para o driver de impressora e o adaptador, só se voltarem ao build.
 
 ## Questão 7: driver como agregado e licença da Amyuni
 
@@ -28,7 +28,7 @@ O envio é decisão do Manfred. Os fatos e as leituras estão em `licencas-binar
 
 **Impacto prático.** Manter ou desligar esses codecs.
 
-**Urgência.** Antes da primeira tag, salvo decisão escrita do Manfred.
+**Urgência.** Não segura a tag, por decisão do Manfred em 04/11/2026.
 
 ## Questão 9: titularidade e licença das mudanças antes da cessão
 
@@ -56,13 +56,22 @@ O envio é decisão do Manfred. Os fatos e as leituras estão em `licencas-binar
 
 **Urgência.** Antes da primeira gravação de atendimento.
 
+## Questão 12: nome MapDesk-MT
+
+**Pergunta.** A Mapear Sistemas usa o nome MapDesk num help desk brasileiro, e as buscas no INPI de 04/11/2026 não trouxeram marca registrada. O uso anterior dá a ela direito de impedir o nome MapDesk-MT num programa de acesso remoto? Contexto em `verificacao-nome-2026-11-04.md`.
+
+**Impacto prático.** Manter ou trocar o nome.
+
+**Urgência.** Não segura a tag, por decisão do Manfred em 04/11/2026.
+
 ## Resumo
 
 | Questão | Tema | Urgência |
 |---|---|---|
-| 6 | Componente sem licença localizada | Antes da primeira tag, para o `hwcodec` e o `hbb_common`, salvo decisão escrita |
+| 6 | Componente sem licença localizada | Não segura a tag, por decisão do Manfred em 04/11/2026 |
 | 7 | Driver como agregado e licença da Amyuni | Não segura a tag, por decisão do Manfred em 02/11/2026 |
-| 8 | Patentes de H.264 e HEVC | Antes da primeira tag, salvo decisão escrita |
+| 8 | Patentes de H.264 e HEVC | Não segura a tag, por decisão do Manfred em 04/11/2026 |
 | 9 | Titularidade e licença antes da cessão | Antes da primeira venda |
 | 10 | Alto risco no suporte remoto | Não segura a tag, por decisão do Manfred em 04/11/2026 |
 | 11 | Gravação do atendimento | Antes da primeira gravação |
+| 12 | Nome MapDesk-MT | Não segura a tag, por decisão do Manfred em 04/11/2026 |
