@@ -29,7 +29,7 @@ Este programa foi modificado pela MT - Manfred Tecnologia. A licença continua a
 | 02/11/2026 | Bloco do MapDesk-MT no topo do README | `README.md` |
 | 02/11/2026 | Link da página de privacidade na tela Sobre | `flutter/lib/mt/mt_info.dart` |
 | 02/11/2026 | Versão sem impressora remota: o driver e o adaptador saem do pacote, e as opções da impressora somem das configurações e do instalador | `.github/workflows/mapdesk-windows.yml`, `src/mt_config.rs`, `flutter/lib/desktop/pages/install_page.dart` |
-| 05/11/2026 | Gravação automática das sessões recebidas travada como desligada | `src/mt_config.rs` |
+| 05/11/2026 | Gravação automática das sessões recebidas desligada, sem efeito mesmo se a caixa for marcada | `src/mt_config.rs` |
 | 05/11/2026 | Avisos de terceiros, licença e aviso de modificação no pacote e na versão, e SHA-256 da engine no log da compilação | `AVISOS-DE-TERCEIROS.md`, `.github/workflows/mapdesk-windows.yml` |
 
 ## Componentes de terceiros

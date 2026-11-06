@@ -32,7 +32,7 @@ O envio é decisão do Manfred. Os fatos e as leituras estão em `licencas-binar
 
 ## Questão 9: titularidade e licença das mudanças antes da cessão
 
-**Pergunta.** Sem contrato específico, o art. 4º da Lei nº 9.609/1998 alcança as mudanças feitas por quem é sócio ou administrador da MT? Se não alcançar, quem concede a AGPL-3.0 sobre essas mudanças, e uma autorização escrita curta do autor à MT resolve o período até a cessão? O art. 49, III, da Lei nº 9.610/1998 limita essa autorização? Fatos ditos pelo Manfred em 05/11/2026: o programa é gratuito, serve de ferramenta do serviço de suporte aos clientes, já foi colocado em cliente e tem sido usado para dois clientes, com compilações sem tag. Se o atendimento é cobrado não foi informado nesta consulta. Isso muda a resposta? Cobrar o atendimento feito com o programa conta como venda dele? Deixar a cópia no computador do cliente conta como distribuição sob a AGPL-3.0?
+**Pergunta.** Sem contrato específico, o art. 4º da Lei nº 9.609/1998 alcança as mudanças feitas por quem é sócio ou administrador da MT? Se não alcançar, quem concede a AGPL-3.0 sobre essas mudanças, e uma autorização escrita curta do autor à MT resolve o período até a cessão? O art. 49, III, da Lei nº 9.610/1998 limita essa autorização? Fatos ditos pelo Manfred em 05/11/2026: o programa é gratuito, serve de ferramenta do serviço de suporte aos clientes, já foi colocado em cliente e tem sido usado para dois clientes. Essas cópias são compilações sem tag, porque nenhuma versão foi publicada até 06/11/2026. Se o atendimento é cobrado não foi informado nesta consulta. Isso muda a resposta? Cobrar o atendimento feito com o programa conta como venda dele? Deixar a cópia no computador do cliente conta como distribuição sob a AGPL-3.0? Se contar, a MT precisa entregar a essas cópias os avisos e a oferta do código das seções 4 a 6, e a troca pela versão com tag passa a ter prazo.
 
 **Leituras possíveis.** (a) Os direitos ficam com a pessoa física até a cessão, e a MT precisa de autorização dela para distribuir. (b) O art. 4º alcança as mudanças, se houver vínculo de serviço com esse objeto, e a cessão só confirma a situação.
 
@@ -71,7 +71,7 @@ O envio é decisão do Manfred. Os fatos e as leituras estão em `licencas-binar
 | 6 | Componente sem licença localizada | Não segura a tag, por decisão do Manfred em 04/11/2026 |
 | 7 | Driver como agregado e licença da Amyuni | Não segura a tag, por decisão do Manfred em 02/11/2026 |
 | 8 | Patentes de H.264 e HEVC | Não segura a tag, por decisão do Manfred em 05/11/2026 |
-| 9 | Titularidade e licença antes da cessão | Antes da primeira venda |
+| 9 | Titularidade e licença antes da cessão | Antes da primeira venda, e o uso com clientes já começou |
 | 10 | Alto risco no suporte remoto | Não segura a tag, por decisão do Manfred em 04/11/2026 |
 | 11 | Gravação do atendimento | Antes da primeira gravação |
 | 12 | Nome MapDesk-MT | Não segura a tag, por decisão do Manfred em 04/11/2026 |
