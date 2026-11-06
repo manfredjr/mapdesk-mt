@@ -4,6 +4,8 @@ Data: 02/11/2026. Projeto MAPDESK-MT. Feita com a skill `legal-br`.
 
 Decisão do Manfred em 02/11/2026: a versão pública pode sair antes da assinatura da cessão, porque o programa é gratuito. O contrato precisa estar assinado antes de qualquer venda. Ele está com o grupo do contrato único e depende do contador.
 
+Nota de 05/11/2026: o Manfred confirmou que o programa nunca é cobrado e que serve de ferramenta do serviço de suporte aos clientes. O contrato desse serviço segue fora desta análise, e o "Resultado" abaixo é o de 02/11/2026.
+
 **Resultado:** a publicação gratuita sob a AGPL-3.0 não depende da cessão para acontecer, na leitura abaixo. Enquanto a cessão não sai, a MT não deve se afirmar titular das mudanças. Só um texto faz isso hoje: a linha 17 do `AGENTS-MT.md`, que convém ajustar antes da tag. A tela Sobre, os metadados, a página e os avisos não afirmam a MT como titular.
 
 ## 1. Premissas
@@ -79,7 +81,7 @@ A cessão assinada depois não apaga o que já saiu. Quem recebeu a versão sob 
 
 ## 5. Requisitos
 
-- [ ] Ajustar a linha 17 do `AGENTS-MT.md` antes da tag, com o ok do Manfred.
+- [x] Ajustar a linha 17 do `AGENTS-MT.md` antes da tag, com o ok do Manfred. Nota de 05/11/2026: ajustada no PR 11, e o ok vem com a junção dele.
 - [ ] Assinar a cessão antes de qualquer venda.
 - [ ] Decidir se o autor assina, antes dela, uma autorização curta à MT para distribuir as mudanças sob a AGPL-3.0, com o texto pela `legal-br`.
 - [ ] Conferir se a minuta cobre as mudanças já feitas, as versões já publicadas, os textos e os logotipos, e se diz se a cessão é gratuita ou paga.
@@ -89,4 +91,4 @@ A cessão assinada depois não apaga o que já saiu. Quem recebeu a versão sob 
 
 Esta pergunta está em `CONSULTA-ADVOGADO-complemento-2026-11-02.md`, questão 9.
 
-**Pergunta.** Sem contrato específico, o art. 4º da Lei nº 9.609/1998 alcança as mudanças feitas por quem é sócio ou administrador da MT? Leituras possíveis: (a) não alcança, e os direitos ficam com a pessoa física até a cessão; (b) alcança, se houver vínculo de serviço com esse objeto, e a cessão só confirma a situação. Impacto: define quem assina o quê e como a minuta descreve as mudanças já feitas. Urgência: antes da primeira venda.
+**Pergunta.** Sem contrato específico, o art. 4º da Lei nº 9.609/1998 alcança as mudanças feitas por quem é sócio ou administrador da MT? Leituras possíveis: (a) não alcança, e os direitos ficam com a pessoa física até a cessão; (b) alcança, se houver vínculo de serviço com esse objeto, e a cessão só confirma a situação. Impacto: define quem assina o quê e como a minuta descreve as mudanças já feitas. Urgência: antes da primeira venda. Nota de 05/11/2026: a questão 9 do complemento ganhou os fatos do uso com clientes.

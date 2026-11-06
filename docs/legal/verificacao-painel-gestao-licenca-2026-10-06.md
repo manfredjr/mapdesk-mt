@@ -172,7 +172,7 @@ Lei nº 9.610/1998, art. 8º: "Não são objeto de proteção como direitos auto
 | Aviso de modificação com data e lista de mudanças | `AVISO-DE-MODIFICACAO.md`, tabela de 05/10 e 06/10/2026 |
 | Termo da seção 7 sobre nomes e logotipos da MT | `AVISO-DE-MODIFICACAO.md`, "Nomes e logotipos" |
 | Esquema de tag por versão e ligação tag e código | `AVISO-DE-MODIFICACAO.md`; `docs/publicacao.md` |
-| Regra de nunca apagar tags e versões | `docs/publicacao.md`, "Depois de publicar", passo 3 |
+| Regra de nunca apagar tags e versões | `docs/publicacao.md`, "Depois de publicar", passo 5 (era o passo 3 até 05/11/2026) |
 | Tela "Sobre": versão MT e versão base, copyright da Purslane Tech, "Baseado no RustDesk", não oficial, sem garantia, permissão de redistribuir e modificar, link da licença, link do código da versão, link do site da MT | `desktop_setting_page.dart`, classe `_About`; `mt_info.dart` |
 | Link de privacidade da RustDesk retirado; o da MT só aparece quando `kMtPrivacidade` tiver endereço | `_About`; `mt_info.dart` |
 | Submódulo `hbb_common` apontando para o fork da MT, no commit do oficial | `.gitmodules`; `git submodule status` (`229b904...`) |
