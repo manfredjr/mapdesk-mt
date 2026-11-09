@@ -8,7 +8,7 @@ Passo a passo para publicar uma versão (fatia 5 e todas as seguintes). Publicar
 
    Decisões do Manfred em 02/11/2026:
    - a primeira versão sai sem esperar as respostas do advogado, com o risco assumido por ele e a consulta (`docs/legal/CONSULTA-ADVOGADO-mapdesk-agpl-marca-2026-10-05.md`) enviada em paralelo. As questões continuam abertas nas pendências;
-   - a cessão do autor para a MT não bloqueia a tag, porque o programa é gratuito, e bloqueia a primeira venda. O contrato está com o grupo do contrato único e depende do contador (`docs/legal/verificacao-publicacao-sem-cessao-2026-11-02.md`).
+   - a cessão do autor para a MT não bloqueia a tag, porque o programa é gratuito, e bloqueia a primeira venda. O Manfred confirmou em 05/11/2026 que o programa é gratuito, nunca é cobrado e serve de ferramenta do serviço de suporte aos clientes, e a decisão de 02/11/2026 segue valendo. Pacote em que o programa entre como item cobrado pede a cessão antes (interpretação em `docs/legal/verificacao-publicacao-sem-cessao-2026-11-02.md`, seção 2, sem resposta do advogado). O contrato está com o grupo do contrato único e depende do contador (`docs/legal/verificacao-publicacao-sem-cessao-2026-11-02.md`).
 2. A chave pública de **produção** (VPS-MT, `docs/instalacao.md`, passo G4) está em `CHAVE_PUBLICA` (`src/mt_config.rs`). Feito em 01/11/2026, quando a VPS da HostGator passou a responder por `rustdesk.manfred.com.br`; o teste `mt_config` do workflow confere o valor exato antes de empacotar. A do laboratório nunca vai para a versão distribuída.
 3. Certificado de assinatura: a primeira versão sai sem certificado, por decisão do Manfred em 01/11/2026, registrada aqui em 02/11/2026. Depois que houver certificado, conferir antes de cada versão se ele está válido e se os segredos do GitHub existem (fatia 4).
 4. A versão MT foi atualizada em dois lugares, com o mesmo valor:
@@ -30,11 +30,12 @@ Passo a passo para publicar uma versão (fatia 5 e todas as seguintes). Publicar
    git push origin 1.5.0-mt.1
    ```
 
-2. O workflow `MapDesk-MT Windows x64` roda pela tag e cria a versão (release) com o `MapDesk-MT.exe` e o link do código-fonte da tag.
+2. O workflow `MapDesk-MT Windows x64` roda pela tag e cria a versão (release) com o `MapDesk-MT.exe`, o `.sha256`, `LICENCE`, `AVISO-DE-MODIFICACAO.md`, `AVISOS-DE-TERCEIROS.md` e o link do código-fonte da tag.
 3. Conferir na página da versão:
-   - o executável está lá;
+   - o executável, o `.sha256` e os três arquivos de licença e avisos estão lá;
    - o link do código abre a árvore da tag;
-   - o SHA-256 do log bate com o do arquivo baixado.
+   - o SHA-256 do log bate com o do arquivo baixado;
+   - o SHA-256 da engine no log da tag bate com o registrado em `docs/superpowers/pendencias.md`. Se mudou, avisar o Manfred antes de divulgar, porque o arquivo vem de uma versão móvel.
 4. Só depois do certificado: baixar o executável da versão e conferir a assinatura (Propriedades e depois Assinaturas digitais).
 
 ## Depois de publicar
@@ -42,7 +43,9 @@ Passo a passo para publicar uma versão (fatia 5 e todas as seguintes). Publicar
 1. Publicar ou atualizar a página do produto (seção "Site do produto", abaixo), antes de divulgar a versão.
    - Depois da conferência no ar e com a confirmação do Manfred ("Site do produto", passo 7), pedir à sessão do site a troca em `manfred.com.br/acesso`: o MapDesk-MT vira o botão principal e o RustDesk oficial fica como alternativa. A decisão é do Manfred, em 02/11/2026, e substitui o "os dois caminhos não se misturam" de 01/11/2026.
 2. Atualizar a "Situação do projeto" do `README-MT.md`.
-3. Nunca apagar tags nem versões antigas que algum cliente recebeu (AGPL-3.0, seção 6).
+3. Se o Manfred tiver dado o ok na junção do PR 11, trocar pela versão com tag as cópias de teste que tiverem ficado com clientes (`docs/superpowers/pendencias.md`, "Cópias de teste com clientes"), para nenhum cliente ficar com compilação sem tag.
+4. Mover as análises de risco para o repositório privado, com o ok do Manfred para criá-lo, sem apagar o histórico nem a tag (decisão de 05/11/2026).
+5. Nunca apagar tags nem versões antigas que algum cliente recebeu (AGPL-3.0, seção 6).
 
 ## Site do produto
 
@@ -54,21 +57,12 @@ A página `https://mapdesk.manfred.com.br/` mora em `public/` deste repositório
    - texto completo da `privacidade.html` no ramo `mt`, com os itens da verificação de privacidade (seção 5), e o endereço gravado em `kMtPrivacidade`. A página entra no ar no passo 4, antes de a versão ser divulgada;
    - bloco do MapDesk-MT no `README.md` da raiz;
    - licenças dos binários (`docs/legal/licencas-binarios-terceiros-2026-11-02.md`): a conferência não fechou. Cada item abaixo precisa estar resolvido ou adiado pelo Manfred por escrito:
-     - anúncio do `usbmmidd_v2` testado numa máquina com o monitor virtual ativo, com a decisão sobre como avisar o cliente;
-     - decisão sobre o `hwcodec`;
-     - arquivo de avisos de terceiros;
-     - instruções do código do FFmpeg nas notas da versão;
-     - perguntas com urgência "antes da primeira tag" em `docs/legal/CONSULTA-ADVOGADO-complemento-2026-11-02.md`, que as decisões de 02/11/2026 não cobrem;
-   - ajuste da linha 17 do `AGENTS-MT.md` e ressalva de terceiros nas linhas 21, 25 e 27, com o ok do Manfred;
-   - decisão sobre as consultas STUN;
+     - perguntas com urgência "antes da primeira tag" em `docs/legal/CONSULTA-ADVOGADO-complemento-2026-11-02.md`, que as decisões de 02/11/2026 a 05/11/2026 não cobrem. Em 05/11/2026 não resta nenhuma: o Manfred assumiu em 04/11/2026 as questões 6 (`hwcodec`, `hbb_common` e `flutter_gpu_texture_renderer`) e 12 (nome), e em 05/11/2026 a questão 8 (patentes), também no uso com clientes;
    - teste de convivência com o RustDesk oficial na mesma máquina, inclusive a desinstalação do MapDesk-MT;
-   - promessas da página sobre o servidor conferidas: IP da máquina no painel, servidor no Brasil, registro de cada conexão, guarda por 6 meses e acesso restrito;
-   - gravação de sessão desligada no lado do técnico, confirmada pelo Manfred;
-   - encarregado ou canal, conforme `docs/superpowers/pendencias.md`;
-   - verificação do provedor, inclusive o acesso do suporte a partir do exterior registrado no VPS-MT;
-   - buscas no INPI: o Manfred confirma se ficam para depois, porque a decisão de 02/11/2026 registra só as respostas do advogado.
+   - gravação automática das sessões feitas pelo técnico conferida como desligada em cada máquina de técnico da MT, e conferido na instalação limpa da compilação final, com a máquina e a versão anotadas, que as sessões recebidas não são gravadas mesmo com a caixa marcada e que o botão de gravar do técnico gera um vídeo que abre. A caixa que aceita o clique fica para a `1.5.0-mt.2`;
+   - ok do Manfred, na junção do PR 11, para seguir com: o aviso do anúncio; o banco sem exclusão automática; o teste G5 e o limite de 6 meses não vistos; a origem do suporte da HostGator em conferência; a infraestrutura da Oracle Cloud, com o acesso não conferido; os avisos sem as dependências de código, a engine e os avisos internos do Flutter; a engine sem SHA-256 fixo e sem o commit exato nas notas; a frase sobre gravação no servidor, com o limite da conferência; as mudanças no `AGENTS-MT.md`; a regra de nenhum cliente ficar com compilação sem tag; a convivência sem o teste do monitor virtual do oficial depois da desinstalação;
 2. Merge do PR do site, com o workflow `MapDesk-MT site` verde.
-3. Tag com o valor de `kMtVersao` (seção "Publicar", acima). O botão da página aponta para essa tag, e a versão traz o `MapDesk-MT.exe` e o `MapDesk-MT.exe.sha256`. A tag vem antes do site para o botão nunca apontar para uma versão que não existe. Até o fim do passo 6, a versão não é divulgada a ninguém, porque o link de privacidade do programa só funciona depois do passo 4.
+3. Tag com o valor de `kMtVersao` (seção "Publicar", acima). O botão da página aponta para essa tag, e a versão traz o `MapDesk-MT.exe`, o `MapDesk-MT.exe.sha256` e os três arquivos de licença e avisos. A tag vem antes do site para o botão nunca apontar para uma versão que não existe. Até o fim do passo 6, a versão não é divulgada a ninguém, porque o link de privacidade do programa só funciona depois do passo 4.
 4. No cPanel da GoDaddy, pelo `roteiro-publicacao-git-cpanel.md`:
    - clonar `https://github.com/manfredjr/mapdesk-mt.git` em `repositories/mapdesk-mt`, sem chave SSH, porque o repositório é público;
    - apontar o subdomínio `mapdesk.manfred.com.br` para a pasta `public` do clone;

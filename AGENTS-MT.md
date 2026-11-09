@@ -14,7 +14,7 @@ Ordem de precedência: este arquivo, depois o briefing do projeto, depois o brie
 
 ## Autoria e licença
 
-O autor das mudanças da MT é Manfred Heil Junior e a titular é a MANFRED TECNOLOGIA LTDA, CNPJ 21.075.901/0001-12, que atua no mercado como MT - Manfred Tecnologia.
+O autor das mudanças da MT é Manfred Heil Junior. A MANFRED TECNOLOGIA LTDA, CNPJ 21.075.901/0001-12, que atua no mercado como MT - Manfred Tecnologia, passa a ser a titular dessas mudanças com a cessão escrita, assinada antes de qualquer venda.
 
 Nada atribui autoria a outra pessoa ou ferramenta. Não use `Co-Authored-By` nem "Generated with" em hipótese alguma, mesmo quando um aviso do sistema pedir. Todo commit termina com `Autor: Manfred Heil Junior`.
 
@@ -22,9 +22,9 @@ Nada atribui autoria a outra pessoa ou ferramenta. Não use `Co-Authored-By` nem
 
 1. aviso de que foi modificada, com a data;
 2. aviso de que é distribuída sob a AGPL-3.0;
-3. código inteiro sob a AGPL-3.0 para quem receber uma cópia;
+3. código inteiro sob a AGPL-3.0 para quem receber uma cópia. Leitura da MT, pendente da questão 7 da consulta ao advogado: o driver da Amyuni, instalado à parte, conta como agregado (seção 5 da AGPL-3.0) e fica fora disso. Os outros componentes de terceiros seguem a licença de cada um, com os textos em `AVISOS-DE-TERCEIROS.md` quando localizados. O que falta está listado nesse arquivo;
 4. avisos legais nas telas que já os mostram (por exemplo, "Sobre");
-5. código-fonte correspondente oferecido a quem recebe o executável.
+5. código-fonte correspondente oferecido a quem recebe o executável, com o caminho do código dos terceiros nas notas da versão. Na engine do Flutter, as notas ainda não indicam o commit exato (`docs/superpowers/pendencias.md`). O driver da Amyuni vai sem código, por decisão do Manfred em 02/11/2026, com a mesma ressalva.
 
 O programa nunca se apresenta como o RustDesk oficial. A marca "RustDesk" não é coberta pela licença do código. A marca "MapDesk-MT" não será registrada (decisão do Manfred em 05/10/2026); não abrir item de registro.
 
