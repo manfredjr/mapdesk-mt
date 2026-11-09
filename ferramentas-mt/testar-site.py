@@ -7,7 +7,7 @@ import sys
 RAIZ = pathlib.Path(__file__).resolve().parent.parent
 PUBLIC = RAIZ / "public"
 REPO = "https://github.com/manfredjr/mapdesk-mt"
-IMAGENS = {".png", ".jpg", ".jpeg", ".gif", ".webp", ".ico", ".avif", ".bmp"}
+IMAGENS = {".png", ".jpg", ".jpeg", ".gif", ".webp", ".ico", ".avif", ".bmp", ".woff2"}
 
 PROIBIDOS = {
     "\u2014": "travessao longo",

@@ -1,21 +1,21 @@
 /* Estilo do site do MapDesk-MT, copiado do MapDisk - MT e com as cores da família Map:
-   coluna única e estreita, texto curto, superfícies planas. Sem script: a tela amplia por link. */
+   coluna única e estreita, texto curto. Sem script: a tela amplia por link. */
 :root {
   --verde-escuro: #006B2D;
   --verde: #0F8F2F;
   --verde-medio: #43A92C;
   --verde-claro: #9AD52B;
-  --fundo: #f5f7f2;
+  --fundo: #ffffff;
   --texto: #202020;
-  --suave: #5b625d;
-  --borda: #dfe4dc;
+  --suave: #6b7280;
+  --borda: #e5e7eb;
   --grafite: #202020;
   --branco: #ffffff;
 }
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 body {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
-  font-size: 16px; line-height: 1.65; color: var(--texto); background: var(--fundo);
+  font-family: 'Montserrat', 'Arial', system-ui, -apple-system, sans-serif; -webkit-font-smoothing: antialiased;
+  font-size: 16px; line-height: 1.6; color: var(--texto); background: var(--fundo);
   display: flex; flex-direction: column; min-height: 100vh;
 }
 main { flex: 1; width: 100%; max-width: 780px; margin: 0 auto; padding: 0 24px 56px; }
@@ -25,24 +25,24 @@ a { color: var(--verde-escuro); }
 /* Topo */
 .topo { text-align: center; padding: 48px 0 32px; border-bottom: 1px solid var(--borda); }
 .topo__simbolo { width: 56px; height: 56px; margin: 0 auto 12px; }
-.topo h1 { font-size: 2.6rem; font-weight: 800; line-height: 1.15; margin-bottom: 12px; }
+.topo h1 { font-size: 2.6rem; font-weight: 800; line-height: 1.15; letter-spacing: -0.5px; margin-bottom: 12px; }
 .topo__frase { color: var(--suave); font-size: 1.08rem; max-width: 34em; margin: 0 auto 28px; }
 .tela { margin: 0 auto 28px; max-width: 680px; }
 .tela a { display: block; cursor: zoom-in; }
 .tela img { width: 100%; border-radius: 10px; border: 1px solid var(--borda); }
 .tela figcaption { font-size: 0.85rem; color: var(--suave); margin-top: 8px; text-align: center; }
 .acoes { display: flex; justify-content: center; flex-wrap: wrap; gap: 12px; margin-bottom: 14px; }
-.btn { display: inline-block; padding: 12px 26px; border-radius: 6px; font-weight: 600; text-decoration: none; border: 1px solid var(--verde-escuro); }
-.btn--primario { background: var(--verde-escuro); color: var(--branco); }
-.btn--primario:hover { background: var(--verde); border-color: var(--verde); }
-.btn--secundario { color: var(--verde-escuro); background: var(--branco); }
-.btn--secundario:hover { background: var(--fundo); }
+.btn { display: inline-flex; padding: 14px 28px; border-radius: 999px; font-size: 0.95rem; font-weight: 600; letter-spacing: 0.3px; text-decoration: none; border: 2px solid transparent; transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease, color 0.2s ease; }
+.btn--primario { background: linear-gradient(90deg, #006B2D 0%, #0C882F 100%); color: var(--branco); box-shadow: 0 8px 20px rgba(15, 143, 47, 0.35); }
+.btn--primario:hover { transform: translateY(-2px); box-shadow: 0 12px 28px rgba(15, 143, 47, 0.45); }
+.btn--secundario { color: var(--verde-escuro); background: transparent; border-color: var(--verde); }
+.btn--secundario:hover { background: var(--verde-escuro); color: var(--branco); }
 .nota { font-size: 0.85rem; color: var(--suave); }
 
 /* Seções */
 section { padding: 36px 0 8px; border-bottom: 1px solid var(--borda); }
 section:last-of-type { border-bottom: 0; }
-h2 { font-size: 1.45rem; font-weight: 700; margin-bottom: 14px; }
+h2 { font-size: 1.35rem; font-weight: 700; margin-bottom: 14px; }
 section p { margin-bottom: 14px; }
 /* Texto corrido justificado, com hifenização pelo idioma da página (lang="pt-BR").
    O topo e o rodapé continuam centralizados. */
@@ -71,3 +71,23 @@ pre { background: var(--grafite); color: #e8f5d8; border-radius: 8px; padding: 1
 
 /* Aviso em destaque, com a faixa no verde do cursor do símbolo */
 .aviso { border-left: 4px solid var(--verde-medio); padding-left: 14px; }
+
+/* Montserrat servida pela propria pagina, sem Google Fonts, para nao enviar o IP do visitante a terceiro. */
+/* latin-ext */
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 300 800;
+  font-display: swap;
+  src: url(../fonts/montserrat-latin-ext.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 300 800;
+  font-display: swap;
+  src: url(../fonts/montserrat-latin.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
