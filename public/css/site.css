@@ -33,10 +33,10 @@ a { color: var(--verde-escuro); }
 .tela figcaption { font-size: 0.85rem; color: var(--suave); margin-top: 8px; text-align: center; }
 .acoes { display: flex; justify-content: center; flex-wrap: wrap; gap: 12px; margin-bottom: 14px; }
 .btn { display: inline-flex; padding: 14px 28px; border-radius: 999px; font-size: 0.95rem; font-weight: 600; letter-spacing: 0.3px; text-decoration: none; border: 2px solid transparent; transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease, color 0.2s ease; }
-.btn--primario { background: linear-gradient(90deg, #006B2D 0%, #0F8F2F 50%, #9AD52B 100%); color: var(--branco); box-shadow: 0 8px 20px rgba(15, 143, 47, 0.35); }
+.btn--primario { background: linear-gradient(90deg, #006B2D 0%, #0C882F 100%); color: var(--branco); box-shadow: 0 8px 20px rgba(15, 143, 47, 0.35); }
 .btn--primario:hover { transform: translateY(-2px); box-shadow: 0 12px 28px rgba(15, 143, 47, 0.45); }
 .btn--secundario { color: var(--verde-escuro); background: transparent; border-color: var(--verde); }
-.btn--secundario:hover { background: var(--verde); color: var(--branco); }
+.btn--secundario:hover { background: var(--verde-escuro); color: var(--branco); }
 .nota { font-size: 0.85rem; color: var(--suave); }
 
 /* Seções */
