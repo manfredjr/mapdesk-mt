@@ -29,8 +29,8 @@ A versão MT fica em `flutter/lib/mt/mt_info.dart` (`kMtVersao`) e sobe junto co
 | 2 | Servidor embutido | feita, PR #3; chave de produção desde 01/11/2026 |
 | 3 | Marca e avisos | feita, PR #2 |
 | 4 | Assinatura | adiada (sem certificado por enquanto) |
-| 5 | Publicação | em preparação: portão em `docs/publicacao.md`, PR #8 a #11 |
-| Site | Página do produto em `public/`, para `mapdesk.manfred.com.br` | feita, PR #7; publicação a fazer |
+| 5 | Publicação | feita: versão `1.5.0-mt.1` publicada em 09/11/2026, com o portão de `docs/publicacao.md` (PR #8 a #11) |
+| Site | Página do produto em `public/`, em `mapdesk.manfred.com.br` | no ar desde 09/11/2026, PR #7, #12 e #13 |
 
 ## Site do produto
 
