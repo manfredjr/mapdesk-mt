@@ -29,19 +29,19 @@ A versão MT fica em `flutter/lib/mt/mt_info.dart` (`kMtVersao`) e sobe junto co
 | 2 | Servidor embutido | feita, PR #3; chave de produção desde 01/11/2026 |
 | 3 | Marca e avisos | feita, PR #2 |
 | 4 | Assinatura | adiada (sem certificado por enquanto) |
-| 5 | Publicação | em preparação: portão em `docs/publicacao.md`, PR #8 a #11 |
-| Site | Página do produto em `public/`, para `mapdesk.manfred.com.br` | feita, PR #7; publicação a fazer |
+| 5 | Publicação | feita: versão `1.5.0-mt.1` publicada em 09/11/2026 como pré-lançamento, com o portão de `docs/publicacao.md` (PR #8 a #11) |
+| Site | Página do produto em `public/`, em `mapdesk.manfred.com.br` | no ar desde 09/11/2026, PR #7, #12 e #13 |
 
 ## Site do produto
 
 A página do produto fica em `public/` e é servida em `https://mapdesk.manfred.com.br/` pelo Git do cPanel (`.cpanel.yml`). O teste `ferramentas-mt/testar-site.py` roda no workflow `mapdesk-site.yml` e barra a publicação com marca sem fonte, medição de terceiros ou sem os links da AGPL-3.0. Os passos de publicação estão em `docs/publicacao.md`.
 
-## Antes de publicar
+## Antes de cada versão
 
-- O que bloqueia a primeira versão está no portão de `docs/publicacao.md` e em `docs/superpowers/pendencias.md`. As respostas do advogado às pendências 1 a 6 e a assinatura (fatia 4) não bloqueiam, por decisão do Manfred em 01/11/2026 e 02/11/2026.
+- O que bloqueia uma versão está no portão de `docs/publicacao.md` e em `docs/superpowers/pendencias.md`. Na `1.5.0-mt.1`, as respostas do advogado às pendências 1 a 6 e a assinatura (fatia 4) não bloqueiam, por decisão do Manfred em 01/11/2026 e 02/11/2026.
 - Teste de rede: nenhuma conexão a `*.rustdesk.com`.
 
-## Depois de publicar
+## Depois da primeira versão
 
 - Conferir a página do produto no ar (`docs/publicacao.md`, "Site do produto"). Depois dessa conferência e com a confirmação do Manfred, pedir à sessão do site que `manfred.com.br/acesso` tenha o MapDesk-MT como botão principal e o RustDesk oficial como alternativa (decisão do Manfred em 02/11/2026).
 
